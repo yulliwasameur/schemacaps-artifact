@@ -1,0 +1,164 @@
+{
+ "package": "@modelcontextprotocol/server-cohort-heatmap",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2.0.2",
+ "published": "2026-09-25T14:10:36.706Z",
+ "index_in_window": 24,
+ "sampled_rank": 18,
+ "extracted_at": "2026-09-29T15:46:44Z",
+ "deps_resolved_before": "2026-09-26T14:10:36Z",
+ "install_seconds": 3.9,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Cohort Heatmap Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-cohort-data",
+   "title": "Get Cohort Retention Data",
+   "description": "Returns cohort retention heatmap data showing customer retention over time by signup month",
+   "inputSchema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "properties": {
+     "metric": {
+      "default": "retention",
+      "type": "string",
+      "enum": [
+       "retention",
+       "revenue",
+       "active"
+      ]
+     },
+     "periodType": {
+      "default": "monthly",
+      "type": "string",
+      "enum": [
+       "monthly",
+       "weekly"
+      ]
+     },
+     "cohortCount": {
+      "default": 12,
+      "type": "number",
+      "minimum": 3,
+      "maximum": 24
+     },
+     "maxPeriods": {
+      "default": 12,
+      "type": "number",
+      "minimum": 3,
+      "maximum": 24
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "cohorts": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "cohortId": {
+         "type": "string"
+        },
+        "cohortLabel": {
+         "type": "string"
+        },
+        "originalUsers": {
+         "type": "number"
+        },
+        "cells": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "cohortIndex": {
+            "type": "number"
+           },
+           "periodIndex": {
+            "type": "number"
+           },
+           "retention": {
+            "type": "number"
+           },
+           "usersRetained": {
+            "type": "number"
+           },
+           "usersOriginal": {
+            "type": "number"
+           }
+          },
+          "required": [
+           "cohortIndex",
+           "periodIndex",
+           "retention",
+           "usersRetained",
+           "usersOriginal"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "cohortId",
+        "cohortLabel",
+        "originalUsers",
+        "cells"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "periods": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "periodLabels": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "metric": {
+      "type": "string"
+     },
+     "periodType": {
+      "type": "string"
+     },
+     "generatedAt": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cohorts",
+     "periods",
+     "periodLabels",
+     "metric",
+     "periodType",
+     "generatedAt"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://get-cohort-data/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://get-cohort-data/mcp-app.html"
+   }
+  }
+ ],
+ "tools_sha256": "eb252f8f34a189a3f99bd1f4bf1cee77effb72fd64889643197837e0d0c33bd3"
+}

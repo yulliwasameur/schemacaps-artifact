@@ -1,0 +1,139 @@
+{
+ "package": "@modelcontextprotocol/server-customer-segmentation",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.4.0",
+ "published": "2026-04-02T03:38:13.306Z",
+ "index_in_window": 13,
+ "sampled_rank": 10,
+ "extracted_at": "2026-09-29T15:47:59Z",
+ "deps_resolved_before": "2026-04-03T03:38:13Z",
+ "install_seconds": 5.8,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Customer Segmentation Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-customer-data",
+   "title": "Get Customer Data",
+   "description": "Returns customer data with segment information for visualization. Optionally filter by segment.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "segment": {
+      "description": "Filter by segment (default: All)",
+      "type": "string",
+      "enum": [
+       "All",
+       "Enterprise",
+       "Mid-Market",
+       "SMB",
+       "Startup"
+      ]
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "customers": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "segment": {
+         "type": "string"
+        },
+        "annualRevenue": {
+         "type": "number"
+        },
+        "employeeCount": {
+         "type": "number"
+        },
+        "accountAge": {
+         "type": "number"
+        },
+        "engagementScore": {
+         "type": "number"
+        },
+        "supportTickets": {
+         "type": "number"
+        },
+        "nps": {
+         "type": "number"
+        }
+       },
+       "required": [
+        "id",
+        "name",
+        "segment",
+        "annualRevenue",
+        "employeeCount",
+        "accountAge",
+        "engagementScore",
+        "supportTickets",
+        "nps"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "segments": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "count": {
+         "type": "number"
+        },
+        "color": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "name",
+        "count",
+        "color"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "customers",
+     "segments"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://customer-segmentation/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://customer-segmentation/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "e6dfc2f63055fdad4215e50d1fdcaaa7208de7ccc82a2b6474d86a0a67708197"
+}

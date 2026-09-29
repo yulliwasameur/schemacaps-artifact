@@ -1,0 +1,196 @@
+{
+ "package": "@modelcontextprotocol/server-debug",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.4.0",
+ "published": "2026-04-02T03:38:14.312Z",
+ "index_in_window": 8,
+ "sampled_rank": 8,
+ "extracted_at": "2026-09-29T15:48:00Z",
+ "deps_resolved_before": "2026-04-03T03:38:14Z",
+ "install_seconds": 6.6,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Debug MCP App Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "debug-tool",
+   "title": "Debug Tool",
+   "description": "Comprehensive debug tool for testing MCP Apps SDK. Configure content types, error simulation, delays, and more.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "contentType": {
+      "default": "text",
+      "type": "string",
+      "enum": [
+       "text",
+       "image",
+       "audio",
+       "resource",
+       "resourceLink",
+       "mixed"
+      ]
+     },
+     "multipleBlocks": {
+      "default": true,
+      "type": "boolean"
+     },
+     "includeStructuredContent": {
+      "default": true,
+      "type": "boolean"
+     },
+     "includeMeta": {
+      "default": true,
+      "type": "boolean"
+     },
+     "largeInput": {
+      "type": "string"
+     },
+     "simulateError": {
+      "default": false,
+      "type": "boolean"
+     },
+     "delayMs": {
+      "type": "number"
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "config": {
+      "type": "object",
+      "propertyNames": {
+       "type": "string"
+      },
+      "additionalProperties": {}
+     },
+     "timestamp": {
+      "type": "string"
+     },
+     "counter": {
+      "type": "number"
+     },
+     "largeInputLength": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "config",
+     "timestamp",
+     "counter"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://debug-tool/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://debug-tool/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "debug-refresh",
+   "title": "Refresh Debug Info",
+   "description": "App-only tool for polling server state. Not visible to the model.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "timestamp": {
+      "type": "string"
+     },
+     "counter": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "timestamp",
+     "counter"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://debug-tool/mcp-app.html",
+     "visibility": [
+      "app"
+     ]
+    },
+    "ui/resourceUri": "ui://debug-tool/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "debug-log",
+   "title": "Log to File",
+   "description": "App-only tool for logging events to the server log file. Not visible to the model.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "type": {
+      "type": "string"
+     },
+     "payload": {}
+    },
+    "required": [
+     "type",
+     "payload"
+    ]
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "logged": {
+      "type": "boolean"
+     },
+     "logFile": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "logged",
+     "logFile"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://debug-tool/mcp-app.html",
+     "visibility": [
+      "app"
+     ]
+    },
+    "ui/resourceUri": "ui://debug-tool/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "1301789c804bbfd6b084cda7219e81463e2e011301b1dedd5de72ccd59c7a1ea"
+}

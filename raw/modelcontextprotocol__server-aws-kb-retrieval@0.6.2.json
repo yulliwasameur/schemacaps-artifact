@@ -1,0 +1,51 @@
+{
+ "package": "@modelcontextprotocol/server-aws-kb-retrieval",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "0.6.2",
+ "published": "2025-01-14T00:35:10.585Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:54:55Z",
+ "deps_resolved_before": "2025-01-15T00:35:10Z",
+ "install_seconds": 11.6,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "aws-kb-retrieval-server",
+  "title": null,
+  "version": "0.2.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "retrieve_from_aws_kb",
+   "description": "Performs retrieval from the AWS Knowledge Base using the provided query and Knowledge Base ID.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string",
+      "description": "The query to perform retrieval on"
+     },
+     "knowledgeBaseId": {
+      "type": "string",
+      "description": "The ID of the AWS Knowledge Base"
+     },
+     "n": {
+      "type": "number",
+      "default": 3,
+      "description": "Number of results to retrieve"
+     }
+    },
+    "required": [
+     "query",
+     "knowledgeBaseId"
+    ]
+   }
+  }
+ ],
+ "tools_sha256": "53cce88e35ec2f4135b7c207efa7b6838b694ea8d30549bfec351efd20cc0be0"
+}

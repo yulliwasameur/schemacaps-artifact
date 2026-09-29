@@ -1,0 +1,200 @@
+{
+ "package": "@modelcontextprotocol/server-budget-allocator",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.4.0",
+ "published": "2026-04-02T03:38:14.551Z",
+ "index_in_window": 13,
+ "sampled_rank": 10,
+ "extracted_at": "2026-09-29T15:44:56Z",
+ "deps_resolved_before": "2026-04-03T03:38:14Z",
+ "install_seconds": 7.7,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Budget Allocator Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-budget-data",
+   "title": "Get Budget Data",
+   "description": "Returns budget configuration with 24 months of historical allocations and industry benchmarks by company stage",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "config": {
+      "type": "object",
+      "properties": {
+       "categories": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "id": {
+           "type": "string"
+          },
+          "name": {
+           "type": "string"
+          },
+          "color": {
+           "type": "string"
+          },
+          "defaultPercent": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "id",
+          "name",
+          "color",
+          "defaultPercent"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "presetBudgets": {
+        "type": "array",
+        "items": {
+         "type": "number"
+        }
+       },
+       "defaultBudget": {
+        "type": "number"
+       },
+       "currency": {
+        "type": "string"
+       },
+       "currencySymbol": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "categories",
+       "presetBudgets",
+       "defaultBudget",
+       "currency",
+       "currencySymbol"
+      ],
+      "additionalProperties": false
+     },
+     "analytics": {
+      "type": "object",
+      "properties": {
+       "history": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "month": {
+           "type": "string"
+          },
+          "allocations": {
+           "type": "object",
+           "propertyNames": {
+            "type": "string"
+           },
+           "additionalProperties": {
+            "type": "number"
+           }
+          }
+         },
+         "required": [
+          "month",
+          "allocations"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "benchmarks": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "stage": {
+           "type": "string"
+          },
+          "categoryBenchmarks": {
+           "type": "object",
+           "propertyNames": {
+            "type": "string"
+           },
+           "additionalProperties": {
+            "type": "object",
+            "properties": {
+             "p25": {
+              "type": "number"
+             },
+             "p50": {
+              "type": "number"
+             },
+             "p75": {
+              "type": "number"
+             }
+            },
+            "required": [
+             "p25",
+             "p50",
+             "p75"
+            ],
+            "additionalProperties": false
+           }
+          }
+         },
+         "required": [
+          "stage",
+          "categoryBenchmarks"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "stages": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "defaultStage": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "history",
+       "benchmarks",
+       "stages",
+       "defaultStage"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "config",
+     "analytics"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://budget-allocator/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://budget-allocator/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "07a52965165cff5b7609b510666ef56217acbe473c064bc3c47b2edf69805583"
+}

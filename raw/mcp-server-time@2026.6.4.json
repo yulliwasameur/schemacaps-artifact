@@ -1,0 +1,79 @@
+{
+ "package": "mcp-server-time",
+ "ecosystem": "pypi",
+ "strate": "A",
+ "version": "2026.6.4",
+ "published": "2026-06-04T01:22:42",
+ "index_in_window": 5,
+ "sampled_rank": 5,
+ "extracted_at": "2026-09-29T16:13:52Z",
+ "deps_resolved_before": "2026-06-05T01:22:42Z",
+ "install_seconds": 0.3,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "mcp-time",
+  "title": null,
+  "version": "1.27.2",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get_current_time",
+   "description": "Get current time in a specific timezone",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "timezone": {
+      "type": "string",
+      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Africa/Algiers' as local timezone if no timezone provided by the user."
+     }
+    },
+    "required": [
+     "timezone"
+    ]
+   },
+   "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+   }
+  },
+  {
+   "name": "convert_time",
+   "description": "Convert time between timezones",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "source_timezone": {
+      "type": "string",
+      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Africa/Algiers' as local timezone if no source timezone provided by the user."
+     },
+     "time": {
+      "type": "string",
+      "description": "Time to convert in 24-hour format (HH:MM)"
+     },
+     "target_timezone": {
+      "type": "string",
+      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'Africa/Algiers' as local timezone if no target timezone provided by the user."
+     }
+    },
+    "required": [
+     "source_timezone",
+     "time",
+     "target_timezone"
+    ]
+   },
+   "annotations": {
+    "readOnlyHint": true,
+    "destructiveHint": false,
+    "idempotentHint": true,
+    "openWorldHint": false
+   }
+  }
+ ],
+ "tools_sha256": "73bc7e30e4a01c3c9094a34dbda8a906acd50f7d19a91e071aa1f34b0b6b9f47"
+}

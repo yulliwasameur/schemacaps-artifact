@@ -1,0 +1,67 @@
+{
+ "package": "mcp-server-time",
+ "ecosystem": "pypi",
+ "strate": "A",
+ "version": "2025.7.1",
+ "published": "2025-07-01T18:32:18",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:13:44Z",
+ "deps_resolved_before": "2025-07-02T18:32:18Z",
+ "install_seconds": 0.6,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "mcp-time",
+  "title": null,
+  "version": "1.10.1",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-06-18",
+ "tools": [
+  {
+   "name": "get_current_time",
+   "description": "Get current time in a specific timezones",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "timezone": {
+      "type": "string",
+      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Africa/Algiers' as local timezone if no timezone provided by the user."
+     }
+    },
+    "required": [
+     "timezone"
+    ]
+   }
+  },
+  {
+   "name": "convert_time",
+   "description": "Convert time between timezones",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "source_timezone": {
+      "type": "string",
+      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'Africa/Algiers' as local timezone if no source timezone provided by the user."
+     },
+     "time": {
+      "type": "string",
+      "description": "Time to convert in 24-hour format (HH:MM)"
+     },
+     "target_timezone": {
+      "type": "string",
+      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'Africa/Algiers' as local timezone if no target timezone provided by the user."
+     }
+    },
+    "required": [
+     "source_timezone",
+     "time",
+     "target_timezone"
+    ]
+   }
+  }
+ ],
+ "tools_sha256": "f7e910a091d3d7c0d05d25bc77a13603e6af85b23591c9f0a7bc5ca2049b93ea"
+}
