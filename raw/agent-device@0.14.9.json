@@ -1,0 +1,80 @@
+{
+ "package": "agent-device",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.14.9",
+ "published": "2026-05-13T17:30:33.922Z",
+ "index_in_window": 109,
+ "sampled_rank": 12,
+ "extracted_at": "2026-09-29T15:55:51Z",
+ "deps_resolved_before": "2026-05-14T17:30:33Z",
+ "install_seconds": 1.0,
+ "status": "ok",
+ "variant": [
+  "mcp"
+ ],
+ "serverInfo": {
+  "name": "agent-device",
+  "title": null,
+  "version": "0.14.9",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "status",
+   "description": "Report the installed agent-device MCP router and CLI metadata.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "install",
+   "description": "Return install and MCP client configuration snippets for agent-device.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "client": {
+      "type": "string",
+      "description": "Optional client name for labeling the returned guidance."
+     },
+     "global": {
+      "type": "boolean",
+      "description": "Use a global agent-device binary when true; use npx when false."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "help",
+   "description": "Return version-matched CLI help for a workflow topic or command.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "topic": {
+      "type": "string",
+      "enum": [
+       "workflow",
+       "debugging",
+       "react-devtools",
+       "remote",
+       "macos",
+       "dogfood"
+      ],
+      "description": "Agent workflow topic."
+     },
+     "command": {
+      "type": "string",
+      "description": "CLI command name such as snapshot, open, logs, or react-devtools."
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ ],
+ "tools_sha256": "6476391b32bcab658934fa7175fcc51b26eb390dd227805a506f2e8fe22cd3ba"
+}

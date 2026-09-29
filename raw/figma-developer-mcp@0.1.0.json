@@ -1,0 +1,14 @@
+{
+ "package": "figma-developer-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.1.0",
+ "published": "2025-02-22T20:16:13.869Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:09:33Z",
+ "deps_resolved_before": "2025-02-23T20:16:13Z",
+ "install_seconds": 0.9,
+ "status": "install_failed",
+ "error": "npm error A complete log of this run can be found in: /root/.npm/_logs/2026-09-29T16_09_33_719Z-debug-0.log\n"
+}

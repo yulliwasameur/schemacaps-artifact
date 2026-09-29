@@ -1,0 +1,110 @@
+{
+ "package": "figma-developer-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.1.5",
+ "published": "2025-03-02T04:59:24.354Z",
+ "index_in_window": 5,
+ "sampled_rank": 2,
+ "extracted_at": "2026-09-29T16:09:39Z",
+ "deps_resolved_before": "2025-03-03T04:59:24Z",
+ "install_seconds": 4.4,
+ "status": "ok",
+ "variant": [
+  "--figma-api-key=dummy",
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Figma MCP Server",
+  "title": null,
+  "version": "0.1.5",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "get_image",
+   "description": "Get the icon file, Get images from Figma data based on the imageRef of image nodes",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "fileKey": {
+      "type": "string",
+      "description": "The key of the Figma file containing the node"
+     },
+     "nodeId": {
+      "type": "string",
+      "description": "The ID of the node to fetch"
+     },
+     "fileName": {
+      "type": "string",
+      "description": "The name of the file to fetch"
+     },
+     "localPath": {
+      "type": "string",
+      "description": "The absolute path to the directory where images are stored in the project"
+     }
+    },
+    "required": [
+     "fileKey",
+     "nodeId",
+     "fileName",
+     "localPath"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "get_file",
+   "description": "When the nodeId cannot be obtained, obtain the layout information about the entire Figma file",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "fileKey": {
+      "type": "string",
+      "description": "The key of the Figma file to fetch"
+     },
+     "depth": {
+      "type": "number",
+      "description": "How many levels deep to traverse the node tree, only use if explicitly requested by the user"
+     }
+    },
+    "required": [
+     "fileKey"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "get_node",
+   "description": "Get layout information about a specific node in a Figma file",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "fileKey": {
+      "type": "string",
+      "description": "The key of the Figma file containing the node, often found in a provided URL like figma.com/(file|design)/<fileKey>/..."
+     },
+     "nodeId": {
+      "type": "string",
+      "description": "The ID of the node to fetch, often found as URL parameter node-id=<nodeId>"
+     },
+     "depth": {
+      "type": "number",
+      "description": "How many levels deep to traverse the node tree"
+     }
+    },
+    "required": [
+     "fileKey",
+     "nodeId"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "b015ab6b5a309fac5d9c7bff47b4f8402e5154f915949c518b608574191d48d2"
+}

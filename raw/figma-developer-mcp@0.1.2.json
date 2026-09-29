@@ -1,0 +1,77 @@
+{
+ "package": "figma-developer-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.1.2",
+ "published": "2025-02-22T21:05:02.978Z",
+ "index_in_window": 2,
+ "sampled_rank": 1,
+ "extracted_at": "2026-09-29T16:09:34Z",
+ "deps_resolved_before": "2025-02-23T21:05:02Z",
+ "install_seconds": 4.9,
+ "status": "ok",
+ "variant": [
+  "--figma-api-key=dummy",
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Figma MCP Server",
+  "title": null,
+  "version": "0.1.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "get_file",
+   "description": "Get layout information about an entire Figma file",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "fileKey": {
+      "type": "string",
+      "description": "The key of the Figma file to fetch"
+     },
+     "depth": {
+      "type": "number",
+      "description": "How many levels deep to traverse the node tree"
+     }
+    },
+    "required": [
+     "fileKey"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "get_node",
+   "description": "Get layout information about a specific node in a Figma file",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "fileKey": {
+      "type": "string",
+      "description": "The key of the Figma file containing the node"
+     },
+     "nodeId": {
+      "type": "string",
+      "description": "The ID of the node to fetch"
+     },
+     "depth": {
+      "type": "number",
+      "description": "How many levels deep to traverse the node tree"
+     }
+    },
+    "required": [
+     "fileKey",
+     "nodeId"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "e7c889ccf18ad4c94f39e53677d7ec08fe013829c99022a4881acf84afa4373f"
+}

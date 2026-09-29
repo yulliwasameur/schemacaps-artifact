@@ -1,0 +1,822 @@
+{
+ "package": "firecrawl-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "3.0.1",
+ "published": "2025-09-11T21:51:37.322Z",
+ "index_in_window": 24,
+ "sampled_rank": 4,
+ "extracted_at": "2026-09-29T15:56:50Z",
+ "deps_resolved_before": "2025-09-12T21:51:37Z",
+ "install_seconds": 8.1,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "firecrawl-fastmcp",
+  "title": null,
+  "version": "3.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-06-18",
+ "tools": [
+  {
+   "name": "firecrawl_scrape",
+   "description": "Scrape content from a single URL. Best for precise single-page extraction. Returns formats like markdown/html/rawHtml/links or JSON via { type: \"json\", prompt, schema }.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "formats": {
+      "type": "array",
+      "items": {
+       "anyOf": [
+        {
+         "type": "string",
+         "enum": [
+          "markdown",
+          "html",
+          "rawHtml",
+          "screenshot",
+          "links",
+          "summary",
+          "changeTracking"
+         ]
+        },
+        {
+         "type": "object",
+         "properties": {
+          "type": {
+           "type": "string",
+           "const": "json"
+          },
+          "prompt": {
+           "type": "string"
+          },
+          "schema": {
+           "type": "object",
+           "propertyNames": {
+            "type": "string"
+           },
+           "additionalProperties": {}
+          }
+         },
+         "required": [
+          "type"
+         ],
+         "additionalProperties": false
+        },
+        {
+         "type": "object",
+         "properties": {
+          "type": {
+           "type": "string",
+           "const": "screenshot"
+          },
+          "fullPage": {
+           "type": "boolean"
+          },
+          "quality": {
+           "type": "number"
+          },
+          "viewport": {
+           "type": "object",
+           "properties": {
+            "width": {
+             "type": "number"
+            },
+            "height": {
+             "type": "number"
+            }
+           },
+           "required": [
+            "width",
+            "height"
+           ],
+           "additionalProperties": false
+          }
+         },
+         "required": [
+          "type"
+         ],
+         "additionalProperties": false
+        }
+       ]
+      }
+     },
+     "onlyMainContent": {
+      "type": "boolean"
+     },
+     "includeTags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "excludeTags": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "waitFor": {
+      "type": "number"
+     },
+     "actions": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "type": {
+         "type": "string",
+         "enum": [
+          "wait",
+          "click",
+          "screenshot",
+          "write",
+          "press",
+          "scroll",
+          "scrape",
+          "executeJavascript",
+          "generatePDF"
+         ]
+        },
+        "selector": {
+         "type": "string"
+        },
+        "milliseconds": {
+         "type": "number"
+        },
+        "text": {
+         "type": "string"
+        },
+        "key": {
+         "type": "string"
+        },
+        "direction": {
+         "type": "string",
+         "enum": [
+          "up",
+          "down"
+         ]
+        },
+        "script": {
+         "type": "string"
+        },
+        "fullPage": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "type"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "mobile": {
+      "type": "boolean"
+     },
+     "skipTlsVerification": {
+      "type": "boolean"
+     },
+     "removeBase64Images": {
+      "type": "boolean"
+     },
+     "location": {
+      "type": "object",
+      "properties": {
+       "country": {
+        "type": "string"
+       },
+       "languages": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       }
+      },
+      "additionalProperties": false
+     },
+     "storeInCache": {
+      "type": "boolean"
+     },
+     "maxAge": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "url"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "firecrawl_map",
+   "description": "Map a website to discover indexed URLs. Best for enumerating pages before scraping/crawling.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "format": "uri"
+     },
+     "search": {
+      "type": "string"
+     },
+     "sitemap": {
+      "type": "string",
+      "enum": [
+       "include",
+       "skip",
+       "only"
+      ]
+     },
+     "includeSubdomains": {
+      "type": "boolean"
+     },
+     "limit": {
+      "type": "number"
+     },
+     "ignoreQueryParameters": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "url"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "firecrawl_search",
+   "description": "Search the web and optionally scrape results. Provide scrapeOptions.formats (strings or { type: \"json\", ... }) for per-result extraction.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string",
+      "minLength": 1
+     },
+     "limit": {
+      "type": "number"
+     },
+     "tbs": {
+      "type": "string"
+     },
+     "filter": {
+      "type": "string"
+     },
+     "location": {
+      "type": "string"
+     },
+     "sources": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "type": {
+         "type": "string",
+         "enum": [
+          "web",
+          "images",
+          "news"
+         ]
+        }
+       },
+       "required": [
+        "type"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "scrapeOptions": {
+      "type": "object",
+      "properties": {
+       "formats": {
+        "type": "array",
+        "items": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "markdown",
+            "html",
+            "rawHtml",
+            "screenshot",
+            "links",
+            "summary",
+            "changeTracking"
+           ]
+          },
+          {
+           "type": "object",
+           "properties": {
+            "type": {
+             "type": "string",
+             "const": "json"
+            },
+            "prompt": {
+             "type": "string"
+            },
+            "schema": {
+             "type": "object",
+             "propertyNames": {
+              "type": "string"
+             },
+             "additionalProperties": {}
+            }
+           },
+           "required": [
+            "type"
+           ],
+           "additionalProperties": false
+          },
+          {
+           "type": "object",
+           "properties": {
+            "type": {
+             "type": "string",
+             "const": "screenshot"
+            },
+            "fullPage": {
+             "type": "boolean"
+            },
+            "quality": {
+             "type": "number"
+            },
+            "viewport": {
+             "type": "object",
+             "properties": {
+              "width": {
+               "type": "number"
+              },
+              "height": {
+               "type": "number"
+              }
+             },
+             "required": [
+              "width",
+              "height"
+             ],
+             "additionalProperties": false
+            }
+           },
+           "required": [
+            "type"
+           ],
+           "additionalProperties": false
+          }
+         ]
+        }
+       },
+       "onlyMainContent": {
+        "type": "boolean"
+       },
+       "includeTags": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "excludeTags": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "waitFor": {
+        "type": "number"
+       },
+       "actions": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "type": {
+           "type": "string",
+           "enum": [
+            "wait",
+            "click",
+            "screenshot",
+            "write",
+            "press",
+            "scroll",
+            "scrape",
+            "executeJavascript",
+            "generatePDF"
+           ]
+          },
+          "selector": {
+           "type": "string"
+          },
+          "milliseconds": {
+           "type": "number"
+          },
+          "text": {
+           "type": "string"
+          },
+          "key": {
+           "type": "string"
+          },
+          "direction": {
+           "type": "string",
+           "enum": [
+            "up",
+            "down"
+           ]
+          },
+          "script": {
+           "type": "string"
+          },
+          "fullPage": {
+           "type": "boolean"
+          }
+         },
+         "required": [
+          "type"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "mobile": {
+        "type": "boolean"
+       },
+       "skipTlsVerification": {
+        "type": "boolean"
+       },
+       "removeBase64Images": {
+        "type": "boolean"
+       },
+       "location": {
+        "type": "object",
+        "properties": {
+         "country": {
+          "type": "string"
+         },
+         "languages": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        },
+        "additionalProperties": false
+       },
+       "storeInCache": {
+        "type": "boolean"
+       },
+       "maxAge": {
+        "type": "number"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "query"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "firecrawl_crawl",
+   "description": "Start a crawl job to discover and extract multiple pages. Returns an operation descriptor; use firecrawl_check_crawl_status for progress/results.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string"
+     },
+     "prompt": {
+      "type": "string"
+     },
+     "excludePaths": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "includePaths": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "maxDiscoveryDepth": {
+      "type": "number"
+     },
+     "sitemap": {
+      "type": "string",
+      "enum": [
+       "skip",
+       "include",
+       "only"
+      ]
+     },
+     "limit": {
+      "type": "number"
+     },
+     "allowExternalLinks": {
+      "type": "boolean"
+     },
+     "allowSubdomains": {
+      "type": "boolean"
+     },
+     "crawlEntireDomain": {
+      "type": "boolean"
+     },
+     "delay": {
+      "type": "number"
+     },
+     "maxConcurrency": {
+      "type": "number"
+     },
+     "webhook": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "object",
+        "properties": {
+         "url": {
+          "type": "string"
+         },
+         "headers": {
+          "type": "object",
+          "propertyNames": {
+           "type": "string"
+          },
+          "additionalProperties": {
+           "type": "string"
+          }
+         }
+        },
+        "required": [
+         "url"
+        ],
+        "additionalProperties": false
+       }
+      ]
+     },
+     "deduplicateSimilarURLs": {
+      "type": "boolean"
+     },
+     "ignoreQueryParameters": {
+      "type": "boolean"
+     },
+     "scrapeOptions": {
+      "type": "object",
+      "properties": {
+       "formats": {
+        "type": "array",
+        "items": {
+         "anyOf": [
+          {
+           "type": "string",
+           "enum": [
+            "markdown",
+            "html",
+            "rawHtml",
+            "screenshot",
+            "links",
+            "summary",
+            "changeTracking"
+           ]
+          },
+          {
+           "type": "object",
+           "properties": {
+            "type": {
+             "type": "string",
+             "const": "json"
+            },
+            "prompt": {
+             "type": "string"
+            },
+            "schema": {
+             "type": "object",
+             "propertyNames": {
+              "type": "string"
+             },
+             "additionalProperties": {}
+            }
+           },
+           "required": [
+            "type"
+           ],
+           "additionalProperties": false
+          },
+          {
+           "type": "object",
+           "properties": {
+            "type": {
+             "type": "string",
+             "const": "screenshot"
+            },
+            "fullPage": {
+             "type": "boolean"
+            },
+            "quality": {
+             "type": "number"
+            },
+            "viewport": {
+             "type": "object",
+             "properties": {
+              "width": {
+               "type": "number"
+              },
+              "height": {
+               "type": "number"
+              }
+             },
+             "required": [
+              "width",
+              "height"
+             ],
+             "additionalProperties": false
+            }
+           },
+           "required": [
+            "type"
+           ],
+           "additionalProperties": false
+          }
+         ]
+        }
+       },
+       "onlyMainContent": {
+        "type": "boolean"
+       },
+       "includeTags": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "excludeTags": {
+        "type": "array",
+        "items": {
+         "type": "string"
+        }
+       },
+       "waitFor": {
+        "type": "number"
+       },
+       "actions": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "type": {
+           "type": "string",
+           "enum": [
+            "wait",
+            "click",
+            "screenshot",
+            "write",
+            "press",
+            "scroll",
+            "scrape",
+            "executeJavascript",
+            "generatePDF"
+           ]
+          },
+          "selector": {
+           "type": "string"
+          },
+          "milliseconds": {
+           "type": "number"
+          },
+          "text": {
+           "type": "string"
+          },
+          "key": {
+           "type": "string"
+          },
+          "direction": {
+           "type": "string",
+           "enum": [
+            "up",
+            "down"
+           ]
+          },
+          "script": {
+           "type": "string"
+          },
+          "fullPage": {
+           "type": "boolean"
+          }
+         },
+         "required": [
+          "type"
+         ],
+         "additionalProperties": false
+        }
+       },
+       "mobile": {
+        "type": "boolean"
+       },
+       "skipTlsVerification": {
+        "type": "boolean"
+       },
+       "removeBase64Images": {
+        "type": "boolean"
+       },
+       "location": {
+        "type": "object",
+        "properties": {
+         "country": {
+          "type": "string"
+         },
+         "languages": {
+          "type": "array",
+          "items": {
+           "type": "string"
+          }
+         }
+        },
+        "additionalProperties": false
+       },
+       "storeInCache": {
+        "type": "boolean"
+       },
+       "maxAge": {
+        "type": "number"
+       }
+      },
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "url"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "firecrawl_check_crawl_status",
+   "description": "Check the status/progress of a crawl job and retrieve results when complete.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "id": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "id"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "firecrawl_extract",
+   "description": "Extract structured data from one or more URLs using LLM extraction (prompt + schema).",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "urls": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "prompt": {
+      "type": "string"
+     },
+     "schema": {
+      "type": "object",
+      "propertyNames": {
+       "type": "string"
+      },
+      "additionalProperties": {}
+     },
+     "allowExternalLinks": {
+      "type": "boolean"
+     },
+     "enableWebSearch": {
+      "type": "boolean"
+     },
+     "includeSubdomains": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "urls"
+    ],
+    "additionalProperties": false
+   }
+  }
+ ],
+ "tools_sha256": "7f0185ede0e3480122f410bdaafcba26ec2b25c9f00852b20ad38d2fc52a5114"
+}
