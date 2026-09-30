@@ -1,0 +1,15 @@
+{
+ "package": "@modelcontextprotocol/server-redis",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2025.4.7",
+ "published": "2025-04-07T09:10:54.879Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:52:39Z",
+ "deps_resolved_before": "2025-04-08T09:10:54Z",
+ "install_seconds": 4.5,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

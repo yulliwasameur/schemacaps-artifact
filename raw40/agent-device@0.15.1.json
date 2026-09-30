@@ -1,0 +1,122 @@
+{
+ "package": "agent-device",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.15.1",
+ "published": "2026-05-20T18:34:58.134Z",
+ "index_in_window": 111,
+ "sampled_rank": 25,
+ "extracted_at": "2026-09-29T21:51:24Z",
+ "deps_resolved_before": "2026-05-21T18:34:58Z",
+ "install_seconds": 0.9,
+ "status": "ok",
+ "variant": [
+  "mcp"
+ ],
+ "serverInfo": {
+  "name": "agent-device",
+  "title": null,
+  "version": "0.15.1",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "status",
+   "description": "Return discovery-only handoff metadata for installing, verifying, and using the agent-device CLI.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false
+   },
+   "outputSchema": {
+    "type": "object",
+    "properties": {
+     "packageName": {
+      "type": "string"
+     },
+     "installedPackageVersion": {
+      "type": "string"
+     },
+     "cliCommandName": {
+      "type": "string"
+     },
+     "installCommand": {
+      "type": "string"
+     },
+     "verifyCommand": {
+      "type": "string"
+     },
+     "startingHelpCommand": {
+      "type": "string"
+     },
+     "supportedTargets": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "capabilities": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "prerequisites": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "docsUrl": {
+      "type": "string"
+     },
+     "agentDocsUrl": {
+      "type": "string"
+     },
+     "firstCommands": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "automationInterface": {
+      "type": "string",
+      "const": "cli"
+     },
+     "automationNote": {
+      "type": "string"
+     },
+     "installRequiresHumanApproval": {
+      "type": "boolean",
+      "const": true
+     },
+     "installSafetyNote": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "packageName",
+     "installedPackageVersion",
+     "cliCommandName",
+     "installCommand",
+     "verifyCommand",
+     "startingHelpCommand",
+     "supportedTargets",
+     "capabilities",
+     "prerequisites",
+     "docsUrl",
+     "agentDocsUrl",
+     "firstCommands",
+     "automationInterface",
+     "automationNote",
+     "installRequiresHumanApproval",
+     "installSafetyNote"
+    ],
+    "additionalProperties": false
+   }
+  }
+ ],
+ "tools_sha256": "52ac799022475f3bb79bed3751cd8a42675b1f05136df3c70e51b0c2010b6e88"
+}

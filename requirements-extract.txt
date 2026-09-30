@@ -1,0 +1,3 @@
+# Only for re-extracting the corpus from the registries (make extract): also needs node>=20, npm and uv.
+-r requirements.txt
+mcp==1.27.0

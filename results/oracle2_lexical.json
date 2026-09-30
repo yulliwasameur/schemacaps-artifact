@@ -1,0 +1,17 @@
+{
+ "mode": "lexical",
+ "samples_per_check": 100,
+ "deterministic_seed": true,
+ "silent_rebinds": 1818,
+ "identical_schema": 1032,
+ "schema_rebinds": 786,
+ "incompatible": 402,
+ "tested": 786,
+ "generated_checks": 324,
+ "compatible": 297,
+ "asked": 412,
+ "compat_undecided": 87,
+ "unsound": [],
+ "seconds": 386.9,
+ "conclusion": "no generated witness contradicts a silent re-bind"
+}

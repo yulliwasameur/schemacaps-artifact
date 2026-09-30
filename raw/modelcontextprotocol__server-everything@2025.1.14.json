@@ -1,0 +1,130 @@
+{
+ "package": "@modelcontextprotocol/server-everything",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2025.1.14",
+ "published": "2025-01-14T01:44:27.394Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:34:09Z",
+ "deps_resolved_before": "2025-01-15T01:44:27Z",
+ "install_seconds": 4.8,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "example-servers/everything",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "echo",
+   "description": "Echoes back the input",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "message": {
+      "type": "string",
+      "description": "Message to echo"
+     }
+    },
+    "required": [
+     "message"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "add",
+   "description": "Adds two numbers",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "a": {
+      "type": "number",
+      "description": "First number"
+     },
+     "b": {
+      "type": "number",
+      "description": "Second number"
+     }
+    },
+    "required": [
+     "a",
+     "b"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "printEnv",
+   "description": "Prints all environment variables, helpful for debugging MCP server configuration",
+   "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "longRunningOperation",
+   "description": "Demonstrates a long running operation with progress updates",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "duration": {
+      "type": "number",
+      "default": 10,
+      "description": "Duration of the operation in seconds"
+     },
+     "steps": {
+      "type": "number",
+      "default": 5,
+      "description": "Number of steps in the operation"
+     }
+    },
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "sampleLLM",
+   "description": "Samples from an LLM using MCP's sampling feature",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "prompt": {
+      "type": "string",
+      "description": "The prompt to send to the LLM"
+     },
+     "maxTokens": {
+      "type": "number",
+      "default": 100,
+      "description": "Maximum number of tokens to generate"
+     }
+    },
+    "required": [
+     "prompt"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "getTinyImage",
+   "description": "Returns the MCP_TINY_IMAGE",
+   "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "8cb2e6a0d6c9786062c8b1c244b6c5b82fcd2a06f8f74b426dc0b2008e007401"
+}

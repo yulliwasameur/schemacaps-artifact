@@ -1,0 +1,89 @@
+{
+ "package": "@modelcontextprotocol/server-threejs",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "0.4.1",
+ "published": "2026-01-15T20:51:37.371Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:36:22Z",
+ "deps_resolved_before": "2026-01-16T20:51:37Z",
+ "install_seconds": 18.5,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Three.js Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "show_threejs_scene",
+   "title": "Show Three.js Scene",
+   "description": "Render an interactive 3D scene with custom Three.js code. Available globals: THREE, OrbitControls, EffectComposer, RenderPass, UnrealBloomPass, canvas, width, height.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "code": {
+      "default": "const scene = new THREE.Scene();\nconst camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);\nconst renderer = new THREE.WebGLRenderer({ canvas, antialias: true });\nrenderer.setSize(width, height);\nrenderer.setClearColor(0x1a1a2e);\n\nconst cube = new THREE.Mesh(\n  new THREE.BoxGeometry(1, 1, 1),\n  new THREE.MeshStandardMaterial({ color: 0x00ff88 })\n);\nscene.add(cube);\n\nscene.add(new THREE.DirectionalLight(0xffffff, 1));\nscene.add(new THREE.AmbientLight(0x404040));\n\ncamera.position.z = 3;\n\nfunction animate() {\n  requestAnimationFrame(animate);\n  cube.rotation.x += 0.01;\n  cube.rotation.y += 0.01;\n  renderer.render(scene, camera);\n}\nanimate();",
+      "description": "JavaScript code to render the 3D scene",
+      "type": "string"
+     },
+     "height": {
+      "default": 400,
+      "description": "Height in pixels",
+      "type": "integer",
+      "exclusiveMinimum": 0,
+      "maximum": 9007199254740991
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "code": {
+      "type": "string"
+     },
+     "height": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "code",
+     "height"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://threejs/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://threejs/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "learn_threejs",
+   "title": "Learn Three.js",
+   "description": "Get documentation and examples for using the Three.js widget",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "b8f80ef306bd61bbdc0c5f4f3267fff2085ed450f2d3aa2a81ed67fcbecd7477"
+}

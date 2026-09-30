@@ -1,0 +1,72 @@
+{
+ "package": "@upstash/context7-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.0.1",
+ "published": "2025-04-08T11:06:33.438Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:55:07Z",
+ "deps_resolved_before": "2025-04-09T11:06:33Z",
+ "install_seconds": 1.7,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "Context7",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null,
+  "description": "Retrieves documentation and code examples for software libraries.",
+  "capabilities": {
+   "resources": {},
+   "tools": {}
+  }
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "list-available-docs",
+   "description": "Lists all available library documentation from Context7. The library names can be used with 'get-library-documentation' to retrieve documentation.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "libraryName": {
+      "type": "string",
+      "description": "Optional library name to search for and rerank results based on"
+     }
+    },
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "get-library-documentation",
+   "description": "Retrieves documentation for a specific library from Context7. Use 'list-available-docs' first to see what's available.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "libraryName": {
+      "type": "string",
+      "description": "Name of the library to retrieve documentation for (e.g., 'upstash-redis', 'nextjs'). Must match exactly a library name from 'list-available-docs'."
+     },
+     "topic": {
+      "type": "string",
+      "description": "Specific topic within the library to focus the documentation on (e.g., 'hooks', 'routing')."
+     },
+     "tokens": {
+      "type": "number",
+      "minimum": 5000,
+      "description": "Maximum number of tokens of documentation to retrieve (default: 5000).Higher values provide more comprehensive documentation but use more context window."
+     }
+    },
+    "required": [
+     "libraryName"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "4a070a728f067cec8cd04d8a75788bba8b2c4cb7d4340fe2fd66fac146e2c6f9"
+}

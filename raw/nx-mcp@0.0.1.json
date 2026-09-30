@@ -1,0 +1,78 @@
+{
+ "package": "nx-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.0.1",
+ "published": "2025-02-25T11:07:43.212Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:11:43Z",
+ "deps_resolved_before": "2025-02-26T11:07:43Z",
+ "install_seconds": 0.8,
+ "status": "ok",
+ "variant": [
+  "{TMP}"
+ ],
+ "serverInfo": {
+  "name": "Nx MCP",
+  "title": null,
+  "version": "0.0.1",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "nx_workspace",
+   "description": "Returns a readable representation of the nx project graph and the nx.json that configures nx. Use it to answer questions about the nx workspace and architecture",
+   "inputSchema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "nx_docs",
+   "description": "Returns a list of documentation sections that could be relevant to the user query. Use it to learn about nx, its configuration and options instead of assuming knowledge about it.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "userQuery": {
+      "type": "string"
+     },
+     "lastAssistantMessage": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "userQuery"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "nx_generators",
+   "description": "Returns a list of generators that could be relevant to the user query.",
+   "inputSchema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "nx_generator_schema",
+   "description": "Returns the detailed JSON schema for an nx generator",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "generatorName": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "generatorName"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "f7353ce6466c3ad4a9799551c8cc07d2e98f03afb12f7fd0e29c5ab76c299d83"
+}

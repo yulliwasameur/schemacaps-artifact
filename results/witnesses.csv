@@ -1,0 +1,116 @@
+package,from,to,tool,argument,kind,old_schema,new_schema,witness_found,witness
+@azure/mcp,0.2.2,0.2.6,azmcp-monitor-table-list,workspace,constraint_dropped,"{""type"": ""string""}",{},True,0
+@azure/mcp,0.2.2,0.2.6,azmcp-monitor-table-type-list,workspace,constraint_dropped,"{""type"": ""string""}",{},True,0
+@notionhq/notion-mcp-server,1.1.0,1.2.0,API-create-a-database,parent,widened,"{""type"": ""string"", ""format"": ""json""}","{""type"": ""object"", ""properties"": {""type"": {""enum"": [""page_id""]}, ""page_id"": {""type"": ""string"", ""format"": ""uuid""}}, ""required"": [""type"", ""page_id""], ""additionalProperties"": true}",True,"{""page_id"": """", ""type"": ""page_id""}"
+@notionhq/notion-mcp-server,1.1.0,1.2.0,API-post-page,parent,widened,"{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string""}}, ""required"": [""page_id""], ""additionalProperties"": false}","{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string"", ""format"": ""uuid""}}, ""required"": [""page_id""], ""additionalProperties"": true}",True,"{""page_id"": """", """": null}"
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-create-a-comment,parent,widened,"{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string""}}, ""required"": [""page_id""], ""additionalProperties"": true}","{""anyOf"": [{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string""}}, ""required"": [""page_id""], ""additionalProperties"": true}, {""type"": ""string""}]}",True,""""""
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-create-a-data-source,parent,widened,"{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string"", ""format"": ""uuid""}}, ""required"": [""page_id""], ""additionalProperties"": true}","{""anyOf"": [{""type"": ""object"", ""properties"": {""page_id"": {""type"": ""string"", ""format"": ""uuid""}}, ""required"": [""page_id""], ""additionalProperties"": true}, {""type"": ""string""}]}",True,""""""
+@sentry/mcp-server,0.21.0,0.23.1,analyze_issue_with_seer,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,create_dsn,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,create_project,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,create_team,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_dsns,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_organizations,query,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_projects,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_projects,query,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_releases,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_releases,query,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_teams,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,find_teams,query,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,get_event_attachment,attachmentId,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,get_event_attachment,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,get_issue_details,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,get_trace_details,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,search_events,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,search_issues,projectSlugOrId,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,search_issues,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,update_issue,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@sentry/mcp-server,0.21.0,0.23.1,update_project,regionUrl,widened,"{""type"": ""string""}","{""anyOf"": [{""type"": ""string""}, {""type"": ""null""}]}",False,null
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_issue,milestone_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_issue_link,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_issue_link,target_issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_issue_note,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_merge_request_note,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_merge_request_thread,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,create_note,noteable_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,delete_issue,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,delete_issue_link,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,delete_issue_link,issue_link_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,get_issue,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,get_issue_link,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,get_issue_link,issue_link_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,get_merge_request,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,get_merge_request_diffs,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_issue_discussions,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_issue_links,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_issues,assignee_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_issues,author_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_merge_request_diffs,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_merge_requests,assignee_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_merge_requests,author_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,list_merge_requests,reviewer_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,mr_discussions,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_issue,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_issue,milestone_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_issue_note,issue_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_issue_note,note_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_merge_request,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_merge_request_note,merge_request_iid,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,1.0.69,2.0.3,update_merge_request_note,note_id,widened,"{""type"": ""number""}","{""type"": ""string""}",True,""""""
+@zereight/mcp-gitlab,2.1.50,2.1.59,push_files,files,widened,"{""type"": ""array"", ""items"": {""type"": ""object"", ""properties"": {""file_path"": {""type"": ""string""}, ""content"": {""type"": ""string""}}, ""required"": [""file_path"", ""content""], ""additionalProperties"": false}}","{""type"": ""array"", ""items"": {""type"": ""object"", ""properties"": {""file_path"": {""type"": ""string""}, ""content"": {""type"": ""string""}, ""action"": {""type"": ""string"", ""enum"": [""create"", ""update"", ""delete"", ""move""]}, ""encoding"": {""type"": ""string"", ""enum"": [""text"", ""base64""]}, ""previous_path"": {""type"": ""string""}}, ""required"": [""file_path""], ""additionalProperties"": false}}",True,"[{""file_path"": """"}]"
+@zereight/mcp-gitlab,2.1.59,2.1.67,push_files,files,widened,"{""type"": ""array"", ""items"": {""type"": ""object"", ""properties"": {""file_path"": {""type"": ""string""}, ""content"": {""type"": ""string""}, ""action"": {""type"": ""string"", ""enum"": [""create"", ""update"", ""delete"", ""move""]}, ""encoding"": {""type"": ""string"", ""enum"": [""text"", ""base64""]}, ""previous_path"": {""type"": ""string""}}, ""required"": [""file_path""], ""additionalProperties"": false}}","{""type"": ""array"", ""items"": {""type"": ""object"", ""properties"": {""file_path"": {""type"": ""string""}, ""content"": {""type"": ""string""}, ""action"": {""type"": ""string"", ""enum"": [""create"", ""update"", ""delete"", ""move""]}, ""encoding"": {""type"": ""string"", ""enum"": [""text"", ""base64""]}, ""previous_path"": {""type"": ""string""}}, ""required"": [""file_path""]}}",True,"[{""file_path"": """", """": null}]"
+firecrawl-mcp,3.23.4,3.25.0,firecrawl_feedback,endpoint,widened,"{""type"": ""string"", ""enum"": [""search"", ""scrape"", ""parse"", ""map""]}","{""type"": ""string"", ""enum"": [""search"", ""scrape"", ""parse"", ""map"", ""alexandria""]}",True,"""alexandria"""
+hostinger-api-mcp,0.0.1,0.0.14,VPS_activateFirewallV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_activateFirewallV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_attachPublicKeyV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_createFirewallRuleV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_createPTRRecordV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_createSnapshotV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deactivateFirewallV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deactivateFirewallV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteAPostInstallScriptV1,postInstallScriptId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteAPublicKeyV1,publicKeyId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteBackupV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteBackupV1,backupId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteFirewallRuleV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteFirewallRuleV1,ruleId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteFirewallV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deletePTRRecordV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteSnapshotV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getActionListV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getActionV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getActionV1,actionId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getAttachedPublicKeysV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getBackupListV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getFirewallV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getMetricsV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getPostInstallScriptV1,postInstallScriptId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getScanMetricsV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getSnapshotV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getTemplateV1,templateId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_installMonarxV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_recreateVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_resetHostnameV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restartVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restoreBackupV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restoreBackupV1,backupId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restoreSnapshotV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_setHostnameV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_setNameserversV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_setPanelPasswordV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_setRootPasswordV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_setupNewVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_startRecoveryModeV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_startVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_stopRecoveryModeV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_stopVirtualMachineV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_syncFirewallV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_syncFirewallV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_uninstallMonarxV1,virtualMachineId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_updateFirewallRuleV1,firewallId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_updateFirewallRuleV1,ruleId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,VPS_updatePostInstallScriptV1,postInstallScriptId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,billing_cancelSubscriptionV1,subscriptionId,constraint_dropped,"{""type"": ""string""}",{},True,0
+hostinger-api-mcp,0.0.1,0.0.14,billing_deletePaymentMethodV1,paymentMethodId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5
+hostinger-api-mcp,0.0.1,0.0.14,billing_setDefaultPaymentMethodV1,paymentMethodId,constraint_dropped,"{""type"": ""integer""}",{},True,3.5

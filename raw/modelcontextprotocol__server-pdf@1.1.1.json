@@ -1,0 +1,166 @@
+{
+ "package": "@modelcontextprotocol/server-pdf",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.1.1",
+ "published": "2026-02-24T02:43:16.820Z",
+ "index_in_window": 5,
+ "sampled_rank": 4,
+ "extracted_at": "2026-09-29T15:36:59Z",
+ "deps_resolved_before": "2026-02-25T02:43:16Z",
+ "install_seconds": 9.9,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "PDF Server",
+  "title": null,
+  "version": "2.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "list_pdfs",
+   "description": "List available PDFs that can be displayed",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "read_pdf_bytes",
+   "title": "Read PDF Bytes",
+   "description": "Read a range of bytes from a PDF (max 512KB per request)",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "description": "PDF URL"
+     },
+     "offset": {
+      "default": 0,
+      "description": "Byte offset",
+      "type": "number",
+      "minimum": 0
+     },
+     "byteCount": {
+      "default": 524288,
+      "description": "Bytes to read",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 524288
+     }
+    },
+    "required": [
+     "url"
+    ]
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string"
+     },
+     "bytes": {
+      "type": "string",
+      "description": "Base64 encoded bytes"
+     },
+     "offset": {
+      "type": "number"
+     },
+     "byteCount": {
+      "type": "number"
+     },
+     "totalBytes": {
+      "type": "number"
+     },
+     "hasMore": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "url",
+     "bytes",
+     "offset",
+     "byteCount",
+     "totalBytes",
+     "hasMore"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "display_pdf",
+   "title": "Display PDF",
+   "description": "Display an interactive PDF viewer.\n\nAccepts:\n- Local files explicitly added to the server (use list_pdfs to see available files)\n- Local files under directories provided by the client as MCP roots\n- Any remote PDF accessible via HTTPS",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "default": "https://arxiv.org/pdf/1706.03762",
+      "description": "PDF URL",
+      "type": "string"
+     },
+     "page": {
+      "default": 1,
+      "description": "Initial page",
+      "type": "number",
+      "minimum": 1
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string"
+     },
+     "initialPage": {
+      "type": "number"
+     },
+     "totalBytes": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "url",
+     "initialPage",
+     "totalBytes"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://pdf-viewer/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://pdf-viewer/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "e3bead7fbd319feba897202a75fbc2b9eb16169594b351647e33cf0a9f752b1b"
+}

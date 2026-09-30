@@ -1,0 +1,174 @@
+{
+ "extraction_status": {
+  "ok": 604,
+  "no_response": 49,
+  "install_failed": 4
+ },
+ "packages_with_ok": 39,
+ "per_package_status": {
+  "@notionhq/notion-mcp-server": {
+   "ok": 19,
+   "no_response": 1
+  },
+  "@modelcontextprotocol/server-transcript": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-everything": {
+   "ok": 20
+  },
+  "@wonderwhy-er/desktop-commander": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-customer-segmentation": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-budget-allocator": {
+   "ok": 20
+  },
+  "@storybook/mcp": {
+   "no_response": 20
+  },
+  "@modelcontextprotocol/server-cohort-heatmap": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-scenario-modeler": {
+   "ok": 20
+  },
+  "nx-mcp": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-debug": {
+   "ok": 20
+  },
+  "agent-device": {
+   "no_response": 12,
+   "ok": 8
+  },
+  "hostinger-api-mcp": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-threejs": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-map": {
+   "ok": 20
+  },
+  "@zereight/mcp-gitlab": {
+   "ok": 19,
+   "no_response": 1
+  },
+  "@modelcontextprotocol/server-wiki-explorer": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-sequential-thinking": {
+   "ok": 5
+  },
+  "@modelcontextprotocol/server-filesystem": {
+   "ok": 12
+  },
+  "figma-developer-mcp": {
+   "ok": 19,
+   "install_failed": 1
+  },
+  "@modelcontextprotocol/server-github": {
+   "ok": 6
+  },
+  "mcp-server-time": {
+   "ok": 8
+  },
+  "mcp-server-fetch": {
+   "ok": 7
+  },
+  "@ui5/mcp-server": {
+   "ok": 20
+  },
+  "n8n-mcp": {
+   "ok": 18,
+   "install_failed": 1,
+   "no_response": 1
+  },
+  "@modelcontextprotocol/server-sheet-music": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-system-monitor": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-memory": {
+   "ok": 8
+  },
+  "firecrawl-mcp": {
+   "ok": 20
+  },
+  "@upstash/context7-mcp": {
+   "ok": 19,
+   "no_response": 1
+  },
+  "mcp-server-git": {
+   "ok": 10
+  },
+  "@sentry/mcp-server": {
+   "ok": 19,
+   "no_response": 1
+  },
+  "@modelcontextprotocol/server-pdf": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-shadertoy": {
+   "ok": 20
+  },
+  "openinputbridge-mcp": {
+   "install_failed": 2
+  },
+  "@azure/mcp": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-video-resource": {
+   "ok": 20
+  },
+  "@modelcontextprotocol/server-gdrive": {
+   "no_response": 1
+  },
+  "@modelcontextprotocol/server-puppeteer": {
+   "ok": 2
+  },
+  "@modelcontextprotocol/server-lazy-auth": {
+   "no_response": 7
+  },
+  "mcp-server-sqlite": {
+   "no_response": 2
+  },
+  "@modelcontextprotocol/server-gitlab": {
+   "ok": 2
+  },
+  "@modelcontextprotocol/server-slack": {
+   "ok": 2
+  },
+  "@modelcontextprotocol/server-aws-kb-retrieval": {
+   "ok": 1
+  },
+  "@modelcontextprotocol/server-redis": {
+   "no_response": 2
+  }
+ },
+ "totals": {
+  "added": 907,
+  "removed": 727,
+  "unchanged": 6849,
+  "def_changed": 2004,
+  "desc_only": 807,
+  "pairs": 565,
+  "reapprove_pin": 2911,
+  "reapprove_compat": 617,
+  "reapprove_schemacaps": 1089,
+  "added_with_authority_args": 720,
+  "schema_changed": 1197,
+  "compatible": 580,
+  "incompatible": 453,
+  "compat_undecided": 164,
+  "tightened": 504,
+  "amplifying": 161,
+  "auth_undecided": 21,
+  "compatible_and_amplifying": 97,
+  "object_opened_only": 122
+ }
+}

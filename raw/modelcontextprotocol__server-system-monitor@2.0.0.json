@@ -1,0 +1,187 @@
+{
+ "package": "@modelcontextprotocol/server-system-monitor",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2.0.0",
+ "published": "2026-09-08T18:29:58.828Z",
+ "index_in_window": 22,
+ "sampled_rank": 17,
+ "extracted_at": "2026-09-29T15:41:43Z",
+ "deps_resolved_before": "2026-09-09T18:29:58Z",
+ "install_seconds": 6.0,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "System Monitor Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-system-info",
+   "title": "Get System Info",
+   "description": "Returns system information, including hostname, platform, CPU info, and memory.",
+   "inputSchema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "hostname": {
+      "type": "string"
+     },
+     "platform": {
+      "type": "string"
+     },
+     "arch": {
+      "type": "string"
+     },
+     "cpu": {
+      "type": "object",
+      "properties": {
+       "model": {
+        "type": "string"
+       },
+       "count": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "model",
+       "count"
+      ],
+      "additionalProperties": false
+     },
+     "memory": {
+      "type": "object",
+      "properties": {
+       "totalBytes": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "totalBytes"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "hostname",
+     "platform",
+     "arch",
+     "cpu",
+     "memory"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://system-monitor/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://system-monitor/mcp-app.html"
+   }
+  },
+  {
+   "name": "poll-system-stats",
+   "title": "Poll System Stats",
+   "description": "Returns dynamic system metrics for polling: per-core CPU timing, memory usage, and uptime. App-only.",
+   "inputSchema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "cpu": {
+      "type": "object",
+      "properties": {
+       "cores": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "idle": {
+           "type": "number"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "idle",
+          "total"
+         ],
+         "additionalProperties": false
+        }
+       }
+      },
+      "required": [
+       "cores"
+      ],
+      "additionalProperties": false
+     },
+     "memory": {
+      "type": "object",
+      "properties": {
+       "usedBytes": {
+        "type": "number"
+       },
+       "usedPercent": {
+        "type": "number"
+       },
+       "freeBytes": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "usedBytes",
+       "usedPercent",
+       "freeBytes"
+      ],
+      "additionalProperties": false
+     },
+     "uptime": {
+      "type": "object",
+      "properties": {
+       "seconds": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "seconds"
+      ],
+      "additionalProperties": false
+     },
+     "timestamp": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cpu",
+     "memory",
+     "uptime",
+     "timestamp"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   }
+  }
+ ],
+ "tools_sha256": "89cbde167e80df6e5c44596a38cc9fd56d470280cedc0302784c65517d9441d5"
+}

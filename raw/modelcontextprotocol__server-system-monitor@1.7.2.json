@@ -1,0 +1,193 @@
+{
+ "package": "@modelcontextprotocol/server-system-monitor",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.7.2",
+ "published": "2026-05-15T18:04:03.523Z",
+ "index_in_window": 18,
+ "sampled_rank": 14,
+ "extracted_at": "2026-09-29T15:41:22Z",
+ "deps_resolved_before": "2026-05-16T18:04:03Z",
+ "install_seconds": 7.2,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "System Monitor Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-system-info",
+   "title": "Get System Info",
+   "description": "Returns system information, including hostname, platform, CPU info, and memory.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "hostname": {
+      "type": "string"
+     },
+     "platform": {
+      "type": "string"
+     },
+     "arch": {
+      "type": "string"
+     },
+     "cpu": {
+      "type": "object",
+      "properties": {
+       "model": {
+        "type": "string"
+       },
+       "count": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "model",
+       "count"
+      ],
+      "additionalProperties": false
+     },
+     "memory": {
+      "type": "object",
+      "properties": {
+       "totalBytes": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "totalBytes"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "hostname",
+     "platform",
+     "arch",
+     "cpu",
+     "memory"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://system-monitor/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://system-monitor/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "poll-system-stats",
+   "title": "Poll System Stats",
+   "description": "Returns dynamic system metrics for polling: per-core CPU timing, memory usage, and uptime. App-only.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "cpu": {
+      "type": "object",
+      "properties": {
+       "cores": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "idle": {
+           "type": "number"
+          },
+          "total": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "idle",
+          "total"
+         ],
+         "additionalProperties": false
+        }
+       }
+      },
+      "required": [
+       "cores"
+      ],
+      "additionalProperties": false
+     },
+     "memory": {
+      "type": "object",
+      "properties": {
+       "usedBytes": {
+        "type": "number"
+       },
+       "usedPercent": {
+        "type": "number"
+       },
+       "freeBytes": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "usedBytes",
+       "usedPercent",
+       "freeBytes"
+      ],
+      "additionalProperties": false
+     },
+     "uptime": {
+      "type": "object",
+      "properties": {
+       "seconds": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "seconds"
+      ],
+      "additionalProperties": false
+     },
+     "timestamp": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "cpu",
+     "memory",
+     "uptime",
+     "timestamp"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "5fcc071bd8b283618e439fc1a60c55c24ad05dc8034221393098419964c6bcab"
+}

@@ -1,0 +1,82 @@
+{
+ "protocol": "drift_server.py widens read_file mid-session (path pattern dropped, webhookUrl added, same name and description) and sends tools/list_changed; each client re-lists and calls read_file with a value only the new schema admits",
+ "observed": "2026-09-30",
+ "results": [
+  {
+   "client": "mcp (Python SDK)",
+   "version": "1.27.0",
+   "schema_changed_under_same_name": true,
+   "notifications_seen_by_app_handler": [
+    "ToolListChangedNotification"
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "mcp (Python SDK)",
+   "version": "2.2.0",
+   "schema_changed_under_same_name": true,
+   "notifications_seen_by_app_handler": [
+    "ToolListChangedNotification"
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "@modelcontextprotocol/sdk",
+   "version": "1.31.0",
+   "configuration": "default",
+   "schema_changed_under_same_name": true,
+   "onChanged_callbacks": [],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "@modelcontextprotocol/sdk",
+   "version": "1.31.0",
+   "configuration": "listChanged.tools.onChanged (opt-in)",
+   "schema_changed_under_same_name": true,
+   "onChanged_callbacks": [
+    {
+     "err": null,
+     "n": 2
+    }
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "ai + @ai-sdk/mcp",
+   "version": "ai@7.0.123, @ai-sdk/mcp@2.0.63",
+   "default_signal_on_change": [
+    "Unsupported message type"
+   ],
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "opt_in_detectToolDrift": {
+    "added": [],
+    "removed": [],
+    "changed": [
+     "read_file"
+    ]
+   },
+   "note": "detectToolDrift reports that a definition changed; it does not say whether authority widened"
+  },
+  {
+   "client": "mcp-scan",
+   "version": "0.4.2",
+   "pinned_hash": "md5(description)",
+   "read_file_schema_changed": true,
+   "W003_on_schema_only_widening": false,
+   "W003_on_description_change": true
+  }
+ ]
+}

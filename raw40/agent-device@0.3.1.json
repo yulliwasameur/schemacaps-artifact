@@ -1,0 +1,15 @@
+{
+ "package": "agent-device",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.3.1",
+ "published": "2026-02-12T12:53:42.809Z",
+ "index_in_window": 18,
+ "sampled_rank": 2,
+ "extracted_at": "2026-09-29T15:55:31Z",
+ "deps_resolved_before": "2026-02-13T12:53:42Z",
+ "install_seconds": 0.8,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

@@ -1,0 +1,15 @@
+{
+ "package": "@modelcontextprotocol/server-gdrive",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2025.1.14",
+ "published": "2025-01-14T01:44:34.879Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:54:45Z",
+ "deps_resolved_before": "2025-01-15T01:44:34Z",
+ "install_seconds": 10.5,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

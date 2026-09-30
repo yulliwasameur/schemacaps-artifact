@@ -1,0 +1,47 @@
+{
+ "package": "nx-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.22.2",
+ "published": "2026-02-23T14:38:19.782Z",
+ "index_in_window": 46,
+ "sampled_rank": 18,
+ "extracted_at": "2026-09-29T16:13:37Z",
+ "deps_resolved_before": "2026-02-24T14:38:19Z",
+ "install_seconds": 0.8,
+ "status": "ok",
+ "variant": [
+  "{TMP}"
+ ],
+ "serverInfo": {
+  "name": "Nx MCP",
+  "version": "0.0.1"
+ },
+ "protocolVersion": "2025-06-18",
+ "tools": [
+  {
+   "name": "nx_docs",
+   "description": "Returns a list of documentation sections that could be relevant to the user query. IMPORTANT: ALWAYS USE THIS IF YOU ARE ANSWERING QUESTIONS ABOUT NX. NEVER ASSUME KNOWLEDGE ABOUT NX BECAUSE IT WILL PROBABLY BE OUTDATED. Use it to learn about nx, its configuration and options instead of assuming knowledge about it.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "userQuery": {
+      "description": "The user query to get docs for. You can pass the original user query verbatim or summarize it.",
+      "type": "string"
+     }
+    },
+    "required": [
+     "userQuery"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "destructiveHint": false,
+    "readOnlyHint": true,
+    "openWorldHint": true
+   }
+  }
+ ],
+ "client": "raw_jsonrpc_pass2",
+ "tools_sha256": "256585bb79e4a904f9b0a4935271030d1879c389ac801f265039d483c9af01e9"
+}

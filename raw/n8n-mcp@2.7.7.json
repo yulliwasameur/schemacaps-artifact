@@ -1,0 +1,14 @@
+{
+ "package": "n8n-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "2.7.7",
+ "published": "2025-07-06T19:58:15.258Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:08:06Z",
+ "deps_resolved_before": "2025-07-07T19:58:15Z",
+ "install_seconds": 122.7,
+ "status": "install_failed",
+ "error": "npm error code E403\nnpm error 403 403 Forbidden - GET https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz\nnpm error 403 In most cases, you or one of your dependencies are requesting\nnpm error 403 a package version that is forbidden by your security policy, or\nnpm error 403 on a server you do not have access to.\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-09-29T16_08_06_352Z-debug-0.log\n"
+}

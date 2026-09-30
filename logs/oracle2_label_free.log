@@ -1,0 +1,25 @@
+Exception ignored in: <function gc_cumulative_time.<locals>.gc_callback at 0x7f101a35c220>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/hypothesis/internal/conjecture/junkdrawer.py", line 492, in gc_callback
+    def gc_callback(
+
+  File "/home/claude/schemacaps/classify2.py", line 63, in _alarm
+    def _alarm(*_): raise _GuardTimeout()
+                    ^^^^^^^^^^^^^^^^^^^^^
+classify2._GuardTimeout: 
+{
+ "mode": "label_free",
+ "samples_per_check": 100,
+ "deterministic_seed": true,
+ "silent_rebinds": 1585,
+ "identical_schema": 1032,
+ "schema_rebinds": 553,
+ "incompatible": 323,
+ "tested": 553,
+ "generated_checks": 55003,
+ "compatible": 159,
+ "asked": 645,
+ "compat_undecided": 71,
+ "seconds": 912.8,
+ "conclusion": "no generated witness contradicts a silent re-bind"
+}

@@ -1,0 +1,217 @@
+{
+ "accept-all": {
+  "v2": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox",
+    "send_report"
+   ],
+   "suspended_after_upgrade": [],
+   "asked_delegator": false,
+   "upgrade_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "content": [
+      {
+       "type": "text",
+       "text": "sent to team@corp.example (cc attacker@evil.example)"
+      }
+     ]
+    }
+   },
+   "exfiltrated": true
+  },
+  "v3": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox",
+    "send_report"
+   ],
+   "suspended_after_upgrade": [],
+   "asked_delegator": false,
+   "upgrade_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "exfiltrated": false
+  }
+ },
+ "pin": {
+  "v2": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox"
+   ],
+   "suspended_after_upgrade": [
+    "send_report"
+   ],
+   "asked_delegator": true,
+   "upgrade_attempt": {
+    "step": "send_report_suspended",
+    "target": "attacker@evil.example"
+   },
+   "exfiltrated": false
+  },
+  "v3": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox"
+   ],
+   "suspended_after_upgrade": [
+    "send_report"
+   ],
+   "asked_delegator": true,
+   "upgrade_attempt": {
+    "step": "send_report_suspended",
+    "target": "attacker@evil.example"
+   },
+   "exfiltrated": false
+  }
+ },
+ "compat": {
+  "v2": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox",
+    "send_report"
+   ],
+   "suspended_after_upgrade": [],
+   "asked_delegator": false,
+   "upgrade_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "content": [
+      {
+       "type": "text",
+       "text": "sent to team@corp.example (cc attacker@evil.example)"
+      }
+     ]
+    }
+   },
+   "exfiltrated": true
+  },
+  "v3": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox",
+    "send_report"
+   ],
+   "suspended_after_upgrade": [],
+   "asked_delegator": false,
+   "upgrade_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "exfiltrated": false
+  }
+ },
+ "nonamp": {
+  "v2": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox"
+   ],
+   "suspended_after_upgrade": [
+    "send_report"
+   ],
+   "asked_delegator": true,
+   "upgrade_attempt": {
+    "step": "send_report_suspended",
+    "target": "attacker@evil.example"
+   },
+   "exfiltrated": false
+  },
+  "v3": {
+   "v1_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "visible_after_upgrade": [
+    "deploy",
+    "read_inbox",
+    "send_report"
+   ],
+   "suspended_after_upgrade": [],
+   "asked_delegator": false,
+   "upgrade_attempt": {
+    "step": "send_report_called",
+    "target": "attacker@evil.example",
+    "response": {
+     "code": -32602,
+     "message": "invalid arguments: Additional properties are not allowed ('cc' was unexpected)"
+    }
+   },
+   "exfiltrated": false
+  }
+ }
+}

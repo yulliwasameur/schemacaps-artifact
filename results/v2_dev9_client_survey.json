@@ -1,0 +1,13 @@
+{
+ "observed": "2026-09-29",
+ "legend": {"a":"no re-check / silent accept","b":"flag on any definition change (pinning)","c":"re-approve only on incompatible change","d":"reason about authority widening"},
+ "clients": [
+  {"client":"MCP TypeScript SDK","on_schema_change":"silent; re-lists tools, no diff/prompt/pinning","on_new_tool":"appears; no SDK approval","class":"a","source":"github.com/modelcontextprotocol/typescript-sdk/issues/1132"},
+  {"client":"MCP Python SDK","on_schema_change":"silent; list_tools/call_tool, no approval or diff","on_new_tool":"appears; no approval","class":"a","source":"py.sdk.modelcontextprotocol.io/client/"},
+  {"client":"Vercel AI SDK (ai@7.0.19)","on_schema_change":"default silent; opt-in fingerprintTools/detectToolDrift diffs description+schema+title and returns changed, app decides; no widening classification","on_new_tool":"in 'added' if app calls detectToolDrift","class":"a default / b opt-in","source":"ai-sdk.dev/docs/ai-sdk-core/mcp-tools"},
+  {"client":"Claude Code / Desktop","on_schema_change":"no change-detection; allow-rules / per-invocation consent","on_new_tool":"auto-runs if a wildcard rule allows, else first-use prompt (not change-triggered)","class":"a","source":"code.claude.com/docs/en/mcp"},
+  {"client":"Cursor","on_schema_change":"not documented / could not verify","on_new_tool":"per-call approval unless allowlisted","class":"a","source":"cursor.com/docs/mcp"},
+  {"client":"VS Code (Copilot)","on_schema_change":"not documented (re-prompts on server-config change only)","on_new_tool":"surfaced, normal per-tool confirmation","class":"a","source":"code.visualstudio.com/docs/agents/concepts/trust-and-safety"},
+  {"client":"Invariant mcp-scan","on_schema_change":"pins md5(description) ONLY; a schema-only widening is NOT caught; flags any description change","on_new_tool":"flagged until whitelisted","class":"b (description-only)","source":"invariantlabs.ai/blog/introducing-mcp-scan"}
+ ]
+}

@@ -1,0 +1,36 @@
+Exception ignored in: <function gc_cumulative_time.<locals>.gc_callback at 0x7f8c99af5620>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/hypothesis/internal/conjecture/junkdrawer.py", line 492, in gc_callback
+    def gc_callback(
+
+  File "/home/claude/schemacaps/classify2.py", line 64, in _alarm
+    def _alarm(*_): raise _GuardTimeout()
+                    ^^^^^^^^^^^^^^^^^^^^^
+classify2._GuardTimeout: 
+Exception ignored in: <function WeakValueDictionary.__init__.<locals>.remove at 0x7f8c99efc2c0>
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/weakref.py", line 105, in remove
+    def remove(wr, selfref=ref(self), _atomic_removal=_remove_dead_weakref):
+
+  File "/home/claude/schemacaps/classify2.py", line 64, in _alarm
+    def _alarm(*_): raise _GuardTimeout()
+                    ^^^^^^^^^^^^^^^^^^^^^
+classify2._GuardTimeout: 
+{
+ "cap20": {
+  "agent-device": 42,
+  "@sentry/mcp-server": 20
+ },
+ "cap40": {
+  "agent-device": 47,
+  "@sentry/mcp-server": 22
+ },
+ "n20": {
+  "agent-device": 8,
+  "@sentry/mcp-server": 19
+ },
+ "n40": {
+  "agent-device": 15,
+  "@sentry/mcp-server": 39
+ }
+}

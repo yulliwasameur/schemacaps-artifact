@@ -1,0 +1,715 @@
+{
+ "package": "@modelcontextprotocol/server-pdf",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.5.0",
+ "published": "2026-04-02T09:13:56.793Z",
+ "index_in_window": 14,
+ "sampled_rank": 11,
+ "extracted_at": "2026-09-29T15:38:01Z",
+ "deps_resolved_before": "2026-04-03T09:13:56Z",
+ "install_seconds": 11.8,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "PDF Server",
+  "title": null,
+  "version": "2.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "list_pdfs",
+   "description": "List available PDFs that can be displayed",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "read_pdf_bytes",
+   "title": "Read PDF Bytes",
+   "description": "Read a range of bytes from a PDF (max 512KB per request). The model should NOT call this tool directly.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "description": "PDF URL or local file path"
+     },
+     "offset": {
+      "default": 0,
+      "description": "Byte offset",
+      "type": "number",
+      "minimum": 0
+     },
+     "byteCount": {
+      "default": 524288,
+      "description": "Bytes to read",
+      "type": "number",
+      "minimum": 1,
+      "maximum": 524288
+     }
+    },
+    "required": [
+     "url"
+    ]
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string"
+     },
+     "bytes": {
+      "type": "string",
+      "description": "Base64 encoded bytes"
+     },
+     "offset": {
+      "type": "number"
+     },
+     "byteCount": {
+      "type": "number"
+     },
+     "totalBytes": {
+      "type": "number"
+     },
+     "hasMore": {
+      "type": "boolean"
+     }
+    },
+    "required": [
+     "url",
+     "bytes",
+     "offset",
+     "byteCount",
+     "totalBytes",
+     "hasMore"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "display_pdf",
+   "title": "Display PDF",
+   "description": "Open a PDF in an interactive viewer. Call this ONCE per PDF.\n\n**All follow-up actions go through the `interact` tool** with the returned viewUUID — annotating, signing, stamping, filling forms, navigating, searching, extracting text/screenshots. Calling display_pdf again creates a SEPARATE viewer with a different viewUUID — interact calls using the new UUID will not reach the viewer the user already sees.\n\nReturns a viewUUID in structuredContent. Pass it to `interact`:\n- add_annotations, update_annotations, remove_annotations, highlight_text\n- fill_form (fill PDF form fields)\n- navigate, search, find, search_navigate, zoom\n- get_text, get_screenshot, get_viewer_state (extract content / read selection & current page)\n- save_as (write annotated PDF to disk)\n\nAccepts local files (use list_pdfs), client MCP root directories, or any HTTPS URL.\nSet `elicit_form_inputs` to true to prompt the user to fill form fields before display.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "default": "https://arxiv.org/pdf/1706.03762",
+      "description": "PDF URL or local file path",
+      "type": "string"
+     },
+     "page": {
+      "default": 1,
+      "description": "Initial page",
+      "type": "number",
+      "minimum": 1
+     },
+     "elicit_form_inputs": {
+      "default": false,
+      "description": "If true and the PDF has form fields, prompt the user to fill them before displaying",
+      "type": "boolean"
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "viewUUID": {
+      "type": "string",
+      "description": "UUID for this viewer instance — pass to interact tool"
+     },
+     "url": {
+      "type": "string"
+     },
+     "initialPage": {
+      "type": "number"
+     },
+     "totalBytes": {
+      "type": "number"
+     },
+     "formFieldValues": {
+      "description": "Form field values filled by the user via elicitation",
+      "type": "object",
+      "propertyNames": {
+       "type": "string"
+      },
+      "additionalProperties": {
+       "anyOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "boolean"
+        }
+       ]
+      }
+     },
+     "formFields": {
+      "description": "Form fields with bounding boxes in model coordinates (top-left origin)",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "type": {
+         "type": "string"
+        },
+        "page": {
+         "type": "number"
+        },
+        "label": {
+         "type": "string"
+        },
+        "x": {
+         "type": "number"
+        },
+        "y": {
+         "type": "number"
+        },
+        "width": {
+         "type": "number"
+        },
+        "height": {
+         "type": "number"
+        },
+        "exportValue": {
+         "description": "Radio button value — pass this to fill_form",
+         "type": "string"
+        },
+        "options": {
+         "description": "Dropdown/listbox option values",
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        }
+       },
+       "required": [
+        "name",
+        "type",
+        "page",
+        "x",
+        "y",
+        "width",
+        "height"
+       ],
+       "additionalProperties": false
+      }
+     }
+    },
+    "required": [
+     "viewUUID",
+     "url",
+     "initialPage",
+     "totalBytes"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://pdf-viewer/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://pdf-viewer/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "interact",
+   "title": "Interact with PDF",
+   "description": "Interact with a PDF viewer: annotate, navigate, search, extract text/screenshots, fill forms.\nIMPORTANT: viewUUID must be the exact UUID returned by display_pdf (e.g. \"a1b2c3d4-...\"). Do NOT use arbitrary strings.\n\n**BATCHING**: Send multiple commands in one call via `commands` array. Commands run sequentially; results are returned in the same order, one content item per command. If a command fails, the batch stops there and that command's slot contains text starting with `ERROR` — content.length tells you how far it got. TIP: End with `get_screenshot` to verify your changes.\n\n**ANNOTATION** — add_annotations with array of annotation objects. Each needs: id (unique string), type, page (1-indexed).\n\n**COORDINATE SYSTEM**: PDF points (1pt = 1/72in), origin at page TOP-LEFT corner. X increases rightward, Y increases downward.\n- US Letter = 612×792pt. Margins: top≈y=50, bottom≈y=742, left≈x=72, right≈x=540, center≈(306, 396).\n- Rectangle/circle/stamp x,y is the TOP-LEFT corner. To place a 200×30 box at the TOP of the page: x=72, y=50, width=200, height=30.\n- For highlights/underlines, each rect's y is the TOP of the highlighted region.\n\nAnnotation types:\n• highlight: rects:[{x,y,width,height}], color?, content? • underline: rects:[{x,y,w,h}], color?\n• strikethrough: rects:[{x,y,w,h}], color? • note: x, y, content, color?\n• rectangle: x, y, width, height, color?, fillColor?, rotation? • circle: x, y, width, height, color?, fillColor?\n• line: x1, y1, x2, y2, color? • freetext: x, y, content, fontSize?, color?\n• stamp: x, y, label (any text, e.g. APPROVED, DRAFT, CONFIDENTIAL), color?, rotation?\n• image: imageUrl (required), x?, y?, width?, height?, mimeType?, rotation?, aspect? — places an image (signature, logo, etc.) on the page. Pass a local file path or HTTPS URL (NO data: URIs, NO base64). Width/height auto-detected if omitted. Users can also drag & drop images directly onto the viewer.\n\nTIP: For text annotations, prefer highlight_text (auto-finds text) over manual rects.\n\nExample — add a signature image and a stamp, then screenshot to verify:\n```json\n{\"viewUUID\":\"…\",\"commands\":[\n  {\"action\":\"add_annotations\",\"annotations\":[\n    {\"id\":\"sig1\",\"type\":\"image\",\"page\":1,\"x\":72,\"y\":700,\"imageUrl\":\"/path/to/signature.png\"},\n    {\"id\":\"s1\",\"type\":\"stamp\",\"page\":1,\"x\":300,\"y\":400,\"label\":\"APPROVED\"}\n  ]},\n  {\"action\":\"get_screenshot\",\"page\":1}\n]}\n```\n\n• highlight_text: auto-find and highlight text (query, page?, color?, content?)\n• update_annotations: partial update (id+type required) • remove_annotations: remove by ids\n\n**NAVIGATION**: navigate (page), search (query), find (query, silent), search_navigate (matchIndex), zoom (scale 0.5–3.0)\n\n**TEXT/SCREENSHOTS**:\n• get_text: extract text from pages. Optional `page` for single page, or `intervals` for ranges [{start?,end?}]. Max 20 pages.\n• get_screenshot: capture a single page as PNG image. Requires `page`.\n• get_viewer_state: snapshot of the live viewer — JSON {currentPage, pageCount, zoom, displayMode, selectedAnnotationIds, selection:{text,contextBefore,contextAfter,boundingRect}|null}. Use this to read what the user has selected or which page they're on.\n\n**FORMS** — fill_form: fill fields with `fields` array of {name, value}.\n\n**SAVE** — save_as: write the annotated PDF (annotations + form values) to a file. Pass `path` (absolute path or file://) for a new location, or omit `path` to overwrite the original. Set `overwrite: true` to replace an existing file (always required when omitting `path`).",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "viewUUID": {
+      "type": "string",
+      "description": "The viewUUID of the PDF viewer (from display_pdf result)"
+     },
+     "action": {
+      "description": "Action to perform (for single command). Use `commands` array for batching.",
+      "type": "string",
+      "enum": [
+       "navigate",
+       "search",
+       "find",
+       "search_navigate",
+       "zoom",
+       "add_annotations",
+       "update_annotations",
+       "remove_annotations",
+       "highlight_text",
+       "fill_form",
+       "get_text",
+       "get_screenshot",
+       "get_viewer_state",
+       "save_as"
+      ]
+     },
+     "page": {
+      "description": "Page number (for navigate, highlight_text, get_screenshot, get_text)",
+      "type": "number",
+      "minimum": 1
+     },
+     "query": {
+      "description": "Search text (for search / find / highlight_text)",
+      "type": "string"
+     },
+     "matchIndex": {
+      "description": "Match index (for search_navigate)",
+      "type": "number",
+      "minimum": 0
+     },
+     "scale": {
+      "description": "Zoom scale, 1.0 = 100% (for zoom)",
+      "type": "number",
+      "minimum": 0.5,
+      "maximum": 3
+     },
+     "annotations": {
+      "description": "Annotation objects (see types in description). Each needs: id, type, page. For update_annotations only id+type are required.",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "propertyNames": {
+        "type": "string"
+       },
+       "additionalProperties": {}
+      }
+     },
+     "ids": {
+      "description": "Annotation IDs (for remove_annotations)",
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "color": {
+      "description": "Color override (for highlight_text)",
+      "type": "string"
+     },
+     "content": {
+      "description": "Tooltip/note content (for highlight_text)",
+      "type": "string"
+     },
+     "fields": {
+      "description": "Form fields to fill (for fill_form): { name, value } where value is string or boolean",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "name": {
+         "type": "string"
+        },
+        "value": {
+         "anyOf": [
+          {
+           "type": "string"
+          },
+          {
+           "type": "boolean"
+          }
+         ]
+        }
+       },
+       "required": [
+        "name",
+        "value"
+       ]
+      }
+     },
+     "intervals": {
+      "description": "Page ranges for get_text. Each has optional start/end. [{start:1,end:5}], [{}] = all pages. Max 20 pages.",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "start": {
+         "type": "number",
+         "minimum": 1
+        },
+        "end": {
+         "type": "number",
+         "minimum": 1
+        }
+       }
+      }
+     },
+     "path": {
+      "description": "Target file path for save_as. Absolute path or file:// URL. Omit to overwrite the original file (requires overwrite: true).",
+      "type": "string"
+     },
+     "overwrite": {
+      "description": "Overwrite if file exists (for save_as). Default false.",
+      "type": "boolean"
+     },
+     "commands": {
+      "description": "Array of commands to execute sequentially. More efficient than separate calls. Tip: end with get_pages+getScreenshots to verify changes.",
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "action": {
+         "type": "string",
+         "enum": [
+          "navigate",
+          "search",
+          "find",
+          "search_navigate",
+          "zoom",
+          "add_annotations",
+          "update_annotations",
+          "remove_annotations",
+          "highlight_text",
+          "fill_form",
+          "get_text",
+          "get_screenshot",
+          "get_viewer_state",
+          "save_as"
+         ],
+         "description": "Action to perform"
+        },
+        "page": {
+         "description": "Page number (for navigate, highlight_text, get_screenshot, get_text)",
+         "type": "number",
+         "minimum": 1
+        },
+        "query": {
+         "description": "Search text (for search / find / highlight_text)",
+         "type": "string"
+        },
+        "matchIndex": {
+         "description": "Match index (for search_navigate)",
+         "type": "number",
+         "minimum": 0
+        },
+        "scale": {
+         "description": "Zoom scale, 1.0 = 100% (for zoom)",
+         "type": "number",
+         "minimum": 0.5,
+         "maximum": 3
+        },
+        "annotations": {
+         "description": "Annotation objects (see types in description). Each needs: id, type, page. For update_annotations only id+type are required.",
+         "type": "array",
+         "items": {
+          "type": "object",
+          "propertyNames": {
+           "type": "string"
+          },
+          "additionalProperties": {}
+         }
+        },
+        "ids": {
+         "description": "Annotation IDs (for remove_annotations)",
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        },
+        "color": {
+         "description": "Color override (for highlight_text)",
+         "type": "string"
+        },
+        "content": {
+         "description": "Tooltip/note content (for highlight_text)",
+         "type": "string"
+        },
+        "fields": {
+         "description": "Form fields to fill (for fill_form): { name, value } where value is string or boolean",
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "name": {
+            "type": "string"
+           },
+           "value": {
+            "anyOf": [
+             {
+              "type": "string"
+             },
+             {
+              "type": "boolean"
+             }
+            ]
+           }
+          },
+          "required": [
+           "name",
+           "value"
+          ]
+         }
+        },
+        "intervals": {
+         "description": "Page ranges for get_text. Each has optional start/end. [{start:1,end:5}], [{}] = all pages. Max 20 pages.",
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "start": {
+            "type": "number",
+            "minimum": 1
+           },
+           "end": {
+            "type": "number",
+            "minimum": 1
+           }
+          }
+         }
+        },
+        "path": {
+         "description": "Target file path for save_as. Absolute path or file:// URL. Omit to overwrite the original file (requires overwrite: true).",
+         "type": "string"
+        },
+        "overwrite": {
+         "description": "Overwrite if file exists (for save_as). Default false.",
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "action"
+       ]
+      }
+     }
+    },
+    "required": [
+     "viewUUID"
+    ]
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "submit_page_data",
+   "title": "Submit Page Data",
+   "description": "Submit rendered page data for a get_pages request (used by viewer). The model should NOT call this tool directly.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "requestId": {
+      "type": "string",
+      "description": "The request ID from the get_pages command"
+     },
+     "pages": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "page": {
+         "type": "number"
+        },
+        "text": {
+         "type": "string"
+        },
+        "image": {
+         "description": "Base64 PNG image data",
+         "type": "string"
+        }
+       },
+       "required": [
+        "page"
+       ]
+      },
+      "description": "Page data entries"
+     }
+    },
+    "required": [
+     "requestId",
+     "pages"
+    ]
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "submit_save_data",
+   "title": "Submit Save Data",
+   "description": "Submit annotated PDF bytes for a save_as request (used by viewer). The model should NOT call this tool directly.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "requestId": {
+      "type": "string",
+      "description": "The request ID from the save_as command"
+     },
+     "data": {
+      "description": "Base64-encoded PDF bytes",
+      "type": "string"
+     },
+     "error": {
+      "description": "Error message if the viewer failed to build bytes",
+      "type": "string"
+     }
+    },
+    "required": [
+     "requestId"
+    ]
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "submit_viewer_state",
+   "title": "Submit Viewer State",
+   "description": "Submit a viewer-state snapshot for a get_viewer_state request (used by viewer). The model should NOT call this tool directly.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "requestId": {
+      "type": "string",
+      "description": "The request ID from the get_viewer_state command"
+     },
+     "state": {
+      "description": "JSON-encoded viewer state snapshot",
+      "type": "string"
+     },
+     "error": {
+      "description": "Error message if the viewer failed to read state",
+      "type": "string"
+     }
+    },
+    "required": [
+     "requestId"
+    ]
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "poll_pdf_commands",
+   "title": "Poll PDF Commands",
+   "description": "Poll for pending commands for a PDF viewer. The model should NOT call this tool directly.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "viewUUID": {
+      "type": "string",
+      "description": "The viewUUID of the PDF viewer"
+     }
+    },
+    "required": [
+     "viewUUID"
+    ]
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "save_pdf",
+   "title": "Save PDF",
+   "description": "Save annotated PDF bytes back to a local file. The model should NOT call this tool directly — use interact with action: save_as instead.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "type": "string",
+      "description": "Original PDF URL or local file path"
+     },
+     "data": {
+      "type": "string",
+      "description": "Base64-encoded PDF bytes"
+     }
+    },
+    "required": [
+     "url",
+     "data"
+    ]
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "filePath": {
+      "type": "string"
+     },
+     "mtimeMs": {
+      "type": "number"
+     }
+    },
+    "required": [
+     "filePath",
+     "mtimeMs"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "visibility": [
+      "app"
+     ]
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "db807612e818f23c2c0f5c78a3db75ecce415ad01011788e11e2af2567b03442"
+}

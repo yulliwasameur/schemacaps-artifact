@@ -1,0 +1,61 @@
+{
+ "package": "nx-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.14.0",
+ "published": "2026-01-22T19:15:53.393Z",
+ "index_in_window": 34,
+ "sampled_rank": 13,
+ "extracted_at": "2026-09-29T16:13:09Z",
+ "deps_resolved_before": "2026-01-23T19:15:53Z",
+ "install_seconds": 0.6,
+ "status": "ok",
+ "variant": [
+  "{TMP}"
+ ],
+ "serverInfo": {
+  "name": "Nx MCP",
+  "version": "0.0.1"
+ },
+ "protocolVersion": "2025-06-18",
+ "tools": [
+  {
+   "name": "nx_docs",
+   "description": "Returns a list of documentation sections that could be relevant to the user query. IMPORTANT: ALWAYS USE THIS IF YOU ARE ANSWERING QUESTIONS ABOUT NX. NEVER ASSUME KNOWLEDGE ABOUT NX BECAUSE IT WILL PROBABLY BE OUTDATED. Use it to learn about nx, its configuration and options instead of assuming knowledge about it.",
+   "inputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "userQuery": {
+      "description": "The user query to get docs for. You can pass the original user query verbatim or summarize it.",
+      "type": "string"
+     }
+    },
+    "required": [
+     "userQuery"
+    ],
+    "additionalProperties": false
+   },
+   "annotations": {
+    "destructiveHint": false,
+    "readOnlyHint": true,
+    "openWorldHint": true
+   }
+  },
+  {
+   "name": "nx_available_plugins",
+   "description": "Returns a list of available Nx plugins from the core team as well as local workspace Nx plugins.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {}
+   },
+   "annotations": {
+    "destructiveHint": false,
+    "readOnlyHint": true,
+    "openWorldHint": true
+   }
+  }
+ ],
+ "client": "raw_jsonrpc_pass2",
+ "tools_sha256": "89986cff85124eea2ec228b1e86a474c1fcf4b4a62de341a090baec0b316e284"
+}

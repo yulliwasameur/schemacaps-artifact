@@ -1,0 +1,15 @@
+{
+ "package": "@upstash/context7-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "1.0.2",
+ "published": "2025-04-13T18:44:42.341Z",
+ "index_in_window": 4,
+ "sampled_rank": 1,
+ "extracted_at": "2026-09-29T15:55:09Z",
+ "deps_resolved_before": "2025-04-14T18:44:42Z",
+ "install_seconds": 1.5,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

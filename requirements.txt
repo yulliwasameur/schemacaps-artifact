@@ -1,0 +1,11 @@
+# Python 3.11 (tested with 3.11.15). Pinned versions used for every number in the paper.
+jsonschema==4.26.0
+jsonsubschema==0.0.8
+greenery==4.2.2
+portion==2.6.3
+jsonref==1.1.0
+hypothesis==6.168.3
+hypothesis-jsonschema==0.23.1
+cryptography==46.0.7
+openpyxl==3.1.5
+pytest==9.1.1

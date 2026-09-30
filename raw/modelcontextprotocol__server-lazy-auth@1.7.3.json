@@ -1,0 +1,15 @@
+{
+ "package": "@modelcontextprotocol/server-lazy-auth",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.7.3",
+ "published": "2026-06-01T11:27:43.941Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T15:46:53Z",
+ "deps_resolved_before": "2026-06-02T11:27:43Z",
+ "install_seconds": 4.7,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

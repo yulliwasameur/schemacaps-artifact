@@ -1,0 +1,15 @@
+{
+ "package": "@storybook/mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.0.2",
+ "published": "2025-10-23T11:48:44.889Z",
+ "index_in_window": 1,
+ "sampled_rank": 1,
+ "extracted_at": "2026-09-29T15:55:02Z",
+ "deps_resolved_before": "2025-10-24T11:48:44Z",
+ "install_seconds": 1.1,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

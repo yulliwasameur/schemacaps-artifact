@@ -1,0 +1,175 @@
+{
+ "observed": "2026-09-30",
+ "question": "When an MCP server widens the inputSchema of an already-approved tool (tools/list_changed, same name and description), does the client (a) silently use the new definition, (b) flag any definition change (pinning / drift detection), (c) re-approve only on an incompatible change, or (d) reason about whether authority widened?",
+ "counting_unit": "8 products: 3 SDK families (MCP TypeScript, MCP Python, Vercel AI), 4 host applications (VS Code, Claude Code, Claude Desktop, Cursor), 1 scanner (mcp-scan / Snyk agent-scan)",
+ "evidence_levels": {
+  "tested": "run against clients/drift_server.py by clients/run_survey.sh (results/client_survey_tests.json)",
+  "source": "source code read at the cited tag/commit",
+  "docs": "official documentation (URL, date accessed)"
+ },
+ "products": [
+  {
+   "product": "MCP TypeScript SDK",
+   "version": "@modelcontextprotocol/sdk 1.31.0 (npm, 2026-09-28)",
+   "evidence": [
+    "tested",
+    "source"
+   ],
+   "source": "https://github.com/modelcontextprotocol/typescript-sdk/blob/4b0051f400219f8d8855f9a5433c6df35f15a639/src/client/index.ts (listChanged option, L180-255)",
+   "behaviour": "default: notification not surfaced; opt-in listChanged.tools.onChanged delivers the refreshed list; no diff, no approval; the widened call reaches the server",
+   "class": "a"
+  },
+  {
+   "product": "MCP Python SDK",
+   "version": "mcp 2.2.0 and 1.27.0 (PyPI)",
+   "evidence": [
+    "tested",
+    "source"
+   ],
+   "source": "https://github.com/modelcontextprotocol/python-sdk/blob/9972c21aa42054fb1450c5fc614761ed11847ec6/src/mcp/client/session.py",
+   "behaviour": "the notification reaches the application only through a user-installed message handler; list_tools returns the widened schema under the same name; no diff, no approval; the widened call reaches the server",
+   "class": "a"
+  },
+  {
+   "product": "Vercel AI SDK",
+   "version": "ai 7.0.123, @ai-sdk/mcp 2.0.63 (npm, 2026-09-30)",
+   "evidence": [
+    "tested",
+    "source"
+   ],
+   "source": "https://github.com/vercel/ai/blob/161a7fdb9783d88b0ea25fe522fbda0233d83427/packages/ai/src/generate-text/tool-fingerprint.ts",
+   "behaviour": "default: tools/list_changed surfaces only as an 'Unsupported message type' error to onUncaughtError; tools() returns fresh definitions; opt-in fingerprintTools/detectToolDrift (since ai 7.0.19) reports read_file as changed, i.e. that a definition changed, not whether authority widened",
+   "class": "a (default) / b (opt-in)"
+  },
+  {
+   "product": "VS Code (Copilot agent mode)",
+   "version": "1.139.1 (2026-09-25)",
+   "evidence": [
+    "source"
+   ],
+   "source": "https://github.com/microsoft/vscode/blob/04c0d99f4fb0d8afe6ce4f0c58e31e183ac3e4b1/src/vs/workbench/contrib/mcp/common/mcpServer.ts (McpTool id = prefix + definition.name)",
+   "behaviour": "re-lists on list_changed; a changed definition is re-registered under the same id (derived from the name only), so per-tool approvals survive; confirmation is per call; server trust is re-asked only when the launch configuration changes",
+   "class": "a"
+  },
+  {
+   "product": "Claude Code",
+   "version": "2.1.285 (npm, 2026-09-29)",
+   "evidence": [
+    "docs"
+   ],
+   "source": "https://code.claude.com/docs/en/mcp ; https://code.claude.com/docs/en/permissions (accessed 2026-09-30)",
+   "behaviour": "documented to refresh capabilities on list_changed; permission rules match tool names; no documented re-approval on a definition change (not runtime-tested)",
+   "class": "a (documented)"
+  },
+  {
+   "product": "Claude Desktop",
+   "version": "2.16120.0 (2026-09-29)",
+   "evidence": [
+    "docs"
+   ],
+   "source": "https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities (updated 2026-08-20)",
+   "behaviour": "per-tool Always allow / Needs approval / Blocked; list_changed and definition changes not documented",
+   "class": "not determinable from public sources"
+  },
+  {
+   "product": "Cursor",
+   "version": "3.22 (accessed 2026-09-30)",
+   "evidence": [
+    "docs"
+   ],
+   "source": "https://cursor.com/docs/context/mcp ; https://cursor.com/docs/reference/permissions",
+   "behaviour": "approval before MCP tool use by default; allowlist entries are server:tool name patterns; list_changed and definition changes not documented",
+   "class": "not determinable from public sources"
+  },
+  {
+   "product": "mcp-scan (now Snyk agent-scan)",
+   "version": "mcp-scan 0.4.2 (last release under that name); pinning present up to agent-scan 0.4.5, removed in 0.4.6 (2026-03-11); snyk-agent-scan 0.6.8 has none",
+   "evidence": [
+    "tested",
+    "source"
+   ],
+   "source": "https://github.com/snyk/agent-scan/blob/7c7790f8abf72f32002d772e5082bf1160d48a27/src/agent_scan/models.py (hash_entity = md5(description), L85-91)",
+   "behaviour": "a schema-only widening raises no W003; a description-only change raises W003",
+   "class": "b for descriptions, a for input schemas"
+  }
+ ],
+ "finding": "none of the 8 products re-approves an approved tool when its input schema widens; one offers opt-in drift detection that flags any change; one pinned descriptions only; two are undocumented",
+ "runtime_tests": [
+  {
+   "client": "mcp (Python SDK)",
+   "version": "1.27.0",
+   "schema_changed_under_same_name": true,
+   "notifications_seen_by_app_handler": [
+    "ToolListChangedNotification"
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "mcp (Python SDK)",
+   "version": "2.2.0",
+   "schema_changed_under_same_name": true,
+   "notifications_seen_by_app_handler": [
+    "ToolListChangedNotification"
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "@modelcontextprotocol/sdk",
+   "version": "1.31.0",
+   "configuration": "default",
+   "schema_changed_under_same_name": true,
+   "onChanged_callbacks": [],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "@modelcontextprotocol/sdk",
+   "version": "1.31.0",
+   "configuration": "listChanged.tools.onChanged (opt-in)",
+   "schema_changed_under_same_name": true,
+   "onChanged_callbacks": [
+    {
+     "err": null,
+     "n": 2
+    }
+   ],
+   "sdk_diff_or_approval_api": "none (consent is left to the host application)",
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "server_reply": "read /etc/passwd"
+  },
+  {
+   "client": "ai + @ai-sdk/mcp",
+   "version": "ai@7.0.123, @ai-sdk/mcp@2.0.63",
+   "default_signal_on_change": [
+    "Unsupported message type"
+   ],
+   "widened_call_reached_server": true,
+   "sdk_error_on_widened_call": null,
+   "opt_in_detectToolDrift": {
+    "added": [],
+    "removed": [],
+    "changed": [
+     "read_file"
+    ]
+   },
+   "note": "detectToolDrift reports that a definition changed; it does not say whether authority widened"
+  },
+  {
+   "client": "mcp-scan",
+   "version": "0.4.2",
+   "pinned_hash": "md5(description)",
+   "read_file_schema_changed": true,
+   "W003_on_schema_only_widening": false,
+   "W003_on_description_change": true
+  }
+ ]
+}

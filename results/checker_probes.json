@@ -1,0 +1,114 @@
+{
+ "probes": 17,
+ "raw_unsound": [
+  "bool vs bool/enum[F]",
+  "bool vs const F",
+  "bool vs enum[F]",
+  "nested bool widened"
+ ],
+ "guarded_unsound": [],
+ "rows": [
+  {
+   "probe": "bool vs bool/enum[F]",
+   "counterexample_exists": true,
+   "raw": true,
+   "guarded": false
+  },
+  {
+   "probe": "bool vs const F",
+   "counterexample_exists": true,
+   "raw": true,
+   "guarded": false
+  },
+  {
+   "probe": "bool vs enum[F]",
+   "counterexample_exists": true,
+   "raw": true,
+   "guarded": false
+  },
+  {
+   "probe": "[bool,null] vs bool/enum[F]",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "nested bool widened",
+   "counterexample_exists": true,
+   "raw": true,
+   "guarded": false
+  },
+  {
+   "probe": "enum[T,F] vs enum[F]",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "int vs int/enum[1]",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "str vs str/const a",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "str vs str/pattern",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "str vs str/maxLength",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "num vs int",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "[str,null] vs str",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "arr vs arr/unique",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "open vs closed",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "enum[a,b] vs enum[a]",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "anyOf vs str",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  },
+  {
+   "probe": "{} vs str",
+   "counterexample_exists": true,
+   "raw": false,
+   "guarded": false
+  }
+ ]
+}

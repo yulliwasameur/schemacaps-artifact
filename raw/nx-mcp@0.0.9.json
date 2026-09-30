@@ -1,0 +1,102 @@
+{
+ "package": "nx-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.0.9",
+ "published": "2025-04-24T16:52:20.811Z",
+ "index_in_window": 8,
+ "sampled_rank": 3,
+ "extracted_at": "2026-09-29T16:11:46Z",
+ "deps_resolved_before": "2025-04-25T16:52:20Z",
+ "install_seconds": 0.9,
+ "status": "ok",
+ "variant": [
+  "{TMP}"
+ ],
+ "serverInfo": {
+  "name": "Nx MCP",
+  "title": null,
+  "version": "0.0.1",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2024-11-05",
+ "tools": [
+  {
+   "name": "nx_docs",
+   "description": "Returns a list of documentation sections that could be relevant to the user query. IMPORTANT: ALWAYS USE THIS IF YOU ARE ANSWERING QUESTIONS ABOUT NX. NEVER ASSUME KNOWLEDGE ABOUT NX BECAUSE IT WILL PROBABLY BE OUTDATED. Use it to learn about nx, its configuration and options instead of assuming knowledge about it.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "userQuery": {
+      "type": "string",
+      "description": "The user query to get docs for. You can pass the original user query verbatim or summarize it."
+     }
+    },
+    "required": [
+     "userQuery"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "nx_available_plugins",
+   "description": "Returns a list of available Nx plugins from the core team as well as local workspace Nx plugins.",
+   "inputSchema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "nx_workspace",
+   "description": "Returns a readable representation of the nx project graph and the nx.json that configures nx. If there are project graph errors, it also returns them. Use it to answer questions about the nx workspace and architecture",
+   "inputSchema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "nx_project_details",
+   "description": "Returns the complete project configuration in JSON format for a given nx project.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "projectName": {
+      "type": "string",
+      "description": "The name of the project to get details for"
+     }
+    },
+    "required": [
+     "projectName"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  },
+  {
+   "name": "nx_generators",
+   "description": "Returns a list of generators that could be relevant to the user query.",
+   "inputSchema": {
+    "type": "object"
+   }
+  },
+  {
+   "name": "nx_generator_schema",
+   "description": "Returns the detailed JSON schema for an nx generator",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "generatorName": {
+      "type": "string",
+      "description": "The name of the generator to get schema for. Use the generator name from the nx_generators tool."
+     }
+    },
+    "required": [
+     "generatorName"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   }
+  }
+ ],
+ "tools_sha256": "af11f7d8d598cc47324005ee04875e74192074f5cdf6cc09d00a02b4585ef8c2"
+}

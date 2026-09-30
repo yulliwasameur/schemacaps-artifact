@@ -13,6 +13,7 @@ from hypothesis_jsonschema import from_schema
 from classify2 import analyse, walk, leaf, is_authority, closed_ancestor
 from classify import resolve_local_refs, clean
 from witness import load
+_NF = object()   # sentinelle "aucun contre-exemple" distincte de None (un témoin peut légitimement être JSON null)
 
 def marg_counterexample(new_s, old_s, n=100):
     """a value admitted by new_s but refused by old_s (would prove pi_a(new) !subseteq pi_a(old))."""
@@ -27,7 +28,7 @@ def marg_counterexample(new_s, old_s, n=100):
         t()
     except Exception:
         return "gen_error"
-    return found[0] if found else None
+    return found[0] if found else _NF
 
 recs = collections.defaultdict(list)
 import glob
@@ -59,7 +60,7 @@ for pkg, items in recs.items():
                 if not is_authority(leaf(p)): continue
                 checked_paths += 1
                 ce = marg_counterexample(dn[p][0], do[p][0])
-                if ce is not None and ce != "gen_error":
+                if ce is not _NF and ce != "gen_error":
                     unsound.append({"pkg": pkg, "from": o["version"], "to": n["version"], "tool": name, "why": f"widened:{p}", "counterexample": json.dumps(ce)[:120]})
 res = {"silent_rebinds": rebinds, "authority_paths_checked": checked_paths, "unsound_rebinds": unsound,
        "conclusion": "no unsound silent re-bind found" if not unsound else f"{len(unsound)} UNSOUND"}

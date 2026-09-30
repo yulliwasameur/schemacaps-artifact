@@ -1,0 +1,15 @@
+{
+ "package": "n8n-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "2.21.0",
+ "published": "2025-10-23T10:36:54.500Z",
+ "index_in_window": 77,
+ "sampled_rank": 5,
+ "extracted_at": "2026-09-29T16:10:55Z",
+ "deps_resolved_before": "2025-10-24T10:36:54Z",
+ "install_seconds": 6.9,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

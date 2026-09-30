@@ -1,0 +1,74 @@
+{
+ "package": "@modelcontextprotocol/server-video-resource",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "2.0.0",
+ "published": "2026-09-08T18:30:30.766Z",
+ "index_in_window": 22,
+ "sampled_rank": 17,
+ "extracted_at": "2026-09-29T15:43:25Z",
+ "deps_resolved_before": "2026-09-09T18:30:30Z",
+ "install_seconds": 3.6,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Video Resource Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "play_video",
+   "title": "Play Video via Resource",
+   "description": "Play a video loaded via MCP resource.\nAvailable videos:\n- bunny-1mb: 1MB\n- bunny-5mb: 5MB\n- bunny-10mb: 10MB\n- bunny-20mb: 20MB\n- bunny-30mb: 30MB\n- bunny-150mb: ~150MB (full 1080p)",
+   "inputSchema": {
+    "type": "object",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "properties": {
+     "videoId": {
+      "default": "bunny-1mb",
+      "description": "Video ID to play. Available: bunny-1mb, bunny-5mb, bunny-10mb, bunny-20mb, bunny-30mb, bunny-150mb",
+      "type": "string",
+      "enum": [
+       "bunny-1mb",
+       "bunny-5mb",
+       "bunny-10mb",
+       "bunny-20mb",
+       "bunny-30mb",
+       "bunny-150mb"
+      ]
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "properties": {
+     "videoUri": {
+      "type": "string"
+     },
+     "description": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "videoUri",
+     "description"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://video-player/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://video-player/mcp-app.html"
+   }
+  }
+ ],
+ "tools_sha256": "adf977e90be2577b45aed282c83b2f1f6b1b6c1b06c1c9389f089d4572b588c1"
+}

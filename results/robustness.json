@@ -1,0 +1,37 @@
+{
+ "labelling": "lexical",
+ "kind": "core",
+ "source": "results/v2_pairs.csv",
+ "packages_resampled": 38,
+ "bootstrap_draws": 10000,
+ "seed": 20260929,
+ "total": 84,
+ "compatible": 580,
+ "rate": 0.14482758620689656,
+ "by_package": {
+  "@notionhq/notion-mcp-server": 3,
+  "@sentry/mcp-server": 20,
+  "@wonderwhy-er/desktop-commander": 10,
+  "@zereight/mcp-gitlab": 8,
+  "agent-device": 42,
+  "firecrawl-mcp": 1
+ },
+ "leave_one_package_out": {
+  "@notionhq/notion-mcp-server": 81,
+  "@sentry/mcp-server": 64,
+  "@wonderwhy-er/desktop-commander": 74,
+  "@zereight/mcp-gitlab": 76,
+  "agent-device": 42,
+  "firecrawl-mcp": 83
+ },
+ "top2": [
+  "agent-device",
+  "@sentry/mcp-server"
+ ],
+ "without_top2": 22,
+ "bootstrap_interval_95": [
+  0.03488372093023256,
+  0.25227963525835867
+ ],
+ "note": "package-level resampling stability check; the corpus is not a random sample of servers"
+}

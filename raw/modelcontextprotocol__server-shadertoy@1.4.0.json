@@ -1,0 +1,72 @@
+{
+ "package": "@modelcontextprotocol/server-shadertoy",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.4.0",
+ "published": "2026-04-02T03:38:12.998Z",
+ "index_in_window": 13,
+ "sampled_rank": 10,
+ "extracted_at": "2026-09-29T15:51:08Z",
+ "deps_resolved_before": "2026-04-03T03:38:12Z",
+ "install_seconds": 5.5,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "ShaderToy Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "render-shadertoy",
+   "title": "ShaderToy Renderer",
+   "description": "Renders a ShaderToy-compatible GLSL fragment shader in real-time using WebGL 2.0.\n\nSHADER FORMAT (ShaderToy conventions):\nUse ShaderToy's mainImage entry point - do NOT use generic GLSL conventions.\n\n  void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n      vec2 uv = fragCoord / iResolution.xy;\n      fragColor = vec4(uv, 0.5 + 0.5*sin(iTime), 1.0);\n  }\n\nDo NOT use: void main(), gl_FragColor, gl_FragCoord - these will not work.\n\nAVAILABLE UNIFORMS:\n- iResolution (vec3): viewport resolution in pixels\n- iTime (float): elapsed time in seconds\n- iTimeDelta (float): time since last frame\n- iFrame (int): frame counter\n- iMouse (vec4): mouse/touch position in pixels (see MOUSE INTERACTION below)\n- iDate (vec4): year, month, day, seconds\n- iChannel0-3 (sampler2D): buffer inputs for multi-pass shaders\n\nMOUSE INTERACTION:\nThe iMouse uniform provides interactive mouse/touch input (works on mobile):\n- iMouse.xy: Current position while button/touch is held down (frozen on release)\n- iMouse.zw: Click start position (positive when down, negative when released)\n- iMouse.z > 0: Button is currently pressed\n- iMouse.z < 0: Button was released\n- iMouse.z == 0: Never clicked\n\nExample - camera control:\n  vec2 uv = iMouse.xy / iResolution.xy;  // normalized 0-1\n\nExample - detect click:\n  if (iMouse.z > 0.0) { /* button is down */ }\n\nMULTI-PASS RENDERING:\n- Use bufferA-D parameters for feedback effects, blur chains, simulations\n- BufferA output -> iChannel0, BufferB -> iChannel1, etc.\n- Buffers can sample their own previous frame for feedback loops\n\nLIMITATIONS - Do NOT use:\n- External textures (generate noise/patterns procedurally)\n- Keyboard input (iKeyboard not available)\n- Audio/microphone input\n- VR features (mainVR not available)\n\nFor procedural noise:\n  float hash(vec2 p) { return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453); }",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "fragmentShader": {
+      "default": "void mainImage(out vec4 fragColor, in vec2 fragCoord) {\n    vec2 uv = fragCoord / iResolution.xy;\n    fragColor = vec4(uv, 0.5 + 0.5*sin(iTime), 1.0);\n}",
+      "description": "Main Image shader - ShaderToy GLSL code",
+      "type": "string"
+     },
+     "common": {
+      "description": "Common code shared across all shaders (optional)",
+      "type": "string"
+     },
+     "bufferA": {
+      "description": "Buffer A shader code - accessible as iChannel0 (optional)",
+      "type": "string"
+     },
+     "bufferB": {
+      "description": "Buffer B shader code - accessible as iChannel1 (optional)",
+      "type": "string"
+     },
+     "bufferC": {
+      "description": "Buffer C shader code - accessible as iChannel2 (optional)",
+      "type": "string"
+     },
+     "bufferD": {
+      "description": "Buffer D shader code - accessible as iChannel3 (optional)",
+      "type": "string"
+     }
+    }
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://shadertoy/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://shadertoy/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "23b9caf79e07eb77b36b14decae79d82cdf8f42342f4bdb3d74eb230f70c1e7c"
+}

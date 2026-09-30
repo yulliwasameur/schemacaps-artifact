@@ -1,0 +1,14 @@
+{
+ "package": "agent-device",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.11.2",
+ "published": "2026-03-30T10:39:19.092Z",
+ "index_in_window": 71,
+ "sampled_rank": 16,
+ "extracted_at": "2026-09-29T21:51:08Z",
+ "deps_resolved_before": "2026-03-31T10:39:19Z",
+ "install_seconds": 0.8,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)"
+}

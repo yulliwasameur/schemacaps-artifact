@@ -1,0 +1,61 @@
+{
+ "labelling": "label_free",
+ "kind": "strict",
+ "source": "results/free_pairs.csv",
+ "packages_resampled": 38,
+ "bootstrap_draws": 10000,
+ "seed": 20260929,
+ "total": 412,
+ "compatible": 580,
+ "rate": 0.7103448275862069,
+ "by_package": {
+  "@azure/mcp": 2,
+  "@modelcontextprotocol/server-everything": 9,
+  "@modelcontextprotocol/server-filesystem": 13,
+  "@modelcontextprotocol/server-github": 1,
+  "@modelcontextprotocol/server-memory": 9,
+  "@modelcontextprotocol/server-pdf": 1,
+  "@modelcontextprotocol/server-sequential-thinking": 1,
+  "@notionhq/notion-mcp-server": 20,
+  "@sentry/mcp-server": 47,
+  "@ui5/mcp-server": 6,
+  "@upstash/context7-mcp": 3,
+  "@wonderwhy-er/desktop-commander": 21,
+  "@zereight/mcp-gitlab": 114,
+  "agent-device": 128,
+  "firecrawl-mcp": 20,
+  "hostinger-api-mcp": 15,
+  "n8n-mcp": 1,
+  "nx-mcp": 1
+ },
+ "leave_one_package_out": {
+  "@azure/mcp": 410,
+  "@modelcontextprotocol/server-everything": 403,
+  "@modelcontextprotocol/server-filesystem": 399,
+  "@modelcontextprotocol/server-github": 411,
+  "@modelcontextprotocol/server-memory": 403,
+  "@modelcontextprotocol/server-pdf": 411,
+  "@modelcontextprotocol/server-sequential-thinking": 411,
+  "@notionhq/notion-mcp-server": 392,
+  "@sentry/mcp-server": 365,
+  "@ui5/mcp-server": 406,
+  "@upstash/context7-mcp": 409,
+  "@wonderwhy-er/desktop-commander": 391,
+  "@zereight/mcp-gitlab": 298,
+  "agent-device": 284,
+  "firecrawl-mcp": 392,
+  "hostinger-api-mcp": 397,
+  "n8n-mcp": 411,
+  "nx-mcp": 411
+ },
+ "top2": [
+  "agent-device",
+  "@zereight/mcp-gitlab"
+ ],
+ "without_top2": 170,
+ "bootstrap_interval_95": [
+  0.5633802816901409,
+  0.8552631578947368
+ ],
+ "note": "package-level resampling stability check; the corpus is not a random sample of servers"
+}

@@ -1,0 +1,2090 @@
+{
+ "flagged": {
+  "@azure/mcp|workspace": {
+   "tools": [
+    "azmcp-monitor-table-list",
+    "azmcp-monitor-table-type-list"
+   ],
+   "pairs": [
+    "0.2.2->0.2.6"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "@notionhq/notion-mcp-server|parent": {
+   "tools": [
+    "API-create-a-comment",
+    "API-create-a-data-source",
+    "API-post-page"
+   ],
+   "pairs": [
+    "1.1.0->1.2.0",
+    "2.2.1->2.4.0"
+   ],
+   "kinds": [
+    "widened"
+   ]
+  },
+  "@notionhq/notion-mcp-server|parent.page_id": {
+   "tools": [
+    "API-create-a-comment",
+    "API-create-a-data-source"
+   ],
+   "pairs": [
+    "2.2.1->2.4.0"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "@notionhq/notion-mcp-server|cover.external.url": {
+   "tools": [
+    "API-patch-page"
+   ],
+   "pairs": [
+    "2.2.1->2.4.0"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "@sentry/mcp-server|regionUrl": {
+   "tools": [
+    "begin_autofix",
+    "create_dsn",
+    "create_project",
+    "create_team",
+    "get_autofix_status",
+    "get_issue_details",
+    "get_issue_summary",
+    "list_dsns",
+    "list_issues",
+    "list_projects",
+    "list_releases",
+    "list_tags",
+    "list_teams",
+    "search_errors",
+    "search_transactions"
+   ],
+   "pairs": [
+    "0.4.0->0.6.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@sentry/mcp-server|eventId": {
+   "tools": [
+    "get_issue_details"
+   ],
+   "pairs": [
+    "0.6.0->0.8.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@sentry/mcp-server|query": {
+   "tools": [
+    "find_organizations",
+    "find_projects",
+    "find_teams"
+   ],
+   "pairs": [
+    "0.17.0->0.19.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@sentry/mcp-server|profileId": {
+   "tools": [
+    "get_profile_details"
+   ],
+   "pairs": [
+    "0.32.0->0.35.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@sentry/mcp-server|profileUrl": {
+   "tools": [
+    "get_profile_details"
+   ],
+   "pairs": [
+    "0.32.0->0.35.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@sentry/mcp-server|profilerId": {
+   "tools": [
+    "get_profile_details"
+   ],
+   "pairs": [
+    "0.32.0->0.35.0"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@sentry/mcp-server|projectSlugOrId": {
+   "tools": [
+    "get_profile_details"
+   ],
+   "pairs": [
+    "0.32.0->0.35.0"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|shell": {
+   "tools": [
+    "execute_command"
+   ],
+   "pairs": [
+    "0.1.30->0.1.35"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|isUrl": {
+   "tools": [
+    "read_file"
+   ],
+   "pairs": [
+    "0.1.30->0.1.35"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|origin": {
+   "tools": [
+    "edit_block",
+    "get_config",
+    "list_directory",
+    "read_file",
+    "set_config_value",
+    "start_process",
+    "start_search",
+    "write_file"
+   ],
+   "pairs": [
+    "0.2.37->0.2.42",
+    "0.2.42->0.2.46"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|commit_id": {
+   "tools": [
+    "create_or_update_file"
+   ],
+   "pairs": [
+    "1.0.8->1.0.18"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|last_commit_id": {
+   "tools": [
+    "create_or_update_file"
+   ],
+   "pairs": [
+    "1.0.8->1.0.18"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|merge_request_iid": {
+   "tools": [
+    "get_merge_request",
+    "get_merge_request_diffs",
+    "update_merge_request"
+   ],
+   "pairs": [
+    "1.0.26->1.0.35"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|assignee_ids": {
+   "tools": [
+    "create_merge_request"
+   ],
+   "pairs": [
+    "1.0.53->1.0.61"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|reviewer_ids": {
+   "tools": [
+    "create_merge_request",
+    "update_merge_request"
+   ],
+   "pairs": [
+    "1.0.53->1.0.61",
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|project_id": {
+   "tools": [
+    "create_branch",
+    "create_label",
+    "create_merge_request",
+    "create_or_update_file",
+    "delete_label",
+    "fork_repository",
+    "get_branch_diffs",
+    "get_commit",
+    "get_commit_diff",
+    "get_file_contents",
+    "get_label",
+    "get_project",
+    "get_repository_tree",
+    "list_commits",
+    "list_labels",
+    "push_files",
+    "update_label"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|target_project_id": {
+   "tools": [
+    "create_merge_request"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|label_id": {
+   "tools": [
+    "delete_label",
+    "get_label",
+    "update_label"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|namespace_id": {
+   "tools": [
+    "get_namespace"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|group_id": {
+   "tools": [
+    "list_group_projects"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|in_reply_to_discussion_id": {
+   "tools": [
+    "create_draft_note"
+   ],
+   "pairs": [
+    "2.0.28->2.1.1"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|file_path": {
+   "tools": [
+    "get_file_contents"
+   ],
+   "pairs": [
+    "2.0.28->2.1.1"
+   ],
+   "kinds": [
+    "became_optional"
+   ]
+  },
+  "@zereight/mcp-gitlab|path": {
+   "tools": [
+    "get_file_contents"
+   ],
+   "pairs": [
+    "2.0.28->2.1.1"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|query": {
+   "tools": [
+    "search_repositories"
+   ],
+   "pairs": [
+    "2.0.28->2.1.1"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "@zereight/mcp-gitlab|files": {
+   "tools": [
+    "push_files"
+   ],
+   "pairs": [
+    "2.1.50->2.1.59"
+   ],
+   "kinds": [
+    "widened"
+   ]
+  },
+  "@zereight/mcp-gitlab|files[].previous_path": {
+   "tools": [
+    "push_files"
+   ],
+   "pairs": [
+    "2.1.50->2.1.59"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|iosXctestDerivedDataPath": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "batch",
+    "boot",
+    "clipboard",
+    "close",
+    "devices",
+    "find",
+    "focus",
+    "gesture",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "reinstall",
+    "replay",
+    "rotate",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "swipe",
+    "test",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|iosXctestEnvDir": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "batch",
+    "boot",
+    "clipboard",
+    "close",
+    "devices",
+    "find",
+    "focus",
+    "gesture",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "reinstall",
+    "replay",
+    "rotate",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "swipe",
+    "test",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|steps[].command": {
+   "tools": [
+    "batch"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10",
+    "0.21.7->0.21.16"
+   ],
+   "kinds": [
+    "widened"
+   ]
+  },
+  "agent-device|tracePath": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|bundleUrl": {
+   "tools": [
+    "open",
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|launchUrl": {
+   "tools": [
+    "open"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|metroHost": {
+   "tools": [
+    "open",
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|path": {
+   "tools": [
+    "session"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|destination": {
+   "tools": [
+    "gesture"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "agent-device|source": {
+   "tools": [
+    "gesture"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "firecrawl-mcp|email": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "firecrawl-mcp|webhookUrl": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "new_authority_arg"
+   ]
+  },
+  "hostinger-api-mcp|virtualMachineId": {
+   "tools": [
+    "VPS_attachPublicKeyV1",
+    "VPS_getMetricsV1",
+    "VPS_recreateVirtualMachineV1",
+    "VPS_setHostnameV1",
+    "VPS_setNameserversV1",
+    "VPS_setPanelPasswordV1",
+    "VPS_setRootPasswordV1",
+    "VPS_setupNewVirtualMachineV1",
+    "VPS_startRecoveryModeV1"
+   ],
+   "pairs": [
+    "0.0.1->0.0.14"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "hostinger-api-mcp|firewallId": {
+   "tools": [
+    "VPS_createFirewallRuleV1",
+    "VPS_updateFirewallRuleV1"
+   ],
+   "pairs": [
+    "0.0.1->0.0.14"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "hostinger-api-mcp|ruleId": {
+   "tools": [
+    "VPS_updateFirewallRuleV1"
+   ],
+   "pairs": [
+    "0.0.1->0.0.14"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  },
+  "hostinger-api-mcp|postInstallScriptId": {
+   "tools": [
+    "VPS_updatePostInstallScriptV1"
+   ],
+   "pairs": [
+    "0.0.1->0.0.14"
+   ],
+   "kinds": [
+    "constraint_dropped"
+   ]
+  }
+ },
+ "unflagged": {
+  "@modelcontextprotocol/server-filesystem|head": {
+   "tools": [
+    "read_file"
+   ],
+   "pairs": [
+    "2025.3.28->2025.7.1"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@modelcontextprotocol/server-filesystem|tail": {
+   "tools": [
+    "read_file"
+   ],
+   "pairs": [
+    "2025.3.28->2025.7.1"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@modelcontextprotocol/server-filesystem|excludePatterns": {
+   "tools": [
+    "directory_tree"
+   ],
+   "pairs": [
+    "2025.8.21->2025.11.25"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@sentry/mcp-server|period": {
+   "tools": [
+    "search_issues"
+   ],
+   "pairs": [
+    "0.35.0->0.37.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@upstash/context7-mcp|mode": {
+   "tools": [
+    "get-library-docs"
+   ],
+   "pairs": [
+    "1.0.28->1.0.32"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|timeoutMs": {
+   "tools": [
+    "search_code",
+    "search_files"
+   ],
+   "pairs": [
+    "0.1.30->0.1.35"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|offset": {
+   "tools": [
+    "read_file",
+    "read_process_output"
+   ],
+   "pairs": [
+    "0.1.39->0.2.4",
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|length": {
+   "tools": [
+    "read_file",
+    "read_process_output"
+   ],
+   "pairs": [
+    "0.1.39->0.2.4",
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|mode": {
+   "tools": [
+    "write_file"
+   ],
+   "pairs": [
+    "0.1.39->0.2.4"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|depth": {
+   "tools": [
+    "list_directory"
+   ],
+   "pairs": [
+    "0.2.13->0.2.17"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|literalSearch": {
+   "tools": [
+    "start_search"
+   ],
+   "pairs": [
+    "0.2.13->0.2.17"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|range": {
+   "tools": [
+    "edit_block",
+    "read_file"
+   ],
+   "pairs": [
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|options": {
+   "tools": [
+    "edit_block",
+    "read_file"
+   ],
+   "pairs": [
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|content": {
+   "tools": [
+    "edit_block"
+   ],
+   "pairs": [
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|verbose_timing": {
+   "tools": [
+    "interact_with_process",
+    "read_process_output",
+    "start_process"
+   ],
+   "pairs": [
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@wonderwhy-er/desktop-commander|sheet": {
+   "tools": [
+    "read_file"
+   ],
+   "pairs": [
+    "0.2.17->0.2.24"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|source_branch": {
+   "tools": [
+    "get_merge_request",
+    "get_merge_request_diffs",
+    "update_merge_request"
+   ],
+   "pairs": [
+    "1.0.26->1.0.35"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|search_namespaces": {
+   "tools": [
+    "list_projects"
+   ],
+   "pairs": [
+    "1.0.26->1.0.35"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|labels": {
+   "tools": [
+    "create_merge_request"
+   ],
+   "pairs": [
+    "1.0.53->1.0.61"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|page": {
+   "tools": [
+    "get_merge_request_notes",
+    "mr_discussions"
+   ],
+   "pairs": [
+    "1.0.53->1.0.61",
+    "2.0.13->2.0.28"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|per_page": {
+   "tools": [
+    "get_merge_request_notes",
+    "mr_discussions"
+   ],
+   "pairs": [
+    "1.0.53->1.0.61",
+    "2.0.13->2.0.28"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.end.type": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.start.new_line": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.start": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.end": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.end.old_line": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.end.new_line": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.start.old_line": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.start.line_code": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.start.type": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|position.line_range.end.line_code": {
+   "tools": [
+    "create_merge_request_thread"
+   ],
+   "pairs": [
+    "1.0.61->1.0.69"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|squash": {
+   "tools": [
+    "create_merge_request"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|remove_source_branch": {
+   "tools": [
+    "create_merge_request"
+   ],
+   "pairs": [
+    "1.0.69->2.0.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|full_diff": {
+   "tools": [
+    "get_commit_diff"
+   ],
+   "pairs": [
+    "2.0.3->2.0.13"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|excluded_file_patterns": {
+   "tools": [
+    "get_merge_request_diffs"
+   ],
+   "pairs": [
+    "2.0.13->2.0.28"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|include_inheritance": {
+   "tools": [
+    "list_project_members"
+   ],
+   "pairs": [
+    "2.0.13->2.0.28"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|resolved": {
+   "tools": [
+    "update_issue_note"
+   ],
+   "pairs": [
+    "2.0.13->2.0.28"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|topic": {
+   "tools": [
+    "list_group_projects",
+    "list_projects"
+   ],
+   "pairs": [
+    "2.0.28->2.1.1"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|files[].action": {
+   "tools": [
+    "push_files"
+   ],
+   "pairs": [
+    "2.1.50->2.1.59"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "@zereight/mcp-gitlab|files[].encoding": {
+   "tools": [
+    "push_files"
+   ],
+   "pairs": [
+    "2.1.50->2.1.59"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|area": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|action": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|app": {
+   "tools": [
+    "settings"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|timeoutMs": {
+   "tools": [
+    "back",
+    "replay",
+    "scroll",
+    "snapshot"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0",
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|shardAll": {
+   "tools": [
+    "test"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|shardSplit": {
+   "tools": [
+    "test"
+   ],
+   "pairs": [
+    "0.16.6->0.17.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|mcpOutputFormat": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "batch",
+    "boot",
+    "clipboard",
+    "close",
+    "devices",
+    "find",
+    "focus",
+    "gesture",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "reinstall",
+    "replay",
+    "rotate",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "swipe",
+    "test",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|iosXctestrunFile": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "batch",
+    "boot",
+    "clipboard",
+    "close",
+    "devices",
+    "find",
+    "focus",
+    "gesture",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "reinstall",
+    "replay",
+    "rotate",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "swipe",
+    "test",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|deviceHub": {
+   "tools": [
+    "open"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|subject": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|template": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|kind": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|out": {
+   "tools": [
+    "perf"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|durationMs": {
+   "tools": [
+    "scroll"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|recordVideo": {
+   "tools": [
+    "test"
+   ],
+   "pairs": [
+    "0.17.0->0.17.10"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|includeCost": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "boot",
+    "clipboard",
+    "close",
+    "debug",
+    "devices",
+    "diff",
+    "find",
+    "focus",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "record",
+    "reinstall",
+    "replay",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "shutdown",
+    "snapshot",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "viewport",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|noRecord": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "back",
+    "clipboard",
+    "close",
+    "diff",
+    "find",
+    "focus",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "perf",
+    "react-native",
+    "record",
+    "reinstall",
+    "screenshot",
+    "scroll",
+    "settings",
+    "snapshot",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "viewport",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|responseLevel": {
+   "tools": [
+    "alert",
+    "app-switcher",
+    "apps",
+    "appstate",
+    "back",
+    "boot",
+    "clipboard",
+    "close",
+    "debug",
+    "devices",
+    "diff",
+    "find",
+    "focus",
+    "home",
+    "install",
+    "install-from-source",
+    "is",
+    "keyboard",
+    "logs",
+    "metro",
+    "network",
+    "open",
+    "perf",
+    "react-native",
+    "record",
+    "reinstall",
+    "replay",
+    "screenshot",
+    "scroll",
+    "session",
+    "settings",
+    "shutdown",
+    "snapshot",
+    "trace",
+    "trigger-app-event",
+    "type",
+    "viewport",
+    "wait"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|force": {
+   "tools": [
+    "close",
+    "open",
+    "replay",
+    "session"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|record": {
+   "tools": [
+    "find",
+    "is",
+    "snapshot"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|metroPort": {
+   "tools": [
+    "open",
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|testIme": {
+   "tools": [
+    "open"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|recordingScope": {
+   "tools": [
+    "record"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|saveScript": {
+   "tools": [
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|resumeFrom": {
+   "tools": [
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|resumePlanDigest": {
+   "tools": [
+    "replay"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|pixelDensity": {
+   "tools": [
+    "screenshot"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|normalizeStatusBar": {
+   "tools": [
+    "screenshot"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|stable": {
+   "tools": [
+    "wait"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|quietMs": {
+   "tools": [
+    "wait"
+   ],
+   "pairs": [
+    "0.17.10->0.20.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|settleQuietMs": {
+   "tools": [
+    "back",
+    "scroll"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|settle": {
+   "tools": [
+    "back",
+    "scroll"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|moveMs": {
+   "tools": [
+    "gesture"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|destinationHoldMs": {
+   "tools": [
+    "gesture"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|sourceHoldMs": {
+   "tools": [
+    "gesture"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|foreground": {
+   "tools": [
+    "open"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|keepSession": {
+   "tools": [
+    "replay"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "agent-device|customActions": {
+   "tools": [
+    "snapshot"
+   ],
+   "pairs": [
+    "0.20.0->0.20.9"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.parsers": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.3.6->3.6.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|parsers": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.3.6->3.6.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.zeroDataRetention": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.6.0->3.7.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.proxy": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.6.0->3.7.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|proxy": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.6.0->3.7.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|zeroDataRetention": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.6.0->3.7.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|enterprise": {
+   "tools": [
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.6.0->3.7.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.queryOptions.mode": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.lockdown": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.profile": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.queryOptions": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.queryOptions.prompt": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.profile.name": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.profile.saveChanges": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|queryOptions": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|profile": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|profile.saveChanges": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|lockdown": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|queryOptions.prompt": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|profile.name": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|queryOptions.mode": {
+   "tools": [
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|includeDomains": {
+   "tools": [
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|excludeDomains": {
+   "tools": [
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.11.0->3.18.0"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scrapeOptions.redactPII": {
+   "tools": [
+    "firecrawl_crawl",
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|goal": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|scheduleText": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|page": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|pages": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|includeDiffs": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|timezone": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|name": {
+   "tools": [
+    "firecrawl_monitor_create"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|redactPII": {
+   "tools": [
+    "firecrawl_parse",
+    "firecrawl_scrape"
+   ],
+   "pairs": [
+    "3.18.0->3.20.3"
+   ],
+   "kinds": [
+    "added"
+   ]
+  },
+  "firecrawl-mcp|highlights": {
+   "tools": [
+    "firecrawl_search"
+   ],
+   "pairs": [
+    "3.22.3->3.23.4"
+   ],
+   "kinds": [
+    "added"
+   ]
+  }
+ }
+}

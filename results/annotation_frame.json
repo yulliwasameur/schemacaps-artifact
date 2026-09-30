@@ -1,0 +1,59 @@
+{
+ "flagged_frame": 50,
+ "flagged_annotated": 44,
+ "flagged_not_in_frame": 0,
+ "flagged_not_annotated": [
+  {
+   "package": "@notionhq/notion-mcp-server",
+   "path": "parent.page_id",
+   "reasons": [
+    "became_optional"
+   ],
+   "has_core_reason": false
+  },
+  {
+   "package": "@sentry/mcp-server",
+   "path": "attachmentId",
+   "reasons": [
+    "nullable"
+   ],
+   "has_core_reason": false
+  },
+  {
+   "package": "@zereight/mcp-gitlab",
+   "path": "position.new_path",
+   "reasons": [
+    "nullable"
+   ],
+   "has_core_reason": false
+  },
+  {
+   "package": "@zereight/mcp-gitlab",
+   "path": "position.old_path",
+   "reasons": [
+    "nullable"
+   ],
+   "has_core_reason": false
+  },
+  {
+   "package": "firecrawl-mcp",
+   "path": "formats[].schema",
+   "reasons": [
+    "object_introduced_open"
+   ],
+   "has_core_reason": false
+  },
+  {
+   "package": "firecrawl-mcp",
+   "path": "scrapeOptions.formats[].schema",
+   "reasons": [
+    "object_introduced_open"
+   ],
+   "has_core_reason": false
+  }
+ ],
+ "unflagged_frame": 132,
+ "unflagged_annotated": 132,
+ "unflagged_not_in_frame": 0,
+ "recall_note": "misses are sampled among added arguments only: measured recall is an upper bound"
+}

@@ -1,0 +1,165 @@
+package,from,to,tool,amplifying,verdict,counterexample
+@azure/mcp,0.0.19,0.1.1,azmcp-subscription-list,False,incompatible_witness,"{""auth-method"": ""pairs.csv""}"
+@azure/mcp,1.0.2,2.0.1,extension_azqr,False,incompatible_witness,"{"""": null}"
+@azure/mcp,1.0.2,2.0.1,group_list,False,incompatible_witness,"{"""": null}"
+@azure/mcp,1.0.2,2.0.1,subscription_list,False,incompatible_witness,"{"""": null}"
+@modelcontextprotocol/server-filesystem,2025.8.21,2025.11.25,list_allowed_directories,False,no_counterexample,
+@modelcontextprotocol/server-threejs,0.4.1,0.4.2,show_threejs_scene,False,no_counterexample,
+@modelcontextprotocol/server-threejs,1.7.5,2.0.0,show_threejs_scene,False,no_counterexample,
+@notionhq/notion-mcp-server,1.9.1,2.0.0,API-get-self,False,no_counterexample,
+@notionhq/notion-mcp-server,1.9.1,2.0.0,API-get-users,False,no_counterexample,
+@notionhq/notion-mcp-server,1.9.1,2.0.0,API-post-page,False,no_counterexample,
+@notionhq/notion-mcp-server,1.9.1,2.0.0,API-post-search,False,incompatible_witness,"{""filter"": {""property"": ""񞅵zèB"", ""value"": """"}, ""page_size"": 0}"
+@notionhq/notion-mcp-server,2.0.0,2.1.0,API-post-page,False,no_counterexample,
+@notionhq/notion-mcp-server,2.1.0,2.2.0,API-move-page,False,incompatible_witness,"{""page_id"": ""觊"", ""parent"": {""type"": {""\u000e𴀂É񴍭"": {"""": 3.5, ""d򨓛¹Ì"": -5663, ""°"": 3.5020468764083e+16}, ""verdict"": [400, false]}}, ""Notion-Version"": ""then""}"
+@notionhq/notion-mcp-server,2.1.0,2.2.0,API-post-page,False,incompatible_witness,"{""parent"": {""type"": null}, ""properties"": {}}"
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-get-self,False,no_counterexample,
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-get-users,False,no_counterexample,
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-move-page,False,no_counterexample,
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-post-page,False,no_counterexample,
+@notionhq/notion-mcp-server,2.2.1,2.4.0,API-post-search,False,no_counterexample,
+@sentry/mcp-server,0.32.0,0.35.0,update_issue,False,no_counterexample,
+@sentry/mcp-server,0.35.0,0.37.0,update_issue,False,no_counterexample,
+@sentry/mcp-server,0.37.0,0.40.0,search_sentry_tools,False,no_counterexample,
+@sentry/mcp-server,0.37.0,0.40.0,update_issue,False,incompatible_witness,"{""assignedTo"": """"}"
+@wonderwhy-er/desktop-commander,0.1.30,0.1.35,list_processes,False,incompatible_witness,"{"""": null}"
+agent-device,0.17.0,0.17.10,click,True,no_counterexample,
+agent-device,0.17.0,0.17.10,fill,True,no_counterexample,
+agent-device,0.17.0,0.17.10,get,True,no_counterexample,
+agent-device,0.17.0,0.17.10,longpress,True,no_counterexample,
+agent-device,0.17.0,0.17.10,press,True,no_counterexample,
+agent-device,0.17.0,0.17.10,push,True,no_counterexample,
+agent-device,0.17.10,0.20.0,click,False,no_counterexample,
+agent-device,0.17.10,0.20.0,fill,False,no_counterexample,
+agent-device,0.17.10,0.20.0,get,False,no_counterexample,
+agent-device,0.17.10,0.20.0,longpress,False,no_counterexample,
+agent-device,0.17.10,0.20.0,press,False,no_counterexample,
+agent-device,0.17.10,0.20.0,push,False,no_counterexample,
+agent-device,0.20.0,0.20.9,click,False,no_counterexample,
+agent-device,0.20.0,0.20.9,fill,False,no_counterexample,
+agent-device,0.20.0,0.20.9,get,False,no_counterexample,
+agent-device,0.20.0,0.20.9,longpress,False,no_counterexample,
+agent-device,0.20.0,0.20.9,press,False,no_counterexample,
+agent-device,0.20.0,0.20.9,push,False,no_counterexample,
+agent-device,0.20.9,0.21.7,click,False,incompatible_witness,"{""target"": {""kind"": ""selector"", ""selector"": """"}, ""depth"": 695, ""daemonBaseUrl"": ""\u0011jogº򰜥񯲝º{ç:"", ""iosXctestrunFile"": ""\bÙ§8""}"
+agent-device,0.20.9,0.21.7,fill,False,incompatible_witness,"{""target"": {""kind"": ""point"", ""x"": -4.699442432646701e-294, ""y"": -5270078841518826.0}, ""text"": ""󓲺t\b£\u0003𒱳'<±󻞉򽔖\u001d¨8é"", ""iosXctestEnvDir"": ""«񲡆5Ð퓖«F""}"
+agent-device,0.20.9,0.21.7,get,False,incompatible_witness,"{""format"": ""attrs"", ""target"": {""kind"": ""selector"", ""selector"": """"}, ""daemonAuthToken"": ""Ø²𖚙"", ""iosSimulatorDeviceSet"": ""/W"", ""includeCost"": true}"
+agent-device,0.20.9,0.21.7,longpress,False,incompatible_witness,"{""target"": {""kind"": ""point"", ""x"": -4293235565468025.0, ""y"": -4.071778767374256e+16}, ""runId"": ""«𠾨Ô¹>OÈ"", ""daemonAuthToken"": ""备BºÛ"", ""deviceTarget"": ""mobile"", ""platform"": ""web"", ""androidDeviceAllowl"
+agent-device,0.20.9,0.21.7,press,False,incompatible_witness,"{""target"": {""kind"": ""selector"", ""selector"": """"}, ""stateDir"": """"}"
+agent-device,0.20.9,0.21.7,push,False,incompatible_witness,"{""app"": ""e󬔭"", ""payload"": ""\b"", ""iosXctestrunFile"": ""\u0012·򳸳PÅ\u001c"", ""cwd"": ""yÁ򪥦"", ""iosSimulatorDeviceSet"": ""R§\u0000$񂙓"", ""debug"": false}"
+figma-developer-mcp,0.2.2,0.3.1,download_figma_images,False,no_counterexample,
+figma-developer-mcp,0.3.1,0.4.2,download_figma_images,False,incompatible_witness,"{""fileKey"": ""Z2µº"", ""localPath"": ""\\FG"", ""nodes"": [{""fileName"": ""򨬊çX\r\u0004ø\u000bÿ𻀦"", ""nodeId"": ""𥎽硙""}, {""fileName"": ""Ç\u0015"", ""nodeId"": """"}], ""scale"": 2.2250738585072014e-308}"
+figma-developer-mcp,0.4.2,0.5.0,download_figma_images,False,incompatible_witness,"{""fileKey"": ""󫛹ìû¹򷶏󰁫ø󶌴öß񷟢񥩕Õ"", ""localPath"": ""/ ÿé"", ""nodes"": [], ""svgOptions"": {""includeId"": false, ""simplifyStroke"": true, ""outlineText"": false}, ""pngScale"": 2.0490252007480165e+307}"
+figma-developer-mcp,0.5.0,0.6.0,download_figma_images,False,incompatible_witness,"{""fileKey"": """", ""localPath"": """", ""nodes"": []}"
+figma-developer-mcp,0.6.0,0.6.2,download_figma_images,False,incompatible_witness,"{""fileKey"": ""Cn5Qx5jb0bMsSIQOJ04Qp"", ""localPath"": ""򴧟"", ""nodes"": [{""fileName"": ""bdY._"", ""nodeId"": ""I౭៥૬᠘2:៣"", ""needsCropping"": true, ""requiresImageDimensions"": true, ""cropTransform"": []}, {""fileName"": "
+figma-developer-mcp,0.6.2,0.6.6,download_figma_images,False,no_counterexample,
+figma-developer-mcp,0.6.6,0.7.1,download_figma_images,False,incompatible_witness,"{""fileKey"": ""xT"", ""localPath"": ""-X󒷄񨛑"", ""nodes"": [{""fileName"": ""ZKc81ig_v_gTiVVef_9.png"", ""nodeId"": ""I௭:0𑙒꩙५൨;١𑛆႗𝟼૩|၂᥎꧴४0১൧𖩦"", ""imageRef"": ""hµ""}, {""fileName"": ""Vwezn.png"", ""nodeId"": ""I૬᮲੫௪୦𖫆൦૯߂෪៥႗٧3႐:๓"
+figma-developer-mcp,0.10.1,0.13.0,download_figma_images,False,no_counterexample,
+firecrawl-mcp,1.12.0,3.0.1,firecrawl_crawl,False,incompatible_witness,"{""url"": """", """": null}"
+firecrawl-mcp,3.18.0,3.20.3,firecrawl_monitor_checks,False,no_counterexample,
+firecrawl-mcp,3.21.2,3.22.3,firecrawl_feedback,False,incompatible_witness,"{""endpoint"": ""search"", ""jobId"": ""00000000-0000-0000-0000-000000000000"", ""rating"": ""bad"", ""valuableSources"": [{""url"": ""https://r.e.aXa""}, {""url"": ""https://p.nEq6hTp.cY"", ""reason"": ""*""}, {""url"": ""https:"
+firecrawl-mcp,3.21.2,3.22.3,firecrawl_monitor_check,False,no_counterexample,
+firecrawl-mcp,3.21.2,3.22.3,firecrawl_monitor_checks,False,no_counterexample,
+firecrawl-mcp,3.21.2,3.22.3,firecrawl_monitor_list,False,no_counterexample,
+firecrawl-mcp,3.23.4,3.25.0,firecrawl_feedback,True,no_counterexample,
+firecrawl-mcp,3.23.4,3.25.0,firecrawl_scrape,True,no_counterexample,
+firecrawl-mcp,3.25.0,3.26.0,firecrawl_agent,True,no_counterexample,
+firecrawl-mcp,3.25.0,3.26.0,firecrawl_scrape,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_activateFirewallV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_createPTRRecordV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_createSnapshotV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deactivateFirewallV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteAPostInstallScriptV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteAPublicKeyV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteBackupV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteFirewallRuleV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteFirewallV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deletePTRRecordV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_deleteSnapshotV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getActionListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getActionV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getAttachedPublicKeysV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getBackupListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getFirewallListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getFirewallV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getPostInstallScriptListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getPostInstallScriptV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getPublicKeyListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getScanMetricsV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getSnapshotV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getTemplateV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_getVirtualMachineV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_installMonarxV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_resetHostnameV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restartVirtualMachineV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restoreBackupV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_restoreSnapshotV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_startVirtualMachineV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_stopRecoveryModeV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_stopVirtualMachineV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_syncFirewallV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,VPS_uninstallMonarxV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,billing_cancelSubscriptionV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,billing_deletePaymentMethodV1,False,no_counterexample,
+hostinger-api-mcp,0.0.1,0.0.14,billing_setDefaultPaymentMethodV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,DNS_deleteZoneRecordsV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,DNS_getRecordsV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,DNS_getSnapshotListV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,DNS_getSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,DNS_resetZoneRecordsV1,True,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,DNS_restoreSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_activateFirewallV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_createPTRRecordV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_createSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deactivateFirewallV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteAPostInstallScriptV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteAPublicKeyV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteBackupV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteFirewallRuleV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteFirewallV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deletePTRRecordV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_deleteSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getActionListV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getActionV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getAttachedPublicKeysV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getBackupListV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getFirewallListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getFirewallV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getPostInstallScriptListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getPostInstallScriptV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getPublicKeyListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getScanMetricsV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getTemplateV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_getVirtualMachineV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_installMonarxV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_resetHostnameV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_restartVirtualMachineV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_restoreBackupV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_restoreSnapshotV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_startVirtualMachineV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_stopRecoveryModeV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_stopVirtualMachineV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_syncFirewallV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,VPS_uninstallMonarxV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,billing_cancelSubscriptionV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,billing_deletePaymentMethodV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,billing_getCatalogItemListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,billing_setDefaultPaymentMethodV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_deleteForwardingDataV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_deleteWHOISProfileV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_disableDomainLockV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_disablePrivacyProtectionV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_enableDomainLockV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_enablePrivacyProtectionV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_getDomainV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_getForwardingDataV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_getWHOISProfileListV1,False,no_counterexample,
+hostinger-api-mcp,0.0.14,0.0.25,domains_getWHOISProfileUsageV1,False,incompatible_witness,{}
+hostinger-api-mcp,0.0.14,0.0.25,domains_getWHOISProfileV1,False,incompatible_witness,{}
+hostinger-api-mcp,1.19.0,1.27.0,billing_getCatalogItemListV1,False,no_counterexample,
+hostinger-api-mcp,1.27.0,1.35.1,reach_listContactsV1,False,no_counterexample,
+hostinger-api-mcp,1.39.0,1.45.4,hosting_checkIfWooCommerceIsInstalledV1,False,no_counterexample,
+hostinger-api-mcp,1.39.0,1.45.4,hosting_listWebsitesV1,False,no_counterexample,
+hostinger-api-mcp,1.39.0,1.45.4,hosting_listWordPressInstallationsV1,False,no_counterexample,
+mcp-server-fetch,2025.1.17,2025.4.7,fetch,False,no_counterexample,

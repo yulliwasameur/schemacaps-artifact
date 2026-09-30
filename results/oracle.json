@@ -1,0 +1,6 @@
+{
+ "silent_rebinds": 297,
+ "authority_paths_checked": 1085,
+ "unsound_rebinds": [],
+ "conclusion": "no unsound silent re-bind found"
+}

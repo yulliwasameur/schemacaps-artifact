@@ -1,0 +1,14 @@
+{
+ "package": "openinputbridge-mcp",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.1.0",
+ "published": "2026-09-08T15:28:11.222Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:11:40Z",
+ "deps_resolved_before": "2026-09-09T15:28:11Z",
+ "install_seconds": 1.4,
+ "status": "install_failed",
+ "error": "npm error code EBADPLATFORM\nnpm error notsup Unsupported platform for openinputbridge-mcp@0.1.0: wanted {\"os\":\"win32\"} (current: {\"os\":\"linux\"})\nnpm error notsup Valid os:  win32\nnpm error notsup Actual os: linux\nnpm error A complete log of this run can be found in: /root/.npm/_logs/2026-09-29T16_11_40_917Z-debug-0.log\n"
+}

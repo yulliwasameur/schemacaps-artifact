@@ -1,0 +1,91 @@
+{
+ "package": "@modelcontextprotocol/server-map",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.2.0",
+ "published": "2026-03-06T15:56:41.268Z",
+ "index_in_window": 7,
+ "sampled_rank": 5,
+ "extracted_at": "2026-09-29T15:32:14Z",
+ "install_seconds": 6.0,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "CesiumJS Map Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "show-map",
+   "title": "Show Map",
+   "description": "Display an interactive world map zoomed to a specific bounding box. Use the GeoCode tool to find the bounding box of a location.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "west": {
+      "default": -0.5,
+      "description": "Western longitude (-180 to 180)",
+      "type": "number"
+     },
+     "south": {
+      "default": 51.3,
+      "description": "Southern latitude (-90 to 90)",
+      "type": "number"
+     },
+     "east": {
+      "default": 0.3,
+      "description": "Eastern longitude (-180 to 180)",
+      "type": "number"
+     },
+     "north": {
+      "default": 51.7,
+      "description": "Northern latitude (-90 to 90)",
+      "type": "number"
+     },
+     "label": {
+      "description": "Optional label to display on the map",
+      "type": "string"
+     }
+    }
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://cesium-map/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://cesium-map/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  },
+  {
+   "name": "geocode",
+   "title": "Geocode",
+   "description": "Search for places using OpenStreetMap. Returns coordinates and bounding boxes for up to 5 matches.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "query": {
+      "type": "string",
+      "description": "Place name or address to search for (e.g., 'Paris', 'Golden Gate Bridge', '1600 Pennsylvania Ave')"
+     }
+    },
+    "required": [
+     "query"
+    ]
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "eb2110a8174fb2fdaa559bbe7fe214dff985d64f7500dab3b692e63dcdd564c6"
+}

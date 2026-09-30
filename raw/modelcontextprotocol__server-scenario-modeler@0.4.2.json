@@ -1,0 +1,324 @@
+{
+ "package": "@modelcontextprotocol/server-scenario-modeler",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "0.4.2",
+ "published": "2026-01-26T14:46:12.184Z",
+ "index_in_window": 1,
+ "sampled_rank": 1,
+ "extracted_at": "2026-09-29T15:50:01Z",
+ "deps_resolved_before": "2026-01-27T14:46:12Z",
+ "install_seconds": 2.1,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "SaaS Scenario Modeler",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-scenario-data",
+   "title": "Get Scenario Data",
+   "description": "Returns SaaS scenario templates and optionally computes custom projections for given inputs",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "customInputs": {
+      "description": "Custom scenario parameters to compute projections for",
+      "type": "object",
+      "properties": {
+       "startingMRR": {
+        "type": "number"
+       },
+       "monthlyGrowthRate": {
+        "type": "number"
+       },
+       "monthlyChurnRate": {
+        "type": "number"
+       },
+       "grossMargin": {
+        "type": "number"
+       },
+       "fixedCosts": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "startingMRR",
+       "monthlyGrowthRate",
+       "monthlyChurnRate",
+       "grossMargin",
+       "fixedCosts"
+      ]
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "templates": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "id": {
+         "type": "string"
+        },
+        "name": {
+         "type": "string"
+        },
+        "description": {
+         "type": "string"
+        },
+        "icon": {
+         "type": "string"
+        },
+        "parameters": {
+         "type": "object",
+         "properties": {
+          "startingMRR": {
+           "type": "number"
+          },
+          "monthlyGrowthRate": {
+           "type": "number"
+          },
+          "monthlyChurnRate": {
+           "type": "number"
+          },
+          "grossMargin": {
+           "type": "number"
+          },
+          "fixedCosts": {
+           "type": "number"
+          }
+         },
+         "required": [
+          "startingMRR",
+          "monthlyGrowthRate",
+          "monthlyChurnRate",
+          "grossMargin",
+          "fixedCosts"
+         ],
+         "additionalProperties": false
+        },
+        "projections": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "month": {
+            "type": "number"
+           },
+           "mrr": {
+            "type": "number"
+           },
+           "grossProfit": {
+            "type": "number"
+           },
+           "netProfit": {
+            "type": "number"
+           },
+           "cumulativeRevenue": {
+            "type": "number"
+           }
+          },
+          "required": [
+           "month",
+           "mrr",
+           "grossProfit",
+           "netProfit",
+           "cumulativeRevenue"
+          ],
+          "additionalProperties": false
+         }
+        },
+        "summary": {
+         "type": "object",
+         "properties": {
+          "endingMRR": {
+           "type": "number"
+          },
+          "arr": {
+           "type": "number"
+          },
+          "totalRevenue": {
+           "type": "number"
+          },
+          "totalProfit": {
+           "type": "number"
+          },
+          "mrrGrowthPct": {
+           "type": "number"
+          },
+          "avgMargin": {
+           "type": "number"
+          },
+          "breakEvenMonth": {
+           "anyOf": [
+            {
+             "type": "number"
+            },
+            {
+             "type": "null"
+            }
+           ]
+          }
+         },
+         "required": [
+          "endingMRR",
+          "arr",
+          "totalRevenue",
+          "totalProfit",
+          "mrrGrowthPct",
+          "avgMargin",
+          "breakEvenMonth"
+         ],
+         "additionalProperties": false
+        },
+        "keyInsight": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "id",
+        "name",
+        "description",
+        "icon",
+        "parameters",
+        "projections",
+        "summary",
+        "keyInsight"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "defaultInputs": {
+      "type": "object",
+      "properties": {
+       "startingMRR": {
+        "type": "number"
+       },
+       "monthlyGrowthRate": {
+        "type": "number"
+       },
+       "monthlyChurnRate": {
+        "type": "number"
+       },
+       "grossMargin": {
+        "type": "number"
+       },
+       "fixedCosts": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "startingMRR",
+       "monthlyGrowthRate",
+       "monthlyChurnRate",
+       "grossMargin",
+       "fixedCosts"
+      ],
+      "additionalProperties": false
+     },
+     "customProjections": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "month": {
+         "type": "number"
+        },
+        "mrr": {
+         "type": "number"
+        },
+        "grossProfit": {
+         "type": "number"
+        },
+        "netProfit": {
+         "type": "number"
+        },
+        "cumulativeRevenue": {
+         "type": "number"
+        }
+       },
+       "required": [
+        "month",
+        "mrr",
+        "grossProfit",
+        "netProfit",
+        "cumulativeRevenue"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "customSummary": {
+      "type": "object",
+      "properties": {
+       "endingMRR": {
+        "type": "number"
+       },
+       "arr": {
+        "type": "number"
+       },
+       "totalRevenue": {
+        "type": "number"
+       },
+       "totalProfit": {
+        "type": "number"
+       },
+       "mrrGrowthPct": {
+        "type": "number"
+       },
+       "avgMargin": {
+        "type": "number"
+       },
+       "breakEvenMonth": {
+        "anyOf": [
+         {
+          "type": "number"
+         },
+         {
+          "type": "null"
+         }
+        ]
+       }
+      },
+      "required": [
+       "endingMRR",
+       "arr",
+       "totalRevenue",
+       "totalProfit",
+       "mrrGrowthPct",
+       "avgMargin",
+       "breakEvenMonth"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "templates",
+     "defaultInputs"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://scenario-modeler/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://scenario-modeler/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "b27a32bf08041a6de1d3684c815712c5d87fc31db970b3358ec7692f6030c88f"
+}

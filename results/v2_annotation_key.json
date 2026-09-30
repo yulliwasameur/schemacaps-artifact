@@ -1,0 +1,1410 @@
+[
+ {
+  "id": "D001",
+  "pkg": "@azure/mcp",
+  "ver": "0.2.2->0.2.6",
+  "tools": "azmcp-monitor-table-list;azmcp-monitor-table-type-list",
+  "path": "workspace",
+  "group": "F"
+ },
+ {
+  "id": "D002",
+  "pkg": "@modelcontextprotocol/server-filesystem",
+  "ver": "2025.8.21->2025.11.25",
+  "tools": "directory_tree",
+  "path": "excludePatterns",
+  "group": "U"
+ },
+ {
+  "id": "D003",
+  "pkg": "@modelcontextprotocol/server-filesystem",
+  "ver": "2025.3.28->2025.7.1",
+  "tools": "read_file",
+  "path": "head",
+  "group": "U"
+ },
+ {
+  "id": "D004",
+  "pkg": "@modelcontextprotocol/server-filesystem",
+  "ver": "2025.3.28->2025.7.1",
+  "tools": "read_file",
+  "path": "tail",
+  "group": "U"
+ },
+ {
+  "id": "D005",
+  "pkg": "@modelcontextprotocol/server-github",
+  "ver": "2025.4.7->2025.4.8",
+  "tools": "create_pull_request_review",
+  "path": "comments[].line",
+  "group": "U"
+ },
+ {
+  "id": "D006",
+  "pkg": "@notionhq/notion-mcp-server",
+  "ver": "1.1.0->1.2.0",
+  "tools": "API-create-a-comment;API-create-a-data-source;API-post-page",
+  "path": "parent",
+  "group": "F"
+ },
+ {
+  "id": "D007",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.6.0->0.8.0",
+  "tools": "get_issue_details",
+  "path": "eventId",
+  "group": "F"
+ },
+ {
+  "id": "D008",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.35.0->0.37.0",
+  "tools": "search_issues",
+  "path": "period",
+  "group": "U"
+ },
+ {
+  "id": "D009",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.32.0->0.35.0",
+  "tools": "get_profile_details",
+  "path": "profileId",
+  "group": "F"
+ },
+ {
+  "id": "D010",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.32.0->0.35.0",
+  "tools": "get_profile_details",
+  "path": "profileUrl",
+  "group": "F"
+ },
+ {
+  "id": "D011",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.32.0->0.35.0",
+  "tools": "get_profile_details",
+  "path": "profilerId",
+  "group": "F"
+ },
+ {
+  "id": "D012",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.32.0->0.35.0",
+  "tools": "get_profile_details",
+  "path": "projectSlugOrId",
+  "group": "F"
+ },
+ {
+  "id": "D013",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.17.0->0.19.0",
+  "tools": "find_organizations;find_projects;find_teams",
+  "path": "query",
+  "group": "F"
+ },
+ {
+  "id": "D014",
+  "pkg": "@sentry/mcp-server",
+  "ver": "0.4.0->0.6.0",
+  "tools": "begin_autofix;create_dsn;create_project;create_team;get_autofix_status;get_issue_details …",
+  "path": "regionUrl",
+  "group": "F"
+ },
+ {
+  "id": "D015",
+  "pkg": "@upstash/context7-mcp",
+  "ver": "1.0.28->1.0.32",
+  "tools": "get-library-docs",
+  "path": "mode",
+  "group": "U"
+ },
+ {
+  "id": "D016",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.17->0.2.24",
+  "tools": "edit_block",
+  "path": "content",
+  "group": "U"
+ },
+ {
+  "id": "D017",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.13->0.2.17",
+  "tools": "list_directory",
+  "path": "depth",
+  "group": "U"
+ },
+ {
+  "id": "D018",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.30->0.1.35",
+  "tools": "read_file",
+  "path": "isUrl",
+  "group": "F"
+ },
+ {
+  "id": "D019",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.39->0.2.4",
+  "tools": "read_file;read_process_output",
+  "path": "length",
+  "group": "U"
+ },
+ {
+  "id": "D020",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.13->0.2.17",
+  "tools": "start_search",
+  "path": "literalSearch",
+  "group": "U"
+ },
+ {
+  "id": "D021",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.39->0.2.4",
+  "tools": "write_file",
+  "path": "mode",
+  "group": "U"
+ },
+ {
+  "id": "D022",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.39->0.2.4",
+  "tools": "read_file;read_process_output",
+  "path": "offset",
+  "group": "U"
+ },
+ {
+  "id": "D023",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.17->0.2.24",
+  "tools": "edit_block;read_file",
+  "path": "options",
+  "group": "U"
+ },
+ {
+  "id": "D024",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.37->0.2.42",
+  "tools": "edit_block;get_config;list_directory;read_file;set_config_value;start_process …",
+  "path": "origin",
+  "group": "F"
+ },
+ {
+  "id": "D025",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.17->0.2.24",
+  "tools": "edit_block;read_file",
+  "path": "range",
+  "group": "U"
+ },
+ {
+  "id": "D026",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.17->0.2.24",
+  "tools": "read_file",
+  "path": "sheet",
+  "group": "U"
+ },
+ {
+  "id": "D027",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.30->0.1.35",
+  "tools": "execute_command",
+  "path": "shell",
+  "group": "F"
+ },
+ {
+  "id": "D028",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.1.30->0.1.35",
+  "tools": "search_code;search_files",
+  "path": "timeoutMs",
+  "group": "U"
+ },
+ {
+  "id": "D029",
+  "pkg": "@wonderwhy-er/desktop-commander",
+  "ver": "0.2.17->0.2.24",
+  "tools": "interact_with_process;read_process_output;start_process",
+  "path": "verbose_timing",
+  "group": "U"
+ },
+ {
+  "id": "D030",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.53->1.0.61",
+  "tools": "create_merge_request",
+  "path": "assignee_ids",
+  "group": "F"
+ },
+ {
+  "id": "D031",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.8->1.0.18",
+  "tools": "create_or_update_file",
+  "path": "commit_id",
+  "group": "F"
+ },
+ {
+  "id": "D032",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.13->2.0.28",
+  "tools": "get_merge_request_diffs",
+  "path": "excluded_file_patterns",
+  "group": "U"
+ },
+ {
+  "id": "D033",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.28->2.1.1",
+  "tools": "get_file_contents",
+  "path": "file_path",
+  "group": "F"
+ },
+ {
+  "id": "D034",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.1.50->2.1.59",
+  "tools": "push_files",
+  "path": "files",
+  "group": "F"
+ },
+ {
+  "id": "D035",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.1.50->2.1.59",
+  "tools": "push_files",
+  "path": "files[].action",
+  "group": "U"
+ },
+ {
+  "id": "D036",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.1.50->2.1.59",
+  "tools": "push_files",
+  "path": "files[].encoding",
+  "group": "U"
+ },
+ {
+  "id": "D037",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.1.50->2.1.59",
+  "tools": "push_files",
+  "path": "files[].previous_path",
+  "group": "F"
+ },
+ {
+  "id": "D038",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.3->2.0.13",
+  "tools": "get_commit_diff",
+  "path": "full_diff",
+  "group": "U"
+ },
+ {
+  "id": "D039",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "list_group_projects",
+  "path": "group_id",
+  "group": "F"
+ },
+ {
+  "id": "D040",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.28->2.1.1",
+  "tools": "create_draft_note",
+  "path": "in_reply_to_discussion_id",
+  "group": "F"
+ },
+ {
+  "id": "D041",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.13->2.0.28",
+  "tools": "list_project_members",
+  "path": "include_inheritance",
+  "group": "U"
+ },
+ {
+  "id": "D042",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "delete_label;get_label;update_label",
+  "path": "label_id",
+  "group": "F"
+ },
+ {
+  "id": "D043",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.53->1.0.61",
+  "tools": "create_merge_request",
+  "path": "labels",
+  "group": "U"
+ },
+ {
+  "id": "D044",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.8->1.0.18",
+  "tools": "create_or_update_file",
+  "path": "last_commit_id",
+  "group": "F"
+ },
+ {
+  "id": "D045",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.26->1.0.35",
+  "tools": "get_merge_request;get_merge_request_diffs;update_merge_request",
+  "path": "merge_request_iid",
+  "group": "F"
+ },
+ {
+  "id": "D046",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "get_namespace",
+  "path": "namespace_id",
+  "group": "F"
+ },
+ {
+  "id": "D047",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.53->1.0.61",
+  "tools": "get_merge_request_notes;mr_discussions",
+  "path": "page",
+  "group": "U"
+ },
+ {
+  "id": "D048",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.28->2.1.1",
+  "tools": "get_file_contents",
+  "path": "path",
+  "group": "F"
+ },
+ {
+  "id": "D049",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.53->1.0.61",
+  "tools": "get_merge_request_notes;mr_discussions",
+  "path": "per_page",
+  "group": "U"
+ },
+ {
+  "id": "D050",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_merge_request_thread",
+  "path": "position.line_range",
+  "group": "U"
+ },
+ {
+  "id": "D051",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.end",
+  "group": "U"
+ },
+ {
+  "id": "D052",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.end.line_code",
+  "group": "U"
+ },
+ {
+  "id": "D053",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.end.new_line",
+  "group": "U"
+ },
+ {
+  "id": "D054",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.end.old_line",
+  "group": "U"
+ },
+ {
+  "id": "D055",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.end.type",
+  "group": "U"
+ },
+ {
+  "id": "D056",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.start",
+  "group": "U"
+ },
+ {
+  "id": "D057",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.start.line_code",
+  "group": "U"
+ },
+ {
+  "id": "D058",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.start.new_line",
+  "group": "U"
+ },
+ {
+  "id": "D059",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.start.old_line",
+  "group": "U"
+ },
+ {
+  "id": "D060",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.61->1.0.69",
+  "tools": "create_draft_note;create_merge_request_thread;update_draft_note",
+  "path": "position.line_range.start.type",
+  "group": "U"
+ },
+ {
+  "id": "D061",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "create_branch;create_label;create_merge_request;create_or_update_file;delete_label;fork_repository …",
+  "path": "project_id",
+  "group": "F"
+ },
+ {
+  "id": "D062",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.28->2.1.1",
+  "tools": "search_repositories",
+  "path": "query",
+  "group": "F"
+ },
+ {
+  "id": "D063",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "create_merge_request",
+  "path": "remove_source_branch",
+  "group": "U"
+ },
+ {
+  "id": "D064",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.13->2.0.28",
+  "tools": "update_issue_note",
+  "path": "resolved",
+  "group": "U"
+ },
+ {
+  "id": "D065",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.53->1.0.61",
+  "tools": "create_merge_request;update_merge_request",
+  "path": "reviewer_ids",
+  "group": "F"
+ },
+ {
+  "id": "D066",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.26->1.0.35",
+  "tools": "list_projects",
+  "path": "search_namespaces",
+  "group": "U"
+ },
+ {
+  "id": "D067",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.26->1.0.35",
+  "tools": "get_merge_request;get_merge_request_diffs;update_merge_request",
+  "path": "source_branch",
+  "group": "U"
+ },
+ {
+  "id": "D068",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "create_merge_request",
+  "path": "squash",
+  "group": "U"
+ },
+ {
+  "id": "D069",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "1.0.69->2.0.3",
+  "tools": "create_merge_request",
+  "path": "target_project_id",
+  "group": "F"
+ },
+ {
+  "id": "D070",
+  "pkg": "@zereight/mcp-gitlab",
+  "ver": "2.0.28->2.1.1",
+  "tools": "list_group_projects;list_projects",
+  "path": "topic",
+  "group": "U"
+ },
+ {
+  "id": "D071",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "perf",
+  "path": "action",
+  "group": "U"
+ },
+ {
+  "id": "D072",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "settings",
+  "path": "app",
+  "group": "U"
+ },
+ {
+  "id": "D073",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "perf",
+  "path": "area",
+  "group": "U"
+ },
+ {
+  "id": "D074",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "open;replay",
+  "path": "bundleUrl",
+  "group": "F"
+ },
+ {
+  "id": "D075",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "snapshot",
+  "path": "customActions",
+  "group": "U"
+ },
+ {
+  "id": "D076",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "gesture",
+  "path": "destination",
+  "group": "F"
+ },
+ {
+  "id": "D077",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "gesture",
+  "path": "destinationHoldMs",
+  "group": "U"
+ },
+ {
+  "id": "D078",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "open",
+  "path": "deviceHub",
+  "group": "U"
+ },
+ {
+  "id": "D079",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "scroll",
+  "path": "durationMs",
+  "group": "U"
+ },
+ {
+  "id": "D080",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "close;open;replay;session",
+  "path": "force",
+  "group": "U"
+ },
+ {
+  "id": "D081",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "open",
+  "path": "foreground",
+  "group": "U"
+ },
+ {
+  "id": "D082",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "alert;app-switcher;apps;appstate;back;boot …",
+  "path": "includeCost",
+  "group": "U"
+ },
+ {
+  "id": "D083",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "alert;app-switcher;apps;appstate;back;batch …",
+  "path": "iosXctestDerivedDataPath",
+  "group": "F"
+ },
+ {
+  "id": "D084",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "alert;app-switcher;apps;appstate;back;batch …",
+  "path": "iosXctestEnvDir",
+  "group": "F"
+ },
+ {
+  "id": "D085",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "alert;app-switcher;apps;appstate;back;batch …",
+  "path": "iosXctestrunFile",
+  "group": "U"
+ },
+ {
+  "id": "D086",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "replay",
+  "path": "keepSession",
+  "group": "U"
+ },
+ {
+  "id": "D087",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "perf",
+  "path": "kind",
+  "group": "U"
+ },
+ {
+  "id": "D088",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "open",
+  "path": "launchUrl",
+  "group": "F"
+ },
+ {
+  "id": "D089",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "alert;app-switcher;apps;appstate;back;batch …",
+  "path": "mcpOutputFormat",
+  "group": "U"
+ },
+ {
+  "id": "D090",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "open;replay",
+  "path": "metroHost",
+  "group": "F"
+ },
+ {
+  "id": "D091",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "open;replay",
+  "path": "metroPort",
+  "group": "U"
+ },
+ {
+  "id": "D092",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "gesture",
+  "path": "moveMs",
+  "group": "U"
+ },
+ {
+  "id": "D093",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "alert;app-switcher;back;clipboard;close;diff …",
+  "path": "noRecord",
+  "group": "U"
+ },
+ {
+  "id": "D094",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "screenshot",
+  "path": "normalizeStatusBar",
+  "group": "U"
+ },
+ {
+  "id": "D095",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "perf",
+  "path": "out",
+  "group": "U"
+ },
+ {
+  "id": "D096",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "session",
+  "path": "path",
+  "group": "F"
+ },
+ {
+  "id": "D097",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "screenshot",
+  "path": "pixelDensity",
+  "group": "U"
+ },
+ {
+  "id": "D098",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "wait",
+  "path": "quietMs",
+  "group": "U"
+ },
+ {
+  "id": "D099",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "find;is;snapshot",
+  "path": "record",
+  "group": "U"
+ },
+ {
+  "id": "D100",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "test",
+  "path": "recordVideo",
+  "group": "U"
+ },
+ {
+  "id": "D101",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "record",
+  "path": "recordingScope",
+  "group": "U"
+ },
+ {
+  "id": "D102",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "alert;app-switcher;apps;appstate;back;boot …",
+  "path": "responseLevel",
+  "group": "U"
+ },
+ {
+  "id": "D103",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "replay",
+  "path": "resumeFrom",
+  "group": "U"
+ },
+ {
+  "id": "D104",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "replay",
+  "path": "resumePlanDigest",
+  "group": "U"
+ },
+ {
+  "id": "D105",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "replay",
+  "path": "saveScript",
+  "group": "U"
+ },
+ {
+  "id": "D106",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "back;scroll",
+  "path": "settle",
+  "group": "U"
+ },
+ {
+  "id": "D107",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "back;scroll",
+  "path": "settleQuietMs",
+  "group": "U"
+ },
+ {
+  "id": "D108",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "test",
+  "path": "shardAll",
+  "group": "U"
+ },
+ {
+  "id": "D109",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "test",
+  "path": "shardSplit",
+  "group": "U"
+ },
+ {
+  "id": "D110",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "gesture",
+  "path": "source",
+  "group": "F"
+ },
+ {
+  "id": "D111",
+  "pkg": "agent-device",
+  "ver": "0.20.0->0.20.9",
+  "tools": "gesture",
+  "path": "sourceHoldMs",
+  "group": "U"
+ },
+ {
+  "id": "D112",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "wait",
+  "path": "stable",
+  "group": "U"
+ },
+ {
+  "id": "D113",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "batch",
+  "path": "steps[].command",
+  "group": "F"
+ },
+ {
+  "id": "D114",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "perf",
+  "path": "subject",
+  "group": "U"
+ },
+ {
+  "id": "D115",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "perf",
+  "path": "template",
+  "group": "U"
+ },
+ {
+  "id": "D116",
+  "pkg": "agent-device",
+  "ver": "0.17.10->0.20.0",
+  "tools": "open",
+  "path": "testIme",
+  "group": "U"
+ },
+ {
+  "id": "D117",
+  "pkg": "agent-device",
+  "ver": "0.16.6->0.17.0",
+  "tools": "back;replay;scroll;snapshot",
+  "path": "timeoutMs",
+  "group": "U"
+ },
+ {
+  "id": "D118",
+  "pkg": "agent-device",
+  "ver": "0.17.0->0.17.10",
+  "tools": "perf",
+  "path": "tracePath",
+  "group": "F"
+ },
+ {
+  "id": "D119",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "email",
+  "group": "F"
+ },
+ {
+  "id": "D120",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.6.0->3.7.3",
+  "tools": "firecrawl_search",
+  "path": "enterprise",
+  "group": "U"
+ },
+ {
+  "id": "D121",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_search",
+  "path": "excludeDomains",
+  "group": "U"
+ },
+ {
+  "id": "D122",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].fullPage",
+  "group": "U"
+ },
+ {
+  "id": "D123",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].prompt",
+  "group": "U"
+ },
+ {
+  "id": "D124",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].quality",
+  "group": "U"
+ },
+ {
+  "id": "D125",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].type",
+  "group": "U"
+ },
+ {
+  "id": "D126",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].viewport",
+  "group": "U"
+ },
+ {
+  "id": "D127",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].viewport.height",
+  "group": "U"
+ },
+ {
+  "id": "D128",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_scrape",
+  "path": "formats[].viewport.width",
+  "group": "U"
+ },
+ {
+  "id": "D129",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "goal",
+  "group": "U"
+ },
+ {
+  "id": "D130",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.22.3->3.23.4",
+  "tools": "firecrawl_search",
+  "path": "highlights",
+  "group": "U"
+ },
+ {
+  "id": "D131",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "includeDiffs",
+  "group": "U"
+ },
+ {
+  "id": "D132",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_search",
+  "path": "includeDomains",
+  "group": "U"
+ },
+ {
+  "id": "D133",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "lockdown",
+  "group": "U"
+ },
+ {
+  "id": "D134",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "name",
+  "group": "U"
+ },
+ {
+  "id": "D135",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "page",
+  "group": "U"
+ },
+ {
+  "id": "D136",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "pages",
+  "group": "U"
+ },
+ {
+  "id": "D137",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_scrape",
+  "path": "parsers",
+  "group": "U"
+ },
+ {
+  "id": "D138",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_scrape",
+  "path": "parsers[].maxPages",
+  "group": "U"
+ },
+ {
+  "id": "D139",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_scrape",
+  "path": "parsers[].type",
+  "group": "U"
+ },
+ {
+  "id": "D140",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "profile",
+  "group": "U"
+ },
+ {
+  "id": "D141",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "profile.name",
+  "group": "U"
+ },
+ {
+  "id": "D142",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "profile.saveChanges",
+  "group": "U"
+ },
+ {
+  "id": "D143",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.6.0->3.7.3",
+  "tools": "firecrawl_scrape",
+  "path": "proxy",
+  "group": "U"
+ },
+ {
+  "id": "D144",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "queryOptions",
+  "group": "U"
+ },
+ {
+  "id": "D145",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "queryOptions.mode",
+  "group": "U"
+ },
+ {
+  "id": "D146",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_scrape",
+  "path": "queryOptions.prompt",
+  "group": "U"
+ },
+ {
+  "id": "D147",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_parse;firecrawl_scrape",
+  "path": "redactPII",
+  "group": "U"
+ },
+ {
+  "id": "D148",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "scheduleText",
+  "group": "U"
+ },
+ {
+  "id": "D149",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].fullPage",
+  "group": "U"
+ },
+ {
+  "id": "D150",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].prompt",
+  "group": "U"
+ },
+ {
+  "id": "D151",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].quality",
+  "group": "U"
+ },
+ {
+  "id": "D152",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].type",
+  "group": "U"
+ },
+ {
+  "id": "D153",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].viewport",
+  "group": "U"
+ },
+ {
+  "id": "D154",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].viewport.height",
+  "group": "U"
+ },
+ {
+  "id": "D155",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.formats[].viewport.width",
+  "group": "U"
+ },
+ {
+  "id": "D156",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.lockdown",
+  "group": "U"
+ },
+ {
+  "id": "D157",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.parsers",
+  "group": "U"
+ },
+ {
+  "id": "D158",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.parsers[].maxPages",
+  "group": "U"
+ },
+ {
+  "id": "D159",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.3.6->3.6.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.parsers[].type",
+  "group": "U"
+ },
+ {
+  "id": "D160",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.profile",
+  "group": "U"
+ },
+ {
+  "id": "D161",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.profile.name",
+  "group": "U"
+ },
+ {
+  "id": "D162",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.profile.saveChanges",
+  "group": "U"
+ },
+ {
+  "id": "D163",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.6.0->3.7.3",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.proxy",
+  "group": "U"
+ },
+ {
+  "id": "D164",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.queryOptions",
+  "group": "U"
+ },
+ {
+  "id": "D165",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.queryOptions.mode",
+  "group": "U"
+ },
+ {
+  "id": "D166",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.11.0->3.18.0",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.queryOptions.prompt",
+  "group": "U"
+ },
+ {
+  "id": "D167",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.redactPII",
+  "group": "U"
+ },
+ {
+  "id": "D168",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.6.0->3.7.3",
+  "tools": "firecrawl_crawl;firecrawl_search",
+  "path": "scrapeOptions.zeroDataRetention",
+  "group": "U"
+ },
+ {
+  "id": "D169",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "timezone",
+  "group": "U"
+ },
+ {
+  "id": "D170",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.1.9->3.3.0",
+  "tools": "firecrawl_crawl",
+  "path": "webhook.headers",
+  "group": "U"
+ },
+ {
+  "id": "D171",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.18.0->3.20.3",
+  "tools": "firecrawl_monitor_create",
+  "path": "webhookUrl",
+  "group": "F"
+ },
+ {
+  "id": "D172",
+  "pkg": "firecrawl-mcp",
+  "ver": "3.6.0->3.7.3",
+  "tools": "firecrawl_scrape",
+  "path": "zeroDataRetention",
+  "group": "U"
+ },
+ {
+  "id": "D173",
+  "pkg": "hostinger-api-mcp",
+  "ver": "0.0.1->0.0.14",
+  "tools": "VPS_createFirewallRuleV1;VPS_updateFirewallRuleV1",
+  "path": "firewallId",
+  "group": "F"
+ },
+ {
+  "id": "D174",
+  "pkg": "hostinger-api-mcp",
+  "ver": "0.0.1->0.0.14",
+  "tools": "VPS_updatePostInstallScriptV1",
+  "path": "postInstallScriptId",
+  "group": "F"
+ },
+ {
+  "id": "D175",
+  "pkg": "hostinger-api-mcp",
+  "ver": "0.0.1->0.0.14",
+  "tools": "VPS_updateFirewallRuleV1",
+  "path": "ruleId",
+  "group": "F"
+ },
+ {
+  "id": "D176",
+  "pkg": "hostinger-api-mcp",
+  "ver": "0.0.1->0.0.14",
+  "tools": "VPS_attachPublicKeyV1;VPS_getMetricsV1;VPS_recreateVirtualMachineV1;VPS_setHostnameV1;VPS_setNameserversV1;VPS_setPanelPasswordV1 …",
+  "path": "virtualMachineId",
+  "group": "F"
+ }
+]

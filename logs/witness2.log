@@ -1,0 +1,10 @@
+{
+ "ca_core_witness": {
+  "widened:found": 6,
+  "new_authority_arg:found": 126
+ },
+ "soundness_check_on_compatible_yes": {
+  "not_found": 580
+ },
+ "soundness_counterexamples": []
+}

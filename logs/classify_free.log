@@ -1,0 +1,37 @@
+/usr/local/lib/python3.11/dist-packages/hypothesis/strategies/_internal/lazy.py:180: HypothesisWarning: Generating overly large repr. This is an expensive operation, and with a length of 42 kB is unlikely to be useful. Use -Wignore to ignore the warning, or -Werror to get a traceback.
+  self.__representation = repr_call(
+/usr/local/lib/python3.11/dist-packages/hypothesis/strategies/_internal/lazy.py:180: HypothesisWarning: Generating overly large repr. This is an expensive operation, and with a length of 127 kB is unlikely to be useful. Use -Wignore to ignore the warning, or -Werror to get a traceback.
+  self.__representation = repr_call(
+Exception ignored in: <function gc_cumulative_time.<locals>.gc_callback at 0x7f470d458900>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/dist-packages/hypothesis/internal/conjecture/junkdrawer.py", line 492, in gc_callback
+    def gc_callback(
+
+  File "/home/claude/schemacaps/classify2.py", line 63, in _alarm
+    def _alarm(*_): raise _GuardTimeout()
+                    ^^^^^^^^^^^^^^^^^^^^^
+_GuardTimeout: 
+{
+"added": 907,
+"removed": 727,
+"added_auth": 856,
+"def_changed": 2004,
+"schema_changed": 1197,
+"compatible": 580,
+"incompatible": 453,
+"compat_undecided": 164,
+"amp_core": 393,
+"amp_strict": 624,
+"undecided": 20,
+"ca_core": 240,
+"ca_strict": 412,
+"rq_compat": 617,
+"rq_core": 413,
+"rq_strict": 645,
+"annot_changed": 742,
+"output_changed": 126,
+"hint_raised": 2,
+"rq_hint_only": 1,
+"pairs": 565
+}
+{'B': {'added': 867, 'removed': 713, 'added_auth': 823, 'def_changed': 1895, 'schema_changed': 1110, 'compatible': 517, 'incompatible': 433, 'compat_undecided': 160, 'amp_core': 381, 'amp_strict': 585, 'undecided': 20, 'ca_core': 230, 'ca_strict': 378, 'rq_compat': 593, 'rq_core': 401, 'rq_strict': 605, 'annot_changed': 676, 'hint_raised': 1, 'output_changed': 80, 'pairs': 228}, 'A': {'added': 40, 'removed': 14, 'added_auth': 33, 'def_changed': 109, 'output_changed': 46, 'schema_changed': 87, 'compatible': 63, 'incompatible': 20, 'compat_undecided': 4, 'amp_core': 12, 'amp_strict': 39, 'undecided': 0, 'ca_core': 10, 'ca_strict': 34, 'rq_compat': 24, 'rq_core': 12, 'rq_strict': 40, 'annot_changed': 66, 'hint_raised': 1, 'rq_hint_only': 1, 'pairs': 337}}

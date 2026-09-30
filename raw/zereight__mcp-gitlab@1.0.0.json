@@ -1,0 +1,15 @@
+{
+ "package": "@zereight/mcp-gitlab",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "1.0.0",
+ "published": "2025-02-11T00:53:25.638Z",
+ "index_in_window": 0,
+ "sampled_rank": 0,
+ "extracted_at": "2026-09-29T16:01:54Z",
+ "deps_resolved_before": "2025-02-12T00:53:25Z",
+ "install_seconds": 2.2,
+ "status": "no_response",
+ "error": "ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)",
+ "error_pass2": "TimeoutError: no tools/list response"
+}

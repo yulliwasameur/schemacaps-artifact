@@ -1,0 +1,11 @@
+{
+ "releases": 684,
+ "ok": 631,
+ "with_registry_hash": 684,
+ "status_counts": {
+  "install_failed": 4,
+  "no_response": 49,
+  "ok": 631
+ },
+ "registry_fetched": "2026-09-30T09:42:17Z"
+}

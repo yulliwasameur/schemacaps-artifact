@@ -1,0 +1,18 @@
+{
+ "cap20": {
+  "agent-device": 42,
+  "@sentry/mcp-server": 20
+ },
+ "cap40": {
+  "agent-device": 47,
+  "@sentry/mcp-server": 22
+ },
+ "n20": {
+  "agent-device": 8,
+  "@sentry/mcp-server": 19
+ },
+ "n40": {
+  "agent-device": 15,
+  "@sentry/mcp-server": 39
+ }
+}

@@ -1,0 +1,30 @@
+{
+ "compatible_changes": 580,
+ "lexical": {
+  "new_authority_arg": 80,
+  "widened": 6,
+  "became_optional": 26,
+  "constraint_dropped": 14,
+  "object_opened": 129,
+  "object_introduced_open": 17,
+  "shape_changed": 0,
+  "default_changed": 0,
+  "nullable": 17,
+  "nullable_on_required": 0
+ },
+ "label_free": {
+  "new_authority_arg": 167,
+  "widened": 134,
+  "became_optional": 45,
+  "constraint_dropped": 33,
+  "object_opened": 129,
+  "object_introduced_open": 17,
+  "shape_changed": 0,
+  "default_changed": 1,
+  "nullable": 21,
+  "nullable_on_required": 0
+ },
+ "strict_narrowings_all_changes": 333,
+ "narrowing_check_undecided": 164,
+ "tools_with_raised_hint": 2
+}

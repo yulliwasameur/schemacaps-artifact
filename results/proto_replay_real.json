@@ -1,0 +1,259 @@
+{
+ "cases": [
+  {
+   "package": "@wonderwhy-er/desktop-commander",
+   "from": "0.1.34",
+   "to": "0.1.35",
+   "tool": "execute_command",
+   "expected_reason": "new_authority_arg:shell",
+   "sources": [
+    "raw_intermediates",
+    "raw"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:shell"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:shell"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  },
+  {
+   "package": "@wonderwhy-er/desktop-commander",
+   "from": "0.1.31",
+   "to": "0.1.32",
+   "tool": "read_file",
+   "expected_reason": "new_authority_arg:isUrl",
+   "sources": [
+    "raw_intermediates",
+    "raw_intermediates"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:isUrl"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:isUrl"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  },
+  {
+   "package": "firecrawl-mcp",
+   "from": "3.18.0",
+   "to": "3.19.0",
+   "tool": "firecrawl_monitor_create",
+   "expected_reason": "new_authority_arg:webhookUrl",
+   "sources": [
+    "raw",
+    "raw_intermediates"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "became_optional:body",
+     "new_authority_arg:email",
+     "new_authority_arg:goal",
+     "new_authority_arg:includeDiffs",
+     "new_authority_arg:name",
+     "new_authority_arg:page",
+     "new_authority_arg:pages",
+     "new_authority_arg:scheduleText",
+     "new_authority_arg:timezone",
+     "new_authority_arg:webhookUrl"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:email",
+     "new_authority_arg:webhookUrl"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  },
+  {
+   "package": "@zereight/mcp-gitlab",
+   "from": "1.0.74",
+   "to": "1.0.75",
+   "tool": "create_merge_request",
+   "expected_reason": "new_authority_arg:target_project_id",
+   "sources": [
+    "raw_intermediates",
+    "raw_intermediates"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "unresolved_ref",
+     "new_authority_arg:target_project_id"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "unresolved_ref",
+     "new_authority_arg:target_project_id"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  },
+  {
+   "package": "@sentry/mcp-server",
+   "from": "0.4.0",
+   "to": "0.5.0",
+   "tool": "begin_autofix",
+   "expected_reason": "new_authority_arg:regionUrl",
+   "sources": [
+    "raw",
+    "raw_intermediates"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:regionUrl"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "new_authority_arg:regionUrl"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  },
+  {
+   "package": "@notionhq/notion-mcp-server",
+   "from": "1.1.0",
+   "to": "1.2.0",
+   "tool": "API-post-page",
+   "expected_reason": "object_opened:parent",
+   "sources": [
+    "raw",
+    "raw"
+   ],
+   "tool_in_both": true,
+   "pin": {
+    "verdict": "suspend",
+    "reasons": [
+     "definition_changed"
+    ]
+   },
+   "compat": {
+    "verdict": "rebind",
+    "reasons": [
+     "backward_compatible"
+    ]
+   },
+   "schemacaps_label_free": {
+    "verdict": "suspend",
+    "reasons": [
+     "widened:parent",
+     "object_opened:parent"
+    ]
+   },
+   "schemacaps_lexical": {
+    "verdict": "suspend",
+    "reasons": [
+     "widened:parent",
+     "object_opened:parent"
+    ]
+   },
+   "expected_reason_produced": {
+    "schemacaps_label_free": true,
+    "schemacaps_lexical": true
+   }
+  }
+ ],
+ "all_expected_reasons_produced": true
+}

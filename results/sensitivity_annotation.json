@@ -1,0 +1,41 @@
+{
+ "compatibles": 580,
+ "regle_lexicale": [
+  97,
+  {
+   "@notionhq/notion-mcp-server": 3,
+   "@sentry/mcp-server": 35,
+   "@wonderwhy-er/desktop-commander": 9,
+   "@zereight/mcp-gitlab": 8,
+   "agent-device": 41,
+   "firecrawl-mcp": 1
+  }
+ ],
+ "proposition_stricte_oui": [
+  47,
+  {
+   "@notionhq/notion-mcp-server": 3,
+   "@sentry/mcp-server": 32,
+   "@wonderwhy-er/desktop-commander": 2,
+   "@zereight/mcp-gitlab": 5,
+   "agent-device": 4,
+   "firecrawl-mcp": 1
+  }
+ ],
+ "proposition_oui_et_discuter": [
+  83,
+  {
+   "@notionhq/notion-mcp-server": 3,
+   "@sentry/mcp-server": 32,
+   "@wonderwhy-er/desktop-commander": 2,
+   "@zereight/mcp-gitlab": 5,
+   "agent-device": 40,
+   "firecrawl-mcp": 1
+  }
+ ],
+ "etiquettes": {
+  "oui": 42,
+  "non": 20,
+  "discuter": 3
+ }
+}

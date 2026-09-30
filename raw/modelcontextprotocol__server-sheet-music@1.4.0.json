@@ -1,0 +1,52 @@
+{
+ "package": "@modelcontextprotocol/server-sheet-music",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.4.0",
+ "published": "2026-04-02T03:38:19.557Z",
+ "index_in_window": 13,
+ "sampled_rank": 10,
+ "extracted_at": "2026-09-29T15:53:56Z",
+ "deps_resolved_before": "2026-04-03T03:38:19Z",
+ "install_seconds": 3.9,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Sheet Music Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "play-sheet-music",
+   "title": "Play Sheet Music",
+   "description": "Plays music from ABC notation with audio playback and visual sheet music. Use this to compose original songs (for birthdays, holidays, or any occasion) or perform well-known tunes (folk songs, nursery rhymes, hymns, classical melodies). For accurate renditions of well-known tunes, look up the ABC notation from abcnotation.com or thesession.org rather than recalling from memory.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "abcNotation": {
+      "default": "X:1\nT:Twinkle, Twinkle Little Star\nM:4/4\nL:1/4\nK:C\nC C G G | A A G2 | F F E E | D D C2 |\nG G F F | E E D2 | G G F F | E E D2 |\nC C G G | A A G2 | F F E E | D D C2 |",
+      "description": "ABC notation string to render as sheet music with audio playback",
+      "type": "string"
+     }
+    }
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://sheet-music/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://sheet-music/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "452928512fe3fb23a7294f992cf1255f495228250842a1846e9a269936f5cbf1"
+}

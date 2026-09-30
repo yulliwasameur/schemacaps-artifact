@@ -1,0 +1,498 @@
+{
+ "package": "@ui5/mcp-server",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.1.2",
+ "published": "2025-09-24T12:04:23.226Z",
+ "index_in_window": 2,
+ "sampled_rank": 1,
+ "extracted_at": "2026-09-29T16:04:08Z",
+ "deps_resolved_before": "2025-09-25T12:04:23Z",
+ "install_seconds": 10.8,
+ "status": "ok",
+ "variant": [],
+ "serverInfo": {
+  "name": "UI5",
+  "title": null,
+  "version": "0.1.2",
+  "websiteUrl": null,
+  "icons": null,
+  "capabilities": {
+   "tools": {}
+  }
+ },
+ "protocolVersion": "2025-06-18",
+ "tools": [
+  {
+   "name": "get_guidelines",
+   "description": "This tool MUST be called once to retrieve UI5 guidelines before working on any UI5 (SAPUI5/OpenUI5) related task or project or creating a UI5 project. The guidelines provided by this tool MUST be followed to ensure best practices and avoid common pitfalls in UI5 development.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {}
+   },
+   "annotations": {
+    "title": "Get UI5 Guidelines",
+    "readOnlyHint": true,
+    "idempotentHint": true,
+    "openWorldHint": false
+   }
+  },
+  {
+   "name": "run_ui5_linter",
+   "description": "Run UI5 linter on a UI5 project to find and optionally fix UI5 related problems like the usage of deprecated API. After making changes, you should always run the linter again to verify that no new problems have been introduced.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "projectDir": {
+      "type": "string",
+      "description": "Root directory of the UI5 project to analyze. Must be an absolute path. Typically this the directory where the 'package.json' and 'ui5.yaml' files are located."
+     },
+     "fix": {
+      "type": "boolean",
+      "default": false,
+      "description": "Attempt to automatically correct certain findings in the files. Only the remaining findings will be returned."
+     },
+     "filePatterns": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "File paths or patterns to lint. If not provided, all files in the project will be linted."
+     },
+     "provideContextInformation": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to include supplementary information in the output. This includes UI5 API reference and documentation resources. When calling the tool multiple times for the same file or project, refrain from requesting additional context every time."
+     }
+    },
+    "required": [
+     "projectDir"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "outputSchema": {
+    "type": "object",
+    "properties": {
+     "projectDir": {
+      "type": "string"
+     },
+     "frameworkVersion": {
+      "type": "string",
+      "description": "The version of UI5 used in the project"
+     },
+     "results": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "filePath": {
+         "type": "string"
+        },
+        "messages": {
+         "type": "array",
+         "items": {
+          "type": "object",
+          "properties": {
+           "ruleId": {
+            "type": "string"
+           },
+           "severity": {
+            "type": "number",
+            "description": "2 = error, 1 = warning"
+           },
+           "line": {
+            "type": "number"
+           },
+           "column": {
+            "type": "number"
+           },
+           "fatal": {
+            "type": "boolean"
+           },
+           "message": {
+            "type": "string"
+           },
+           "messageDetails": {
+            "type": "string"
+           }
+          },
+          "required": [
+           "ruleId",
+           "severity",
+           "message"
+          ],
+          "additionalProperties": false
+         }
+        }
+       },
+       "required": [
+        "filePath",
+        "messages"
+       ],
+       "additionalProperties": false,
+       "description": "Linting results for a single file in the project"
+      }
+     },
+     "contextInformation": {
+      "type": "object",
+      "properties": {
+       "ruleDescriptions": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "ruleId": {
+           "type": "string"
+          },
+          "description": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "ruleId",
+          "description"
+         ],
+         "additionalProperties": false
+        },
+        "description": "Brief descriptions of the rules that were found to be violated in the project"
+       },
+       "migrationGuides": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "title": {
+           "type": "string"
+          },
+          "text": {
+           "type": "string"
+          },
+          "uri": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "title",
+          "text",
+          "uri"
+         ],
+         "additionalProperties": false
+        },
+        "description": "For problems the linter can't fix automatically, \"fix hint\" documents may be provided as guidance for manually resolving them."
+       },
+       "apiReferences": {
+        "type": "array",
+        "description": "Short extracts from the UI5 API reference for the APIs mentioned in the linter report"
+       },
+       "documentationResources": {
+        "type": "array",
+        "items": {
+         "type": "object",
+         "properties": {
+          "title": {
+           "type": "string"
+          },
+          "text": {
+           "type": "string"
+          },
+          "uri": {
+           "type": "string"
+          }
+         },
+         "required": [
+          "title",
+          "text",
+          "uri"
+         ],
+         "additionalProperties": false
+        },
+        "description": "Relevant pages in the UI5 documentation that may help to understand the findings and how to resolve them best."
+       }
+      },
+      "required": [
+       "ruleDescriptions",
+       "migrationGuides",
+       "apiReferences",
+       "documentationResources"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "projectDir",
+     "results"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "annotations": {
+    "title": "UI5 linter",
+    "readOnlyHint": false
+   }
+  },
+  {
+   "name": "get_api_reference",
+   "description": "Search the UI5 API reference for module names and symbols",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "projectDir": {
+      "type": "string",
+      "description": "The root directory of the UI5 project, containing the 'package.json' and 'ui5.yaml' files. This is used to determine the UI5 framework version and libraries used in the project. "
+     },
+     "query": {
+      "type": "string",
+      "pattern": "^[^<>\"'()]+$",
+      "description": "Name of the UI5 module or symbol using either dot or slash notation. Examples: 'sap.m.Button', 'sap/ui/core/Core'. Individual symbols can be requested as well, e.g. 'sap.m.Button#text', 'sap.ui.core.Core#init'"
+     }
+    },
+    "required": [
+     "projectDir",
+     "query"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "annotations": {
+    "title": "UI5 API Reference",
+    "readOnlyHint": true,
+    "idempotentHint": true
+   }
+  },
+  {
+   "name": "get_project_info",
+   "description": "Get general information about a local UI5 project.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "projectDir": {
+      "type": "string",
+      "description": "Root directory of the UI5 project to analyze. Must be an absolute path. If a path to a file is provided, the root directory will be determined automatically."
+     }
+    },
+    "required": [
+     "projectDir"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "outputSchema": {
+    "type": "object",
+    "properties": {
+     "projectDir": {
+      "type": "string",
+      "description": "The root directory of the UI5 project, containing the 'package.json' and 'ui5.yaml' files."
+     },
+     "projectName": {
+      "type": "string",
+      "description": "The name of the project. Note that this may *not* be the namespace"
+     },
+     "projectType": {
+      "type": "string"
+     },
+     "frameworkName": {
+      "type": "string",
+      "enum": [
+       "OpenUI5",
+       "SAPUI5"
+      ],
+      "description": "Whether the project uses OpenUI5 or SAPUI5"
+     },
+     "frameworkVersion": {
+      "type": "string",
+      "description": "The version of the framework used in the project"
+     },
+     "frameworkLibraries": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "The framework libraries used in the project"
+     },
+     "versionInfo": {
+      "type": "object",
+      "properties": {
+       "supportStatus": {
+        "type": "string"
+       },
+       "isLts": {
+        "type": "boolean",
+        "description": "Whether the framework version is a Long Term Support (LTS) version"
+       },
+       "latestVersion": {
+        "type": "string"
+       },
+       "latestLtsVersion": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "supportStatus",
+       "latestVersion"
+      ],
+      "additionalProperties": false
+     }
+    },
+    "required": [
+     "projectDir",
+     "projectName",
+     "projectType"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "annotations": {
+    "title": "UI5 Project Info",
+    "readOnlyHint": true,
+    "idempotentHint": true
+   }
+  },
+  {
+   "name": "create_ui5_app",
+   "description": "Create a new basic SAPUI5 application implemented in TypeScript or JavaScript",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "appNamespace": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9_.]*$",
+      "description": "The namespace for the application, e.g. com.myorg.myapp. Only lowercase alpha-numeric characters, underscores and dots are allowed."
+     },
+     "basePath": {
+      "type": "string",
+      "description": "Absolute base path for the creation. The application will be created either immediately inside this path or in a subdirectory (its name equals the application namespace), depending on the 'createAppDirectory' parameter. This base path must be absolute, not just 'app' or '.' or './something'!"
+     },
+     "createAppDirectory": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to create a new directory (name equals the application namespace) inside the base path. Set this to 'false' when you want to place the 'app' directly in the given base path. In SAP CAP applications, typically give the path to the 'app' folder as basePath and set this to 'true' to create an application folder. Default: true."
+     },
+     "framework": {
+      "type": "string",
+      "enum": [
+       "OpenUI5",
+       "SAPUI5"
+      ],
+      "default": "SAPUI5",
+      "description": "Framework to use (OpenUI5 or SAPUI5), defaults to SAPUI5"
+     },
+     "frameworkVersion": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$",
+      "description": "Framework version, defaults to latest version. Omit this when in doubt. When provided, it must be a concrete semantic version, like e.g. 1.136.0. Versions older than 1.96.0 are not supported."
+     },
+     "author": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9 .,'@_-]+$",
+      "description": "Author of the application (auto-detected if not provided)"
+     },
+     "oDataV4Url": {
+      "type": "string",
+      "description": "URL of an OData V4 service, if applicable. This is entirely optional, but without it, the generated app UI will have no OData Model configured. Setting an URL will configure an OData V4 model in the application. Only works for OData V4 services, not for OData V2. The URL must be either a valid complete URL starting with http:// or https:// or a server-root-relative URL like '/odata/v4/serviceName' when the OData service is running on the same server. In this case, the prefix 'http://localhost:4004/' will be assumed and used by this tool for inquiries about the service. When the port is not 4004, a complete 'http://localhost:<port>...' URL must be provided. In the generated application, any 'http://localhost:<port>' prefix will be removed. HINT: when the project is a SAP CAP project and CAP/CDS tools are available, you **MUST** use them to search for OData services and entities and properties **BEFORE** calling this tool. This will help you find the correct service URL."
+     },
+     "oDataEntitySet": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_]+$",
+      "description": "Entity set of the OData V4 service to display. Only has an effect when 'oDataV4Url' is set as well. This is optional, but setting an entity set is beneficial, as it will configure a basic UI in the application which displays the entity set."
+     },
+     "entityProperties": {
+      "type": "array",
+      "items": {
+       "type": "string",
+       "pattern": "^[a-zA-Z0-9_]+$"
+      },
+      "description": "Properties of the OData entity set to display. Only has an effect when 'oDataV4Url' and'oDataEntitySet' are set. This parameter is optional, but useful to display initial data, when the names of existing properties are known. If not provided and the service is active and reachable at tool execution time, some random properties will be displayed."
+     },
+     "initializeGitRepository": {
+      "type": "boolean",
+      "default": true,
+      "description": "Initialize a local git repository for the application, default is 'true'"
+     },
+     "runNpmInstall": {
+      "type": "boolean",
+      "default": true,
+      "description": "Execute npm install after creating the application, default is 'true'"
+     },
+     "typescript": {
+      "type": "boolean",
+      "default": true,
+      "description": "Whether to create a TypeScript application (true) or JavaScript application (false), default is 'true'. Although the default is preferred, the user MUST know about this option before generation, but you should not require an active decision. Also, if an overall project already exists, this should influence the language choice to keep things consistent."
+     }
+    },
+    "required": [
+     "appNamespace",
+     "basePath"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "annotations": {
+    "title": "Create SAPUI5 App",
+    "readOnlyHint": false
+   }
+  },
+  {
+   "name": "get_version_info",
+   "description": "Get version information for UI5 (OpenUI5 or SAPUI5)",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "frameworkName": {
+      "type": "string",
+      "enum": [
+       "OpenUI5",
+       "SAPUI5"
+      ],
+      "description": "The UI5 framework to get version information for"
+     }
+    },
+    "required": [
+     "frameworkName"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "outputSchema": {
+    "type": "object",
+    "properties": {
+     "versions": {
+      "type": "object",
+      "additionalProperties": {
+       "type": "object",
+       "properties": {
+        "version": {
+         "type": "string"
+        },
+        "support": {
+         "type": "string"
+        },
+        "lts": {
+         "type": "boolean"
+        }
+       },
+       "required": [
+        "version",
+        "support",
+        "lts"
+       ],
+       "additionalProperties": false
+      },
+      "description": "All known versions with their support information"
+     }
+    },
+    "required": [
+     "versions"
+    ],
+    "additionalProperties": false,
+    "$schema": "http://json-schema.org/draft-07/schema#"
+   },
+   "annotations": {
+    "title": "UI5 Version Info",
+    "readOnlyHint": true,
+    "idempotentHint": true
+   }
+  }
+ ],
+ "tools_sha256": "cd0f5936edc8790b0664a40fc0d8797b60f0598a77cf9d338337674016b39532"
+}

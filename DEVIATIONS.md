@@ -64,3 +64,28 @@ paquets ont au moins une version dans la fenêtre (le « 46 » comptait un paque
    d'une valeur par défaut, indices d'outil relevés intégrés à la règle. Effet : ré-approbations de la règle stricte
    343 → 395 ; noyau compatible-et-amplifiant inchangé (84). Feuilles d'annotation régénérées (176 cas : 44 signalés,
    132 non signalés), colonne « Modification » neutralisée pour ne pas révéler le groupe.
+
+10. **30/09/2026, révision 2 après relecture externe stricte** (versions précédentes archivées : `classify2_dev9.py`,
+   `results/v2_dev9_*`, `prototype/archive/`).
+   (a) *06:07 UTC, non consigné à l'époque, consigné ici :* `nullable` ajouté à l'ensemble « demander » (`null` ≠
+   absence, §2) et sentinelle de l'oracle corrigée (un témoin `null` était écarté). Effet : 395 → 412 ré-approbations,
+   257 → 274 compatibles strictement amplifiants.
+   (b) Un objet fermé qui devient `{}`, `true` ou non contraint est une ouverture (`object_opened`) ; un retrait d'un
+   parent resté fermé est une restriction ; un changement de forme demande (`shape_changed`). Effet sur le corpus : nul.
+   (c) `jsonsubschema` est incorrect pour un booléen non restreint comparé à un booléen restreint par `enum`/`const`
+   (3 sondes sur 20). Normalisation des booléens + garde par contre-exemple (Hypothesis, 60 tirages, 2 s, graine fixe) sur
+   tout verdict « ⊆ ». Effet sur le corpus : garde appelée 407 fois (lexical) / 467 (sans étiquettes), 0 verdict
+   renversé, 0 échec de génération (garde sans signal, borne de temps vérifiée dans le test).
+   (d) Étiqueteurs : mode sans étiquettes (rôle inconnu ⇒ autorité, défaut du proxy) ajouté ; le coût est rapporté
+   pour les deux ; la règle lexicale reste une heuristique dont le rappel est mesuré.
+   (e) Oracle v2 : audite toute re-liaison silencieuse (compatible, incompatible, compatibilité indécise), tirages
+   déterministes, échecs de génération comptés ; en mode sans étiquettes, inclusion du schéma entier et défauts.
+   (f) Changements incompatibles : décision explicite — la règle est orthogonale à la compatibilité ; un changement
+   incompatible non amplifiant est re-lié sans demande (des appels peuvent échouer, aucune autorité n'est gagnée).
+   (g) Proxy révision 2 : manifeste versionné et h_A, U cumulatif, P et h_P, identité du serveur, validation des appels,
+   politique sur chemins imbriqués et éléments de tableaux, `null` ≠ absence, défauts déclarés, reçus à SHA-256 complet
+   numérotés et chaînés, commande `verify`, boucle mono-fil (pas de concurrence entre traitement des listes et des appels sur l'état des capacités).
+   (h) Rejeu réel sur les paires exactes de versions (Table 5) ; surcoût re-mesuré. (i) `robustness.py` ajouté
+   (régénère l'intervalle par rééchantillonnage des paquets, graine fixe : [3,5 ; 25,2] % contre [3,4 ; 25,2] % publié).
+   (j) Double annotation indépendante achevée (176 cas) et arbitrage des 29 désaccords. (k) Manifeste par version
+   avec empreintes des registres (`results/releases.csv`).

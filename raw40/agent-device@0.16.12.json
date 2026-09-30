@@ -1,0 +1,5739 @@
+{
+ "package": "agent-device",
+ "ecosystem": "npm",
+ "strate": "B",
+ "version": "0.16.12",
+ "published": "2026-06-03T19:21:15.599Z",
+ "index_in_window": 124,
+ "sampled_rank": 28,
+ "extracted_at": "2026-09-29T21:51:27Z",
+ "deps_resolved_before": "2026-06-04T19:21:15Z",
+ "install_seconds": 0.8,
+ "status": "ok",
+ "variant": [
+  "mcp"
+ ],
+ "serverInfo": {
+  "name": "agent-device",
+  "title": null,
+  "version": "0.16.12",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "alert",
+   "description": "Inspect or handle platform alerts.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "get",
+       "accept",
+       "dismiss",
+       "wait"
+      ]
+     },
+     "timeoutMs": {
+      "type": "integer"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "app-switcher",
+   "description": "Open the app switcher.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "apps",
+   "description": "List installed apps.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "appsFilter": {
+      "type": "string",
+      "enum": [
+       "user-installed",
+       "all"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "appstate",
+   "description": "Show foreground app or activity.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "back",
+   "description": "Navigate back.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "mode": {
+      "type": "string",
+      "enum": [
+       "in-app",
+       "system"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "batch",
+   "description": "Run multiple structured command steps in one daemon request.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "steps": {
+      "type": "array",
+      "description": "Structured batch steps. Each step uses a command name and the same input object as that command tool.",
+      "items": {
+       "type": "object",
+       "properties": {
+        "command": {
+         "type": "string",
+         "enum": [
+          "devices",
+          "boot",
+          "apps",
+          "open",
+          "close",
+          "install",
+          "reinstall",
+          "install-from-source",
+          "push",
+          "trigger-app-event",
+          "snapshot",
+          "screenshot",
+          "diff",
+          "wait",
+          "alert",
+          "settings",
+          "click",
+          "press",
+          "longpress",
+          "swipe",
+          "focus",
+          "type",
+          "fill",
+          "scroll",
+          "get",
+          "gesture",
+          "is",
+          "find",
+          "perf",
+          "logs",
+          "network",
+          "record",
+          "trace",
+          "test",
+          "appstate",
+          "back",
+          "home",
+          "rotate",
+          "app-switcher",
+          "keyboard",
+          "clipboard",
+          "react-native"
+         ],
+         "description": "Command name to run with structured input."
+        },
+        "input": {
+         "type": "object",
+         "additionalProperties": true,
+         "description": "Structured command input for the nested command. Use the matching MCP tool schema for this object."
+        },
+        "runtime": {
+         "type": "object",
+         "additionalProperties": true,
+         "description": "Optional per-step runtime payload."
+        }
+       },
+       "required": [
+        "command",
+        "input"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "onError": {
+      "type": "string",
+      "enum": [
+       "stop"
+      ],
+      "description": "Batch failure policy."
+     },
+     "maxSteps": {
+      "type": "integer",
+      "description": "Maximum number of steps accepted for this batch.",
+      "minimum": 1,
+      "maximum": 1000
+     },
+     "out": {
+      "type": "string",
+      "description": "Optional output path for command artifacts."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "steps"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "boot",
+   "description": "Boot or prepare a selected device without using CLI positional arguments.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "headless": {
+      "type": "boolean",
+      "description": "Boot without showing simulator UI when supported."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "click",
+   "description": "Click or tap a semantic UI target by ref, selector, or point.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "oneOf": [
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "ref"
+         },
+         "ref": {
+          "type": "string",
+          "description": "Snapshot element ref such as @e12."
+         },
+         "label": {
+          "type": "string",
+          "description": "Optional human label for the ref."
+         }
+        },
+        "required": [
+         "kind",
+         "ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "selector"
+         },
+         "selector": {
+          "type": "string",
+          "description": "Agent-device selector expression."
+         }
+        },
+        "required": [
+         "kind",
+         "selector"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "point"
+         },
+         "x": {
+          "type": "number"
+         },
+         "y": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "kind",
+         "x",
+         "y"
+        ],
+        "additionalProperties": false
+       }
+      ],
+      "description": "UI target. This is separate from deviceTarget, which selects the device form."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "button": {
+      "type": "string",
+      "enum": [
+       "primary",
+       "secondary",
+       "middle"
+      ],
+      "description": "Pointer button for platforms that support mouse buttons."
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "count": {
+      "type": "integer",
+      "description": "Number of press/click repetitions.",
+      "minimum": 1
+     },
+     "intervalMs": {
+      "type": "integer",
+      "description": "Delay between repeated press/click actions.",
+      "minimum": 0
+     },
+     "holdMs": {
+      "type": "integer",
+      "description": "Hold duration for each action.",
+      "minimum": 0
+     },
+     "jitterPx": {
+      "type": "integer",
+      "description": "Randomization radius in pixels.",
+      "minimum": 0
+     },
+     "doubleTap": {
+      "type": "boolean",
+      "description": "Request a double-tap action."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "target"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "clipboard",
+   "description": "Read or write clipboard text.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "read",
+       "write"
+      ]
+     },
+     "text": {
+      "type": "string"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "action"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "close",
+   "description": "Close an app or end the active session.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "app": {
+      "type": "string",
+      "description": "Optional app to close."
+     },
+     "shutdown": {
+      "type": "boolean",
+      "description": "Shutdown the session/device where supported."
+     },
+     "saveScript": {
+      "oneOf": [
+       {
+        "type": "boolean"
+       },
+       {
+        "type": "string"
+       }
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "devices",
+   "description": "List available devices.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "diff",
+   "description": "Diff accessibility snapshots.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "kind": {
+      "type": "string",
+      "const": "snapshot"
+     },
+     "out": {
+      "type": "string"
+     },
+     "interactiveOnly": {
+      "type": "boolean"
+     },
+     "compact": {
+      "type": "boolean"
+     },
+     "depth": {
+      "type": "integer"
+     },
+     "scope": {
+      "type": "string"
+     },
+     "raw": {
+      "type": "boolean"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "kind"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "fill",
+   "description": "Fill text into a semantic UI target by ref, selector, or point.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "oneOf": [
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "ref"
+         },
+         "ref": {
+          "type": "string",
+          "description": "Snapshot element ref such as @e12."
+         },
+         "label": {
+          "type": "string",
+          "description": "Optional human label for the ref."
+         }
+        },
+        "required": [
+         "kind",
+         "ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "selector"
+         },
+         "selector": {
+          "type": "string",
+          "description": "Agent-device selector expression."
+         }
+        },
+        "required": [
+         "kind",
+         "selector"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "point"
+         },
+         "x": {
+          "type": "number"
+         },
+         "y": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "kind",
+         "x",
+         "y"
+        ],
+        "additionalProperties": false
+       }
+      ],
+      "description": "UI target. This is separate from deviceTarget, which selects the device form."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "text": {
+      "type": "string",
+      "description": "Text to enter into the target."
+     },
+     "delayMs": {
+      "type": "integer",
+      "description": "Delay between typed characters.",
+      "minimum": 0
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "target",
+     "text"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "find",
+   "description": "Find an element and optionally act on it.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "locator": {
+      "type": "string",
+      "enum": [
+       "any",
+       "text",
+       "label",
+       "value",
+       "role",
+       "id"
+      ]
+     },
+     "query": {
+      "type": "string"
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "click",
+       "focus",
+       "exists",
+       "getText",
+       "getAttrs",
+       "wait",
+       "fill",
+       "type"
+      ]
+     },
+     "value": {
+      "type": "string"
+     },
+     "timeoutMs": {
+      "type": "integer"
+     },
+     "first": {
+      "type": "boolean"
+     },
+     "last": {
+      "type": "boolean"
+     },
+     "depth": {
+      "type": "integer"
+     },
+     "raw": {
+      "type": "boolean"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "query"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "focus",
+   "description": "Focus input at coordinates.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "x": {
+      "type": "number",
+      "description": "X coordinate."
+     },
+     "y": {
+      "type": "number",
+      "description": "Y coordinate."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "x",
+     "y"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "gesture",
+   "description": "Run a structured gesture.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "pan",
+       "fling",
+       "swipe",
+       "pinch",
+       "rotate",
+       "transform"
+      ],
+      "description": "Gesture variant."
+     },
+     "direction": {
+      "type": "string",
+      "enum": [
+       "up",
+       "down",
+       "left",
+       "right"
+      ],
+      "description": "Fling direction."
+     },
+     "preset": {
+      "type": "string",
+      "enum": [
+       "left",
+       "right",
+       "left-edge",
+       "right-edge"
+      ],
+      "description": "Swipe preset."
+     },
+     "origin": {
+      "type": "object",
+      "description": "Gesture origin point.",
+      "properties": {
+       "x": {
+        "type": "number"
+       },
+       "y": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "x",
+       "y"
+      ],
+      "additionalProperties": false
+     },
+     "delta": {
+      "type": "object",
+      "description": "Movement delta for pan or transform gestures.",
+      "properties": {
+       "x": {
+        "type": "number"
+       },
+       "y": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "x",
+       "y"
+      ],
+      "additionalProperties": false
+     },
+     "distance": {
+      "type": "integer",
+      "description": "Fling distance.",
+      "minimum": 0
+     },
+     "scale": {
+      "type": "number",
+      "description": "Pinch or transform scale."
+     },
+     "degrees": {
+      "type": "number",
+      "description": "Rotation in degrees."
+     },
+     "velocity": {
+      "type": "integer",
+      "description": "Rotate gesture velocity.",
+      "minimum": 0
+     },
+     "durationMs": {
+      "type": "integer",
+      "description": "Gesture duration in milliseconds.",
+      "minimum": 0
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "kind"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "get",
+   "description": "Get element text or attributes.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "oneOf": [
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "ref"
+         },
+         "ref": {
+          "type": "string",
+          "description": "Snapshot element ref such as @e12."
+         },
+         "label": {
+          "type": "string",
+          "description": "Optional human label for the ref."
+         }
+        },
+        "required": [
+         "kind",
+         "ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "selector"
+         },
+         "selector": {
+          "type": "string",
+          "description": "Agent-device selector expression."
+         }
+        },
+        "required": [
+         "kind",
+         "selector"
+        ],
+        "additionalProperties": false
+       }
+      ],
+      "description": "UI element target by snapshot ref or selector expression."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "format": {
+      "type": "string",
+      "enum": [
+       "text",
+       "attrs"
+      ]
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "format",
+     "target"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "home",
+   "description": "Go to the home screen.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "install",
+   "description": "Install an app binary.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "app": {
+      "type": "string"
+     },
+     "appPath": {
+      "type": "string",
+      "description": "Path to app binary."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "app",
+     "appPath"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "install-from-source",
+   "description": "Install an app from a structured source.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Install source object."
+     },
+     "retainPaths": {
+      "type": "boolean"
+     },
+     "retentionMs": {
+      "type": "integer"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "source"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "is",
+   "description": "Assert UI state.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "predicate": {
+      "type": "string",
+      "enum": [
+       "visible",
+       "hidden",
+       "exists",
+       "editable",
+       "selected",
+       "text"
+      ]
+     },
+     "selector": {
+      "type": "string"
+     },
+     "value": {
+      "type": "string"
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "predicate",
+     "selector"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "keyboard",
+   "description": "Inspect or dismiss the keyboard.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "status",
+       "dismiss"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "logs",
+   "description": "Manage session app logs.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "path",
+       "start",
+       "stop",
+       "doctor",
+       "mark",
+       "clear"
+      ]
+     },
+     "message": {
+      "type": "string"
+     },
+     "restart": {
+      "type": "boolean"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "longpress",
+   "description": "Long press by ref, selector, or point.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "oneOf": [
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "ref"
+         },
+         "ref": {
+          "type": "string",
+          "description": "Snapshot element ref such as @e12."
+         },
+         "label": {
+          "type": "string",
+          "description": "Optional human label for the ref."
+         }
+        },
+        "required": [
+         "kind",
+         "ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "selector"
+         },
+         "selector": {
+          "type": "string",
+          "description": "Agent-device selector expression."
+         }
+        },
+        "required": [
+         "kind",
+         "selector"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "point"
+         },
+         "x": {
+          "type": "number"
+         },
+         "y": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "kind",
+         "x",
+         "y"
+        ],
+        "additionalProperties": false
+       }
+      ],
+      "description": "UI target. This is separate from deviceTarget, which selects the device form."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "durationMs": {
+      "type": "integer",
+      "description": "Long press duration in milliseconds.",
+      "minimum": 0
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "target"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "metro",
+   "description": "Prepare Metro runtime or reload React Native apps.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "prepare",
+       "reload"
+      ]
+     },
+     "projectRoot": {
+      "type": "string"
+     },
+     "kind": {
+      "type": "string"
+     },
+     "publicBaseUrl": {
+      "type": "string"
+     },
+     "proxyBaseUrl": {
+      "type": "string"
+     },
+     "bearerToken": {
+      "type": "string"
+     },
+     "bridgeScope": {
+      "type": "object",
+      "additionalProperties": true
+     },
+     "launchUrl": {
+      "type": "string"
+     },
+     "port": {
+      "type": "integer"
+     },
+     "listenHost": {
+      "type": "string"
+     },
+     "statusHost": {
+      "type": "string"
+     },
+     "startupTimeoutMs": {
+      "type": "integer"
+     },
+     "probeTimeoutMs": {
+      "type": "integer"
+     },
+     "reuseExisting": {
+      "type": "boolean"
+     },
+     "installDependenciesIfNeeded": {
+      "type": "boolean"
+     },
+     "runtimeFilePath": {
+      "type": "string"
+     },
+     "logPath": {
+      "type": "string"
+     },
+     "metroHost": {
+      "type": "string"
+     },
+     "metroPort": {
+      "type": "integer"
+     },
+     "bundleUrl": {
+      "type": "string"
+     },
+     "timeoutMs": {
+      "type": "integer"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "action"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "network",
+   "description": "Show recent HTTP traffic.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "dump",
+       "log"
+      ]
+     },
+     "limit": {
+      "type": "integer"
+     },
+     "include": {
+      "type": "string",
+      "enum": [
+       "summary",
+       "headers",
+       "body",
+       "all"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "open",
+   "description": "Open an app, deep link, URL, or platform surface.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "app": {
+      "type": "string",
+      "description": "App name, bundle id, package, or URL."
+     },
+     "url": {
+      "type": "string",
+      "description": "Optional URL passed with an app shell."
+     },
+     "surface": {
+      "type": "string",
+      "enum": [
+       "app",
+       "frontmost-app",
+       "desktop",
+       "menubar"
+      ]
+     },
+     "activity": {
+      "type": "string",
+      "description": "Android activity name."
+     },
+     "launchConsole": {
+      "type": "string",
+      "description": "Launch console mode."
+     },
+     "launchArgs": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      },
+      "description": "Launch arguments forwarded verbatim to the platform launch command."
+     },
+     "relaunch": {
+      "type": "boolean",
+      "description": "Force relaunch."
+     },
+     "saveScript": {
+      "oneOf": [
+       {
+        "type": "boolean"
+       },
+       {
+        "type": "string"
+       }
+      ]
+     },
+     "noRecord": {
+      "type": "boolean",
+      "description": "Do not record this action."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "perf",
+   "description": "Show session performance metrics.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "press",
+   "description": "Press a semantic UI target by ref, selector, or point.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "oneOf": [
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "ref"
+         },
+         "ref": {
+          "type": "string",
+          "description": "Snapshot element ref such as @e12."
+         },
+         "label": {
+          "type": "string",
+          "description": "Optional human label for the ref."
+         }
+        },
+        "required": [
+         "kind",
+         "ref"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "selector"
+         },
+         "selector": {
+          "type": "string",
+          "description": "Agent-device selector expression."
+         }
+        },
+        "required": [
+         "kind",
+         "selector"
+        ],
+        "additionalProperties": false
+       },
+       {
+        "type": "object",
+        "properties": {
+         "kind": {
+          "type": "string",
+          "const": "point"
+         },
+         "x": {
+          "type": "number"
+         },
+         "y": {
+          "type": "number"
+         }
+        },
+        "required": [
+         "kind",
+         "x",
+         "y"
+        ],
+        "additionalProperties": false
+       }
+      ],
+      "description": "UI target. This is separate from deviceTarget, which selects the device form."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "depth": {
+      "type": "integer",
+      "description": "Snapshot traversal depth.",
+      "minimum": 0
+     },
+     "scope": {
+      "type": "string",
+      "description": "Snapshot scope selector used before resolution."
+     },
+     "raw": {
+      "type": "boolean",
+      "description": "Use raw snapshot data during selector resolution."
+     },
+     "count": {
+      "type": "integer",
+      "description": "Number of press/click repetitions.",
+      "minimum": 1
+     },
+     "intervalMs": {
+      "type": "integer",
+      "description": "Delay between repeated press/click actions.",
+      "minimum": 0
+     },
+     "holdMs": {
+      "type": "integer",
+      "description": "Hold duration for each action.",
+      "minimum": 0
+     },
+     "jitterPx": {
+      "type": "integer",
+      "description": "Randomization radius in pixels.",
+      "minimum": 0
+     },
+     "doubleTap": {
+      "type": "boolean",
+      "description": "Request a double-tap action."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "target"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "push",
+   "description": "Deliver a push payload.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "app": {
+      "type": "string"
+     },
+     "payload": {
+      "oneOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "object",
+        "additionalProperties": true
+       }
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "app",
+     "payload"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "react-native",
+   "description": "Run supported React Native app automation helpers.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "dismiss-overlay"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "action"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "record",
+   "description": "Start or stop screen recording.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "start",
+       "stop"
+      ]
+     },
+     "path": {
+      "type": "string"
+     },
+     "fps": {
+      "type": "integer"
+     },
+     "quality": {
+      "type": "integer"
+     },
+     "hideTouches": {
+      "type": "boolean"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "action"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "reinstall",
+   "description": "Reinstall an app binary.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "app": {
+      "type": "string"
+     },
+     "appPath": {
+      "type": "string",
+      "description": "Path to app binary."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "app",
+     "appPath"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "replay",
+   "description": "Replay a recorded session.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "path": {
+      "type": "string"
+     },
+     "update": {
+      "type": "boolean"
+     },
+     "backend": {
+      "type": "string"
+     },
+     "maestro": {
+      "type": "boolean"
+     },
+     "env": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "path"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "rotate",
+   "description": "Rotate device orientation.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "orientation": {
+      "type": "string",
+      "enum": [
+       "portrait",
+       "portrait-upside-down",
+       "landscape-left",
+       "landscape-right"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "orientation"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "screenshot",
+   "description": "Capture a screenshot.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "path": {
+      "type": "string",
+      "description": "Output path."
+     },
+     "overlayRefs": {
+      "type": "boolean"
+     },
+     "fullscreen": {
+      "type": "boolean"
+     },
+     "maxSize": {
+      "type": "integer"
+     },
+     "stabilize": {
+      "type": "boolean"
+     },
+     "surface": {
+      "type": "string",
+      "enum": [
+       "app",
+       "frontmost-app",
+       "desktop",
+       "menubar"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "scroll",
+   "description": "Scroll in a direction or to an edge.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "direction": {
+      "type": "string",
+      "enum": [
+       "up",
+       "down",
+       "left",
+       "right",
+       "top",
+       "bottom"
+      ]
+     },
+     "amount": {
+      "type": "number",
+      "description": "Platform scroll amount."
+     },
+     "pixels": {
+      "type": "integer",
+      "description": "Pixel scroll amount.",
+      "minimum": 0
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "direction"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "session",
+   "description": "List active sessions.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "list"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "settings",
+   "description": "Change OS settings and app permissions.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "setting": {
+      "type": "string"
+     },
+     "state": {
+      "type": "string"
+     },
+     "app": {
+      "type": "string"
+     },
+     "latitude": {
+      "type": "number"
+     },
+     "longitude": {
+      "type": "number"
+     },
+     "permission": {
+      "type": "string"
+     },
+     "mode": {
+      "type": "string",
+      "enum": [
+       "full",
+       "limited"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "setting",
+     "state"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "snapshot",
+   "description": "Capture an accessibility snapshot.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "interactiveOnly": {
+      "type": "boolean"
+     },
+     "compact": {
+      "type": "boolean"
+     },
+     "depth": {
+      "type": "integer"
+     },
+     "scope": {
+      "type": "string"
+     },
+     "raw": {
+      "type": "boolean"
+     },
+     "forceFull": {
+      "type": "boolean"
+     },
+     "timeoutMs": {
+      "type": "integer",
+      "description": "Maximum wall-clock time for the snapshot command."
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "swipe",
+   "description": "Swipe between two points.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "from": {
+      "type": "object",
+      "description": "Swipe start point.",
+      "properties": {
+       "x": {
+        "type": "number"
+       },
+       "y": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "x",
+       "y"
+      ],
+      "additionalProperties": false
+     },
+     "to": {
+      "type": "object",
+      "description": "Swipe end point.",
+      "properties": {
+       "x": {
+        "type": "number"
+       },
+       "y": {
+        "type": "number"
+       }
+      },
+      "required": [
+       "x",
+       "y"
+      ],
+      "additionalProperties": false
+     },
+     "durationMs": {
+      "type": "integer",
+      "description": "Swipe duration in milliseconds.",
+      "minimum": 0
+     },
+     "count": {
+      "type": "integer",
+      "description": "Number of swipe repetitions.",
+      "minimum": 1
+     },
+     "pauseMs": {
+      "type": "integer",
+      "description": "Pause between repeated swipes.",
+      "minimum": 0
+     },
+     "pattern": {
+      "type": "string",
+      "enum": [
+       "one-way",
+       "ping-pong"
+      ]
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "from",
+     "to"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "test",
+   "description": "Run one or more replay scripts.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "paths": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "update": {
+      "type": "boolean"
+     },
+     "backend": {
+      "type": "string"
+     },
+     "maestro": {
+      "type": "boolean"
+     },
+     "env": {
+      "type": "array",
+      "items": {
+       "type": "string"
+      }
+     },
+     "failFast": {
+      "type": "boolean"
+     },
+     "timeoutMs": {
+      "type": "integer"
+     },
+     "retries": {
+      "type": "integer"
+     },
+     "artifactsDir": {
+      "type": "string"
+     },
+     "reportJunit": {
+      "type": "string"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "paths"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "trace",
+   "description": "Start or stop trace capture.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "action": {
+      "type": "string",
+      "enum": [
+       "start",
+       "stop"
+      ]
+     },
+     "path": {
+      "type": "string"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "action"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "trigger-app-event",
+   "description": "Trigger an app-defined event.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "event": {
+      "type": "string"
+     },
+     "payload": {
+      "type": "object",
+      "additionalProperties": true
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "event"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "type",
+   "description": "Type text in the focused field.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "text": {
+      "type": "string",
+      "description": "Text to type."
+     },
+     "delayMs": {
+      "type": "integer",
+      "description": "Delay between typed characters.",
+      "minimum": 0
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "required": [
+     "text"
+    ],
+    "additionalProperties": false
+   }
+  },
+  {
+   "name": "wait",
+   "description": "Wait for duration, text, ref, or selector.",
+   "inputSchema": {
+    "type": "object",
+    "properties": {
+     "session": {
+      "type": "string",
+      "description": "Agent-device session name."
+     },
+     "platform": {
+      "type": "string",
+      "enum": [
+       "ios",
+       "android",
+       "macos",
+       "linux",
+       "apple"
+      ],
+      "description": "Platform selector used to resolve a device."
+     },
+     "deviceTarget": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Device target form. Maps to the CLI --target flag."
+     },
+     "target": {
+      "type": "string",
+      "enum": [
+       "mobile",
+       "tv",
+       "desktop"
+      ],
+      "description": "Alias for deviceTarget on commands without a UI target field. Interaction commands reserve target for the UI element."
+     },
+     "device": {
+      "type": "string",
+      "description": "Device name selector."
+     },
+     "udid": {
+      "type": "string",
+      "description": "iOS device UDID selector."
+     },
+     "serial": {
+      "type": "string",
+      "description": "Android serial selector."
+     },
+     "iosSimulatorDeviceSet": {
+      "type": "string",
+      "description": "iOS simulator device-set path used for device resolution."
+     },
+     "androidDeviceAllowlist": {
+      "type": "string",
+      "description": "Android serial allowlist used for device resolution."
+     },
+     "daemonBaseUrl": {
+      "type": "string",
+      "description": "Remote daemon base URL."
+     },
+     "daemonAuthToken": {
+      "type": "string",
+      "description": "Remote daemon auth token."
+     },
+     "tenant": {
+      "type": "string",
+      "description": "Remote tenant identifier."
+     },
+     "runId": {
+      "type": "string",
+      "description": "Lease run identifier."
+     },
+     "leaseId": {
+      "type": "string",
+      "description": "Existing lease identifier."
+     },
+     "cwd": {
+      "type": "string",
+      "description": "Working directory for command execution."
+     },
+     "debug": {
+      "type": "boolean",
+      "description": "Enable debug diagnostics."
+     },
+     "kind": {
+      "type": "string",
+      "enum": [
+       "duration",
+       "text",
+       "ref",
+       "selector"
+      ]
+     },
+     "durationMs": {
+      "type": "integer"
+     },
+     "text": {
+      "type": "string"
+     },
+     "ref": {
+      "type": "string"
+     },
+     "selector": {
+      "type": "string"
+     },
+     "timeoutMs": {
+      "type": "integer"
+     },
+     "depth": {
+      "type": "integer"
+     },
+     "scope": {
+      "type": "string"
+     },
+     "raw": {
+      "type": "boolean"
+     },
+     "stateDir": {
+      "type": "string",
+      "description": "Agent-device state directory."
+     }
+    },
+    "additionalProperties": false
+   }
+  }
+ ],
+ "tools_sha256": "1694870e71ee0073b8acd31e98bd9ac116217d4bede9eea4867574e387db13e2"
+}

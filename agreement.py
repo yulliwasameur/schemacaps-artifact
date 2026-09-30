@@ -51,7 +51,22 @@ def missed(S):
         if any((r["package"], p) in S for p in new) and not any((r["package"], p) in S for p in paths(r, STRICT)):
             c += 1
     return c
-res = {"n": n, "percent_agreement": round(po, 3), "cohen_kappa": round(kappa, 3), "disagreements": dis,
+def kappa_of(pairs, labs_):
+    m = len(pairs)
+    if not m: return float("nan")
+    p_o = sum(x == y for x, y in pairs) / m
+    c1, c2 = collections.Counter(x for x, _ in pairs), collections.Counter(y for _, y in pairs)
+    p_e = sum(c1[l] * c2[l] for l in labs_) / m ** 2
+    return (p_o - p_e) / (1 - p_e) if p_e < 1 else 1.0
+coll = lambda v: "non" if v == "incertain" else v
+kappa_collapsed = kappa_of([(coll(a[i]), coll(b[i])) for i in ids], ("oui", "non"))
+sure = [i for i in ids if "incertain" not in (a[i], b[i])]
+kappa_excluding_unsure = kappa_of([(a[i], b[i]) for i in sure], ("oui", "non"))
+hard = [i for i in dis if "incertain" not in (a[i], b[i])]
+res = {"n": n, "percent_agreement": round(po, 3), "cohen_kappa": round(kappa, 3),
+       "cohen_kappa_unsure_as_no": round(kappa_collapsed, 3), "cohen_kappa_excluding_unsure": round(kappa_excluding_unsure, 3),
+       "n_excluding_unsure": len(sure), "hard_disagreements": hard, "unsure_counts": {"A1": ca["incertain"], "A2": cb["incertain"]},
+       "flagged": len(F), "unflagged": len(U), "gold_yes": len(yes), "disagreements": dis,
        "unresolved_disagreements": [i for i in dis if not arb.get(i)],
        "lexical_rule_precision": round(prec, 3), "lexical_rule_recall": round(rec, 3),
        "K_final_core": count(fin, ("new_authority_arg", "widened")) + missed(fin),

@@ -1,0 +1,110 @@
+{
+ "package": "@modelcontextprotocol/server-wiki-explorer",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.7.1",
+ "published": "2026-04-27T15:20:57.683Z",
+ "index_in_window": 17,
+ "sampled_rank": 13,
+ "extracted_at": "2026-09-29T15:44:52Z",
+ "deps_resolved_before": "2026-04-28T15:20:57Z",
+ "install_seconds": 6.5,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Wiki Explorer",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "get-first-degree-links",
+   "title": "Get First-Degree Links",
+   "description": "Returns all Wikipedia pages that the given page links to directly. The widget is interactive and exposes tools for exploring the graph (expanding nodes to see their links), searching for articles, and querying visible nodes.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "url": {
+      "default": "https://en.wikipedia.org/wiki/Model_Context_Protocol",
+      "description": "Wikipedia page URL",
+      "type": "string",
+      "format": "uri"
+     }
+    }
+   },
+   "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+     "page": {
+      "type": "object",
+      "properties": {
+       "url": {
+        "type": "string"
+       },
+       "title": {
+        "type": "string"
+       }
+      },
+      "required": [
+       "url",
+       "title"
+      ],
+      "additionalProperties": false
+     },
+     "links": {
+      "type": "array",
+      "items": {
+       "type": "object",
+       "properties": {
+        "url": {
+         "type": "string"
+        },
+        "title": {
+         "type": "string"
+        }
+       },
+       "required": [
+        "url",
+        "title"
+       ],
+       "additionalProperties": false
+      }
+     },
+     "error": {
+      "anyOf": [
+       {
+        "type": "string"
+       },
+       {
+        "type": "null"
+       }
+      ]
+     }
+    },
+    "required": [
+     "page",
+     "links",
+     "error"
+    ],
+    "additionalProperties": false
+   },
+   "meta": {
+    "ui": {
+     "resourceUri": "ui://wiki-explorer/mcp-app.html"
+    },
+    "ui/resourceUri": "ui://wiki-explorer/mcp-app.html"
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "6e23e1498518e207ad94b3e1d01def2efc3be91696c862783f8f65d8f8fe2e5c"
+}

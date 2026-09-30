@@ -1,0 +1,46 @@
+{
+ "package": "@modelcontextprotocol/server-transcript",
+ "ecosystem": "npm",
+ "strate": "A",
+ "version": "1.1.0",
+ "published": "2026-02-22T01:24:16.340Z",
+ "index_in_window": 4,
+ "sampled_rank": 3,
+ "extracted_at": "2026-09-29T15:40:54Z",
+ "deps_resolved_before": "2026-02-23T01:24:16Z",
+ "install_seconds": 7.5,
+ "status": "ok",
+ "variant": [
+  "--stdio"
+ ],
+ "serverInfo": {
+  "name": "Transcript Server",
+  "title": null,
+  "version": "1.0.0",
+  "websiteUrl": null,
+  "icons": null
+ },
+ "protocolVersion": "2025-11-25",
+ "tools": [
+  {
+   "name": "transcribe",
+   "title": "Transcribe Speech",
+   "description": "Opens a live speech transcription interface using the Web Speech API.",
+   "inputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {}
+   },
+   "meta": {
+    "ui/resourceUri": "ui://transcript/mcp-app.html",
+    "ui": {
+     "resourceUri": "ui://transcript/mcp-app.html"
+    }
+   },
+   "execution": {
+    "taskSupport": "forbidden"
+   }
+  }
+ ],
+ "tools_sha256": "d577e81afe26aa13eeec8deba128e9f79e66b0c70f07c7d86c96f57387c8be84"
+}
