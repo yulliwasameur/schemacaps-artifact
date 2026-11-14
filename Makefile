@@ -45,6 +45,7 @@ demo:                     ## staged scenario matrix and exact-pair replay of the
 
 adversarial:              ## exact-reference benchmark of the checker and of the rule (deviation 11)
 	$(PY) adversarial_bench.py
+	BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json $(PY) adversarial_bench.py
 
 bench:                    ## proxy overhead (5 runs x 500 iterations)
 	$(PY) prototype/bench_overhead.py

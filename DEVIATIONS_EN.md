@@ -66,8 +66,8 @@ Decision-time and overhead figures are those of the original measurement (2-core
 for fields newly declared under a typed `additionalProperties` (see below).
 
 **Deviation 11, second seed (declared before running, 14/11/2026, 16:13 UTC).** Because the fixed rule was first evaluated on
-the very benchmark that exposed the gaps (seed 20261114, post hoc), a second, independent run uses seed **20270223**,
-fixed here before it was executed: `BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json python3
+the very benchmark that exposed the gaps (seed 20261114, post hoc), a second draw of the same generator uses seed **20270223**,
+recorded here before it was executed (self-attested, like the protocol timing): `BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json python3
 adversarial_bench.py`. Both runs are reported. The checker guard is time-bounded (2 s per inclusion), so the
 benchmark is deterministic on a given machine but could in principle differ on a much slower one; the criterion of
 reproduction is 0 false silent re-binds of the fixed rule and 0 false acceptances of the guarded checker.

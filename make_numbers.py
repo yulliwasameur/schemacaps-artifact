@@ -172,6 +172,16 @@ put("BenchGenerated", BR["generated"]); put("BenchDiscarded", BR["discarded"])
 put("BenchSiblingAsk", BR["sibling_old"]); put("BenchSiblingSilent", BR["sibling_old_silent"])
 put("BenchRuleNonAmp", BR["non_amplifying"]); put("BenchUnnecPct", pct(BR["guarded"]["asks_non_amplifying"], BR["non_amplifying"]), 0)
 put("BenchGuardOverRule", BR["guard_overturned_rule_phase"])
+# checker pairs by kind (conditional if/then; typed additionalProperties), from the shipped rows
+def _kind(x):
+    s = json.dumps(x["a"]) + json.dumps(x["b"])
+    return "cond" if '"if"' in s else ("star" if 'additionalProperties": {' in s else "other")
+for _k, _n in (("cond", "Cond"), ("star", "Star")):
+    _R = [x for x in B["checker_rows"] if _kind(x) == _k]; _ni = [x for x in _R if not x["truth"]]
+    put("BenchChk" + _n + "Pairs", len(_R)); put("BenchChk" + _n + "NotIncl", len(_ni))
+    for _v, _m in (("raw", "Raw"), ("norm", "Norm"), ("guarded", "Guard")):
+        put("BenchChk" + _n + _m + "FA", sum(1 for x in _ni if x[_v] is True))
+put("BenchChkUnknown", sum(1 for x in B["checker_rows"] if x["guarded"] is None))
 B2 = J("adversarial_bench_seed2.json"); C2, R2 = B2["checker"], B2["rule"]
 put("BenchSeedTwo", B2["seed"]); put("BenchTwoPairs", R2["pairs"]); put("BenchTwoAmp", R2["amplifying"])
 put("BenchTwoFalseSilent", R2["guarded"]["false_silent"]); put("BenchTwoVthreeSilent", R2["v3_false_silent"])
@@ -189,7 +199,7 @@ put("CoqLines", sum(1 for _ in open("proof/NonAmplification.v")))
 
 
 # Machine-dependent values (timing, overhead, per-check sample counts under a wall-clock cap): reported, not failed on.
-VOLATILE_PREFIXES = ("Ov", "Tm", "OrGen")
+VOLATILE_PREFIXES = ("Ov", "Tm", "OrGenLex", "OrGenFree", "BenchChkUnknown")
 
 
 def emit():

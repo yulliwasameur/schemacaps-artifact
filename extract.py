@@ -6,6 +6,7 @@ import asyncio, json, os, shutil, subprocess, sys, tempfile, time, hashlib, trac
 from concurrent.futures import ProcessPoolExecutor
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
+WORK = os.environ.get("SCHEMACAPS_WORK", os.path.join(tempfile.gettempdir(), "schemacaps_work"))  # was /home/claude/schemacaps/work in the original run
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(ROOT, "raw")
@@ -116,8 +117,8 @@ def do_package(item):
             results.append(rec["status"]); continue
         rec = {"package": pkg, "ecosystem": eco, "strate": meta["strate"], "version": ver, "published": dates[i],
                "index_in_window": i, "sampled_rank": k, "extracted_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
-        d = tempfile.mkdtemp(prefix="sc_", dir="/home/claude/schemacaps/work")
-        tmp = tempfile.mkdtemp(prefix="run_", dir="/home/claude/schemacaps/work")
+        d = tempfile.mkdtemp(prefix="sc_", dir=WORK)
+        tmp = tempfile.mkdtemp(prefix="run_", dir=WORK)
         try:
             ok, err, secs = install(pkg, eco, ver, d, dates[i])
             rec["deps_resolved_before"] = cutoff(dates[i])
@@ -157,7 +158,7 @@ def do_package(item):
     return pkg, results
 
 if __name__ == "__main__":
-    os.makedirs("/home/claude/schemacaps/work", exist_ok=True)
+    os.makedirs(WORK, exist_ok=True)
     corpus = json.load(open(os.path.join(ROOT, "corpus_versions.json")))
     items = [(p, m) for p, m in corpus.items() if m["versions"]]
     only = sys.argv[1:]

@@ -110,8 +110,8 @@ correction n'ajoute des appels au vérificateur gardé (≤ 2 s chacun) que pour
 nouvellement déclarés sous un `additionalProperties` typé.
 
 **Seconde graine (déclarée avant exécution, 14/11/2026, 16:13 UTC).** La règle corrigée ayant d'abord été évaluée
-sur le banc même qui avait révélé les trous (graine 20261114, post hoc), une seconde exécution indépendante utilise la
-graine **20270223**, fixée ici avant d'être lancée (`BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json`). Les
+sur le banc même qui avait révélé les trous (graine 20261114, post hoc), un second tirage du même générateur utilise la
+graine **20270223**, consignée ici avant d'être lancée (auto-attesté, comme l'horodatage du protocole) (`BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json`). Les
 deux exécutions sont rapportées. La garde est bornée en temps (2 s par inclusion) : le banc est déterministe sur une
 machine donnée mais pourrait en principe différer sur une machine beaucoup plus lente ; le critère de reproduction est
 0 re-lien silencieux erroné de la règle corrigée et 0 fausse acceptation du vérificateur gardé.

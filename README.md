@@ -2,12 +2,15 @@
 
 Yulliwas Ameur (Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Cnam), Samia Bouzefrane (CEDRIC, Cnam),
 Soumya Banerjee (Inria). Licence: MIT (code), CC BY 4.0 (data and documents); see `LICENSE`, `LICENSE-DATA`,
-`CITATION.cff`. Archived on Zenodo: [10.5281/zenodo.24224248](https://doi.org/10.5281/zenodo.24224248) (version v1.0.0-camera-ready;
-all versions: [10.5281/zenodo.24224247](https://doi.org/10.5281/zenodo.24224247)).
+`CITATION.cff`. Archived on Zenodo, all versions: [10.5281/zenodo.24224247](https://doi.org/10.5281/zenodo.24224247); the paper cites
+the version of tag `v1.0.1-camera-ready` (its DOI is shown on the Zenodo page of that release).
 
 Artefact of *SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority* (ICAART 2027,
 SciTePress). Everything the paper reports is regenerated from the archived corpus by scripts; `numbers.tex`, which
-the paper `\input`s, is itself generated, and `make check` fails if any regenerated number differs from it.
+the paper `\input`s, is itself generated, and `make check` fails if any regenerated deterministic number differs from it
+(machine-dependent values — timing `Tm*`, overhead `Ov*`, time-bounded sample counts `OrGenLex`/`OrGenFree` and the
+benchmark's timeout count `BenchChkUnknown` — are reported, not failed on; `make reproduce` re-measures timing on your
+machine, whereas the shipped `results/v2_timing.json` is the original 2-core x86-64 measurement cited by the paper).
 
 ## Quick start
 
