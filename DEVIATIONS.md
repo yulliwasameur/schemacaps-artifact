@@ -89,3 +89,29 @@ paquets ont au moins une version dans la fenêtre (le « 46 » comptait un paque
    (régénère l'intervalle par rééchantillonnage des paquets, graine fixe : [3,5 ; 25,2] % contre [3,4 ; 25,2] % publié).
    (j) Double annotation indépendante achevée (176 cas) et arbitrage des 29 désaccords. (k) Manifeste par version
    avec empreintes des registres (`results/releases.csv`).
+
+
+## Écart n° 11 — 14/11/2026, version finale (post hoc)
+
+Un banc à référence exacte (`adversarial_bench.py`, `make adversarial` ; graine fixe ; fragment de JSON Schema à
+domaines finis tranché par énumération, indépendamment de `jsonsubschema`) a été ajouté à la demande d'un relecteur.
+Il a révélé deux cas où la règle soumise re-liait en silence un changement amplifiant :
+
+- **(a)** une déclaration requise ou munie d'un défaut retirée d'un objet fermé : sa valeur effective devient ⊥,
+  que l'ancienne marge excluait. La règle demande désormais (`removed_to_bottom`) ; l'oracle label-free avait le même
+  angle mort (il ne comparait les défauts que sur les chemins présents dans les deux versions) et le signale désormais.
+- **(b)** un champ nouvellement déclaré sur un objet dont l'ancienne version ne l'admettait que par un
+  `additionalProperties` typé : la nouvelle déclaration doit rester incluse dans ce schéma (`declared_beyond_star`).
+
+Quatre tests de régression ajoutés (48 au total). Effet sur le pilote : aucun nombre label-free ne change ; en mode
+lexical, une ré-approbation de plus (412 → 413, total 1 319 → 1 320) et un re-lien silencieux de moins audité par
+l'oracle. Les temps de décision et le surcoût sont ceux de la mesure d'origine (x86-64, 2 cœurs, règle soumise) ; la
+correction n'ajoute des appels au vérificateur gardé (≤ 2 s chacun) que pour les déclarations retirées et les champs
+nouvellement déclarés sous un `additionalProperties` typé.
+
+**Seconde graine (déclarée avant exécution, 14/11/2026, 16:13 UTC).** La règle corrigée ayant d'abord été évaluée
+sur le banc même qui avait révélé les trous (graine 20261114, post hoc), une seconde exécution indépendante utilise la
+graine **20270223**, fixée ici avant d'être lancée (`BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json`). Les
+deux exécutions sont rapportées. La garde est bornée en temps (2 s par inclusion) : le banc est déterministe sur une
+machine donnée mais pourrait en principe différer sur une machine beaucoup plus lente ; le critère de reproduction est
+0 re-lien silencieux erroné de la règle corrigée et 0 fausse acceptation du vérificateur gardé.

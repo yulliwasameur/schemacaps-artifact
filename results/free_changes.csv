@@ -563,7 +563,7 @@ package,strate,from,to,tool,schema_changed,compatible,amp_core,amp_strict,undeci
 @wonderwhy-er/desktop-commander,B,0.1.30,0.1.35,search_code,True,True,True,True,False,True,False,False,,new_authority_arg:timeoutMs
 @wonderwhy-er/desktop-commander,B,0.1.30,0.1.35,search_files,True,True,True,True,False,True,False,False,,new_authority_arg:timeoutMs
 @wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,create_directory,False,,False,False,False,True,True,False,,
-@wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,edit_block,True,False,True,True,False,True,False,False,,removed:blockContent;new_authority_arg:expected_replacements;new_authority_arg:file_path;new_authority_arg:new_string;new_authority_arg:old_string
+@wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,edit_block,True,False,True,True,False,True,False,False,,removed_to_bottom:blockContent;new_authority_arg:expected_replacements;new_authority_arg:file_path;new_authority_arg:new_string;new_authority_arg:old_string
 @wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,execute_command,False,,False,False,False,True,True,False,,
 @wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,get_file_info,False,,False,False,False,True,True,False,,
 @wonderwhy-er/desktop-commander,B,0.1.35,0.1.39,list_directory,False,,False,False,False,True,True,False,,
@@ -1396,7 +1396,7 @@ figma-developer-mcp,B,0.1.11,0.1.13,download_figma_images,True,True,False,False,
 figma-developer-mcp,B,0.2.2,0.3.1,download_figma_images,True,,True,True,False,True,False,False,,new_authority_arg:scale
 figma-developer-mcp,B,0.2.2,0.3.1,get_figma_data,True,True,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.3.1,0.4.2,download_figma_images,True,,True,True,False,True,False,False,,new_authority_arg:pngScale;removed:scale;new_authority_arg:svgOptions;new_authority_arg:svgOptions.includeId;new_authority_arg:svgOptions.outlineText;new_authority_arg:svgOptions.simplifyStroke
-figma-developer-mcp,B,0.4.2,0.5.0,download_figma_images,True,,True,True,False,True,False,False,,widened:nodes;new_authority_arg:nodes[].cropTransform;new_authority_arg:nodes[].filenameSuffix;new_authority_arg:nodes[].needsCropping;new_authority_arg:nodes[].requiresImageDimensions;removed:svgOptions;removed:svgOptions.includeId;removed:svgOptions.outlineText;removed:svgOptions.simplifyStroke
+figma-developer-mcp,B,0.4.2,0.5.0,download_figma_images,True,,True,True,False,True,False,False,,widened:nodes;new_authority_arg:nodes[].cropTransform;new_authority_arg:nodes[].filenameSuffix;new_authority_arg:nodes[].needsCropping;new_authority_arg:nodes[].requiresImageDimensions;removed_to_bottom:svgOptions;removed_to_bottom:svgOptions.includeId;removed_to_bottom:svgOptions.outlineText;removed_to_bottom:svgOptions.simplifyStroke
 figma-developer-mcp,B,0.4.2,0.5.0,get_figma_data,True,True,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.5.0,0.6.0,download_figma_images,True,,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.6.0,0.6.2,download_figma_images,True,,False,False,True,True,False,False,,undecided:nodes;undecided:nodes[].fileName

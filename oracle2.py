@@ -96,6 +96,9 @@ def audit_label_free(so, sn):
     for p in set(do) & set(dn):
         if do[p][2] != dn[p][2]:
             issues.append(("default_changed", p, json.dumps([do[p][2], dn[p][2]])[:80]))
+    for p in set(do) - set(dn):                         # écart n° 11 : déclaration requise ou avec défaut retirée
+        if do[p][1] or do[p][2] is not None:
+            issues.append(("removed_to_bottom", p, json.dumps([do[p][1], do[p][2]])[:80]))
     st, vals = generate(sn)
     if st != "ok":
         return issues, "gen_error", 0

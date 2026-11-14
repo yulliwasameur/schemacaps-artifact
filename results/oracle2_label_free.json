@@ -12,6 +12,6 @@
  "asked": 645,
  "compat_undecided": 71,
  "unsound": [],
- "seconds": 744.5,
+ "seconds": 236.6,
  "conclusion": "no generated witness contradicts a silent re-bind"
 }

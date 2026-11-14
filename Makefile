@@ -6,9 +6,9 @@
 #   make extract     re-mine the corpus from the registries (long; needs requirements-extract.txt, node, npm, uv)
 PY ?= python3
 
-.PHONY: reproduce env test pilot oracle annotation robustness demo bench numbers check proof proof-docker survey manifest extract
+.PHONY: reproduce env test pilot oracle annotation robustness demo adversarial bench numbers check proof proof-docker survey manifest extract
 
-reproduce: test pilot oracle annotation robustness demo bench check
+reproduce: test pilot oracle annotation robustness demo adversarial bench check
 
 env:
 	$(PY) -m pip install -r requirements.lock
@@ -42,6 +42,9 @@ robustness:               ## package bootstrap, leave-one-out, cap sensitivity (
 demo:                     ## staged scenario matrix and exact-pair replay of the six real cases
 	$(PY) prototype/demo_scenarios.py
 	$(PY) prototype/replay_real.py
+
+adversarial:              ## exact-reference benchmark of the checker and of the rule (deviation 11)
+	$(PY) adversarial_bench.py
 
 bench:                    ## proxy overhead (5 runs x 500 iterations)
 	$(PY) prototype/bench_overhead.py

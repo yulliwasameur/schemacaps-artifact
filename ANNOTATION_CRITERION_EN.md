@@ -1,7 +1,7 @@
 # Annotation guide — "authority-bearing argument" (English translation)
 
 > Translation for reviewers of `CRITERES_annotation.md`, the French guide the annotators used. The French text is
-> authoritative. Annotator names are replaced by roles in the anonymised artefact.
+> authoritative. Annotator names are replaced by roles in this artefact (see `REDACTIONS.md`).
 
 **Goal.** For each case (package, tool, argument), decide whether the argument is *authority-bearing*:
 `oui` (yes) / `non` (no) / `incertain` (unsure). Judge the argument's **semantic role**, not whether a vulnerability

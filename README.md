@@ -1,7 +1,11 @@
-# SchemaCaps — artefact (anonymised for double-blind review)
+# SchemaCaps — artefact
 
-Artefact of *SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority* (ICAART 2027
-submission). Everything the paper reports is regenerated from the archived corpus by scripts; `numbers.tex`, which
+Yulliwas Ameur (Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Cnam), Samia Bouzefrane (CEDRIC, Cnam),
+Soumya Banerjee (Inria). Licence: MIT (code), CC BY 4.0 (data and documents); see `LICENSE`, `LICENSE-DATA`,
+`CITATION.cff`. DOI: *(Zenodo DOI, added at release)*.
+
+Artefact of *SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority* (ICAART 2027,
+SciTePress). Everything the paper reports is regenerated from the archived corpus by scripts; `numbers.tex`, which
 the paper `\input`s, is itself generated, and `make check` fails if any regenerated number differs from it.
 
 ## Quick start
@@ -12,7 +16,7 @@ the paper `\input`s, is itself generated, and `make check` fails if any regenera
     make proof            # Coq 8.18.0 (or: make proof-docker)
     make survey           # client survey test protocol (node >= 20, npm, uv, network)
 
-`make reproduce` = `test pilot oracle annotation robustness demo bench check`: it regenerates every result, then checks
+`make reproduce` = `test pilot oracle annotation robustness demo adversarial bench check`: it regenerates every result, then checks
 it against the shipped `numbers.tex` (`make numbers` rewrites that file). About an hour on 2 cores; the
 oracle and the decision-time measurement dominate.
 
@@ -21,8 +25,9 @@ oracle and the decision-time measurement dominate.
 | Claim (paper section) | Level | Command | Output |
 |---|---|---|---|
 | Per-step non-amplification composes along a chain (§4) | mechanised | `make proof` | `proof/NonAmplification.v` (Print Assumptions: closed) |
-| The rule decides Definition 1 conservatively (§4) | tested | `make test` | 44 tests in `tests/` |
+| The rule decides Definition 1 conservatively (§4) | tested | `make test` | 48 tests in `tests/` |
 | The subschema checker is unsound on boolean enums; the guard fixes the probes (§4) | tested | `python3 checker_probes.py` | `results/checker_probes.json` |
+| Exact-reference benchmark of the checker and of the rule; the two gaps it exposed are fixed (§4, deviation 11) | tested | `make adversarial` | `results/adversarial_bench.json` |
 | No generated witness contradicts any silent re-bind (§7) | measured | `make oracle` | `results/oracle2_{label_free,lexical}.json` |
 | The proxy enforces the rule; overhead (§5) | prototype | `make test`, `make bench` | `tests/test_proxy.py`, `results/proto_overhead.json`, `results/v2_timing.json` |
 | Staged attacks blocked; six real cases (§6) | prototype | `make demo` | `results/proto_scenarios.json`, `results/proto_replay_real.json` |
@@ -49,7 +54,7 @@ oracle and the decision-time measurement dominate.
   metadata with the lexical flag (read only by `agreement.py`). Protocol: `ANNOTATION_PROTOCOL.md`; criterion:
   `CRITERES_annotation.md` (French, used by the annotators) and `ANNOTATION_CRITERION_EN.md`.
 - `PROTOCOLE.md` (pre-registered, French) and `PROTOCOL_EN.md`; `DEVIATIONS.md` and `DEVIATIONS_EN.md` (dated,
-  pre-classification vs post hoc); `TIMELINE.md`; `REDACTIONS.md` (what the anonymisation changed, and hashes).
+  pre-classification vs post hoc); `TIMELINE.md`; `REDACTIONS.md` (annotator names replaced by roles, and hashes).
 - `logs/` — extraction logs (`extract.log`, `extract_raw.log`, `intermediates.log`) and the logs of the last run.
 
 ## What the artefact does not establish

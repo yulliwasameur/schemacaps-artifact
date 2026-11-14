@@ -181,3 +181,25 @@ if __name__ == "__main__":
             except AssertionError as e:
                 fails += 1; print("FAIL", k, e)
     sys.exit(1 if fails else 0)
+
+
+def test_removing_defaulted_or_required_declaration_asks():
+    # Deviation 11 (adversarial benchmark): the effective value of a removed declaration becomes ⊥ ("server decides"),
+    # which its old marginal excluded (required, or filled by a declared default).
+    for old in (obj({"path": {"type": "string", "default": "/tmp"}, "q": S}),
+                obj({"path": S, "q": S}, required=["path"])):
+        ask, why = asks(old, obj({"q": S}), LABEL_FREE)
+        assert ask and "removed_to_bottom:path" in why, why
+
+
+def test_removing_optional_declaration_without_default_rebinds():
+    ask, why = asks(obj({"path": S, "q": S}), obj({"q": S}), LABEL_FREE)
+    assert not ask and "removed:path" in why, why
+
+
+def test_declaration_beyond_typed_additional_properties_asks():
+    # Deviation 11: the old object admitted undeclared fields only as integers; declaring one as a boolean widens it.
+    old = {"type": "object", "properties": {"q": S}, "additionalProperties": {"type": "integer"}}
+    new = {"type": "object", "properties": {"q": S, "w": {"type": "boolean"}}, "additionalProperties": {"type": "integer"}}
+    ask, why = asks(old, new, LABEL_FREE)
+    assert ask and "declared_beyond_star:w" in why, why

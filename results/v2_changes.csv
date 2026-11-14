@@ -1396,7 +1396,7 @@ figma-developer-mcp,B,0.1.11,0.1.13,download_figma_images,True,True,False,False,
 figma-developer-mcp,B,0.2.2,0.3.1,download_figma_images,True,,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.2.2,0.3.1,get_figma_data,True,True,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.3.1,0.4.2,download_figma_images,True,,True,True,False,True,False,False,,new_authority_arg:svgOptions.includeId
-figma-developer-mcp,B,0.4.2,0.5.0,download_figma_images,True,,False,False,False,True,False,False,,removed:svgOptions.includeId
+figma-developer-mcp,B,0.4.2,0.5.0,download_figma_images,True,,False,True,False,True,False,False,,removed_to_bottom:svgOptions.includeId
 figma-developer-mcp,B,0.4.2,0.5.0,get_figma_data,True,True,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.5.0,0.6.0,download_figma_images,True,,False,False,False,True,False,False,,
 figma-developer-mcp,B,0.6.0,0.6.2,download_figma_images,True,,False,False,True,True,False,False,,undecided:nodes[].fileName

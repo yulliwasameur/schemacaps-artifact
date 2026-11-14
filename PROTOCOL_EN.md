@@ -4,9 +4,9 @@
 > written on 29 Sept 2026 at 15:25:05 UTC and hashed ten seconds later (`PROTOCOLE.sha256`), before the corpus
 > was enumerated (15:25:44–15:26:15 UTC) and extracted (15:29–16:14 UTC). The ordering is recorded in the
 > artefact (file times and the `extracted_at` field of every release record, see `TIMELINE.md`); it is
-> self-attested — the protocol was not deposited with a third-party registry. The copy of `PROTOCOLE.md` in the
-> anonymised artefact has two annotator names replaced (see `REDACTIONS.md`), so its hash differs from the
-> recorded one; the original is released after review so the recorded hash can be checked.
+> self-attested — the protocol was not deposited with a third-party registry. The copy of `PROTOCOLE.md` in this
+> artefact has two annotator names replaced by roles (see `REDACTIONS.md`), so its hash differs from the recorded
+> one; the original file is kept by the authors and available on request, so the recorded hash can be checked then.
 
 ## Question
 Among the real evolutions of the input schemas (`inputSchema`) of the tools of published MCP servers, how many

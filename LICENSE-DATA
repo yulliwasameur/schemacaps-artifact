@@ -1,0 +1,8 @@
+The data and documentation of this artefact (corpus snapshots under raw/, raw40/, raw_intermediates/, raw_run1/,
+cache/, results/, annotation/, and the Markdown documents) are licensed under the Creative Commons Attribution 4.0
+International licence (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/legalcode
+
+The tool schemas in raw*/ were extracted from third-party npm and PyPI packages; they remain subject to the licences
+of those packages and are redistributed here only as research data, unmodified.
+
+Copyright (c) 2026 Yulliwas Ameur, Samia Bouzefrane, Soumya Banerjee

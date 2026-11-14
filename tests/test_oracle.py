@@ -39,3 +39,9 @@ def test_lexical_detects_opening_new_arg_and_widening():
 
 def test_lexical_ignores_non_authority_widening():
     assert not kinds(oracle2.audit_lexical, o({"text": {"enum": ["a"]}}), o({"text": {"enum": ["a", "b"]}}))
+
+
+def test_label_free_detects_removed_defaulted_declaration():
+    # Deviation 11: removing a defaulted declaration from a closed object turns its effective value into ⊥.
+    assert "removed_to_bottom" in kinds(oracle2.audit_label_free, o({"x": {"type": "string", "default": "a"}, "y": S}),
+                                        o({"y": S}))

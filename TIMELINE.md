@@ -18,4 +18,4 @@ Self-attested: file times and recorded extraction times; nothing was deposited w
 | 2026-09-30 09:06:44 | deviation log, last edit (DEVIATIONS.md) |
 
 The protocol hash in PROTOCOLE.sha256 is that of the original file; the artefact copy of PROTOCOLE.md is
-anonymised (REDACTIONS.md), so its own hash is given there as well.
+redacted (annotator names replaced by roles, REDACTIONS.md), so its own hash is given there as well.

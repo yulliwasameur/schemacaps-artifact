@@ -21,5 +21,5 @@ rows.sort(key=lambda r: r[1])
 out = ["# Timeline (UTC)", "", "Self-attested: file times and recorded extraction times; nothing was deposited with a third party.", "",
        "| When (UTC) | Event |", "|---|---|"] + [f"| {w} | {e} |" for e, w in rows]
 out += ["", "The protocol hash in PROTOCOLE.sha256 is that of the original file; the artefact copy of PROTOCOLE.md is",
-        "anonymised (REDACTIONS.md), so its own hash is given there as well."]
+        "redacted (annotator names replaced by roles, REDACTIONS.md), so its own hash is given there as well."]
 open("TIMELINE.md", "w").write("\n".join(out) + "\n"); print("\n".join(out))

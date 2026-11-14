@@ -104,7 +104,7 @@ COMB = ("anyOf", "oneOf", "allOf", "if", "not", "dependentRequired", "dependentS
         "minProperties", "maxProperties", "propertyNames", "patternProperties")
 BRANCH = ("anyOf", "oneOf", "allOf")
 STRICT = ("new_authority_arg", "widened", "became_optional", "default_changed", "constraint_dropped",
-          "object_opened", "object_introduced_open", "nullable_on_required", "nullable", "hint_raised",
+          "object_opened", "object_introduced_open", "nullable_on_required", "nullable", "hint_raised", "removed_to_bottom", "declared_beyond_star",
           "shape_changed")
 CORE = ("new_authority_arg", "widened")
 
@@ -288,10 +288,30 @@ def analyse(o, n, labeller=None):
             if d1 != d0 and not (d1 is None and d0 is None):
                 reasons.append(f"default_changed:{p}")
         elif p in dn:
-            reasons.append(("new_authority_arg:" if closed_ancestor(p, oo, do) else "declaration_restored:") + p)
+            if closed_ancestor(p, oo, do):
+                reasons.append("new_authority_arg:" + p)
+            elif parent(p) in apo:
+                # Écart n° 11 (banc adverse) : l'ancien objet n'admettait ce champ que par son additionalProperties
+                # typé ; la nouvelle déclaration doit rester incluse dans ce schéma.
+                r = sub(clean(dn[p][0]), clean(apo[parent(p)]))
+                if r is None:
+                    und = True; reasons.append(f"undecided_star:{p}")
+                elif r is False:
+                    reasons.append("declared_beyond_star:" + p)
+                else:
+                    reasons.append("declaration_restored:" + p)
+            else:
+                reasons.append("declaration_restored:" + p)
         else:
             par_new_open = not on.get(parent(p), False) if parent(p) in on else not closed_ancestor(p, on, dn)
-            reasons.append(("constraint_dropped:" if par_new_open else "removed:") + p)
+            if par_new_open:
+                reasons.append("constraint_dropped:" + p)
+            elif do[p][1] or do[p][2] is not None:
+                # Écart n° 11 (banc adverse, 14/11/2026) : une déclaration requise ou munie d'un défaut disparaît d'un
+                # objet fermé ; sa valeur effective devient ⊥ (« le serveur décide »), absente de l'ancienne marge.
+                reasons.append("removed_to_bottom:" + p)
+            else:
+                reasons.append("removed:" + p)
     for path, closed in oo.items():
         if path not in on:
             # Écart n° 10 : l'ancienne version ferme cet objet (⋆ n'admet rien) ; la nouvelle ne l'expose plus comme

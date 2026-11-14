@@ -16,6 +16,7 @@ release record (`TIMELINE.md`). "Pre-classification" means decided before any sc
 | 8 | 29/09 21:17, after an adversarial review | classifier v2: `required`, defaults, nested paths, openings, product condition, tool hints | post hoc | defines the reported rule |
 | 9 | 29/09 evening, after a second review | ⋆ under closed ancestors, typed `additionalProperties`, branch descent, unresolved `$ref` | post hoc | re-approvals 343 → 395 |
 | 10 | 30/09, revision 2 | see below | post hoc | lexical counts unchanged; label-free mode added |
+| 11 | 14/11, camera-ready | exact-reference benchmark; two rule gaps fixed (see below) | post hoc | label-free counts unchanged; lexical +1 re-approval |
 
 Deviation 10 in detail (previous versions archived: `classify2_dev9.py`, `results/v2_dev9_*`, `prototype/archive/`):
 
@@ -45,3 +46,31 @@ Deviation 10 in detail (previous versions archived: `classify2_dev9.py`, `result
 
 What was pre-specified is the corpus, the window, the extraction procedure, the two questions and the three rules
 compared. The classifier, and hence every count it produces, is post hoc; the paper says so.
+
+
+## Deviation 11 — 14/11/2026, camera-ready (post hoc)
+
+An exact-reference benchmark (`adversarial_bench.py`, `make adversarial`; fixed seed; finite-domain fragment of JSON
+Schema decided by enumeration, independent of `jsonsubschema`) was added at the request of a reviewer. It exposed two
+cases in which the submitted rule re-bound an amplifying change silently:
+
+- **(a)** a required or defaulted declaration removed from a closed object: its effective value becomes ⊥, which
+  its old marginal excluded. The rule now asks (`removed_to_bottom`); the label-free oracle had the same blind spot
+  (it compared defaults only on paths present in both versions) and now flags it.
+- **(b)** a field newly declared on an object whose old version admitted it only through a typed
+  `additionalProperties`: the new declaration must stay included in that schema (`declared_beyond_star`).
+
+Four regression tests were added (48 in total). Effect on the pilot: no label-free number changes; in lexical mode one
+re-approval is added (412 → 413, total 1,319 → 1,320) and one fewer silent re-bind is audited by the oracle.
+Decision-time and overhead figures are those of the original measurement (2-core x86-64); the fix adds guarded checker calls only for removed declarations and
+for fields newly declared under a typed `additionalProperties` (see below).
+
+**Deviation 11, second seed (declared before running, 14/11/2026, 16:13 UTC).** Because the fixed rule was first evaluated on
+the very benchmark that exposed the gaps (seed 20261114, post hoc), a second, independent run uses seed **20270223**,
+fixed here before it was executed: `BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json python3
+adversarial_bench.py`. Both runs are reported. The checker guard is time-bounded (2 s per inclusion), so the
+benchmark is deterministic on a given machine but could in principle differ on a much slower one; the criterion of
+reproduction is 0 false silent re-binds of the fixed rule and 0 false acceptances of the guarded checker.
+The decision-time figures of the paper (`results/v2_timing.json`) are those of the original measurement with the
+submitted rule (2-core x86-64); the fix adds checker calls (`sub()`, guarded, at most 2 s each) only for removed
+declarations and for fields newly declared under a typed `additionalProperties`.

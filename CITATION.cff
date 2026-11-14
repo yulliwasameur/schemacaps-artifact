@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this artefact, please cite the paper below."
+title: "SchemaCaps artefact: corpus, rule, checker benchmark, proxy and proofs"
+version: v1.0.0-camera-ready
+license: MIT
+repository-code: "https://github.com/yulliwasameur/schemacaps-artifact"
+authors:
+  - family-names: Ameur
+    given-names: Yulliwas
+    affiliation: "Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Cnam"
+  - family-names: Bouzefrane
+    given-names: Samia
+    affiliation: "CEDRIC, Cnam"
+  - family-names: Banerjee
+    given-names: Soumya
+    affiliation: "Inria"
+preferred-citation:
+  type: conference-paper
+  title: "SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority"
+  authors:
+    - family-names: Ameur
+      given-names: Yulliwas
+    - family-names: Bouzefrane
+      given-names: Samia
+    - family-names: Banerjee
+      given-names: Soumya
+  collection-title: "Proceedings of the International Conference on Agents and Artificial Intelligence (ICAART 2027)"
+  publisher:
+    name: SciTePress
+  year: 2027

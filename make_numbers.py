@@ -63,6 +63,8 @@ pin, comp, lex, free = T["def_changed"], T["rq_compat"], T["rq_strict"], F["rq_s
 put("LexBelowPin", pct(pin - lex, pin), 0); put("LexBelowCompat", pct(comp - lex, comp), 0)
 put("FreeBelowPin", pct(pin - free, pin), 0); put("FreeAboveCompat", pct(free - comp, comp), 1)
 put("FreeMinusCompat", free - comp)
+# plain integers (no thousands separator) for chart lengths in the slides and the poster
+M["AskPinPlain"], M["AskCompatPlain"], M["AskSCFreePlain"] = str(pin), str(comp), str(free)
 add = T["added"]
 put("TotPin", pin + add); put("TotCompat", comp + add); put("TotLex", lex + add); put("TotFree", free + add)
 put("TotFreeBelowPin", pct(pin - free, pin + add), 0)
@@ -99,7 +101,7 @@ for lab, f in (("Lex", "oracle2_lexical.json"), ("Free", "oracle2_label_free.jso
     o = J(f)
     put("OrSilent" + lab, o["silent_rebinds"]); put("OrSame" + lab, o["identical_schema"]); put("OrSchema" + lab, o["schema_rebinds"])
     put("OrCompat" + lab, o.get("compatible", 0)); put("OrIncompat" + lab, o.get("incompatible", 0))
-    put("OrUnd" + lab, o.get("compat_undecided", 0)); put("OrGen" + lab, o["generated_checks"])
+    put("OrUnd" + lab, o.get("compat_undecided", 0)); put("OrGen" + lab, o["generated_checks"])   # label-free: generated calls; lexical: marginal checks tested
     put("OrGenErr" + lab, o.get("gen_error", 0)); put("OrWitness" + lab, len(o["unsound"])); put("OrN", o["samples_per_check"])
 cp = J("checker_probes.json")
 put("Probes", cp["probes"]); put("ProbesRawUnsound", len(cp["raw_unsound"])); put("ProbesGuardUnsound", len(cp["guarded_unsound"]))
@@ -127,7 +129,7 @@ put("OvRuns", ov["runs"]); put("OvIter", ov["iterations_per_run"])
 tm = J("v2_timing.json")
 for lab, k in (("Lex", "lexical"), ("Free", "label_free")):
     put("TmMed" + lab, tm[k]["median_ms"], 0); put("TmNinety" + lab, tm[k]["p90_ms"], 0)
-    put("TmPNN" + lab, tm[k]["p99_ms"] / 1000.0, 1)
+    put("TmPNN" + lab, tm[k]["p99_ms"] / 1000.0, 1); put("TmMax" + lab, tm[k]["max_ms"] / 1000.0, 1)
 rp = J("proto_replay_real.json")
 put("ReplayCases", len(rp["cases"])); put("ReplayOK", sum(all(c.get("expected_reason_produced", {}).values()) for c in rp["cases"]))
 put("ReplayCompatRebind", sum(c["compat"]["verdict"] == "rebind" for c in rp["cases"]))
@@ -151,6 +153,32 @@ for s_name, label in names.items():
     rows.append(label + " & " + " & ".join(cells) + "\\\\")
 M["DemoRows"] = "\n".join(rows)
 put("ReceiptsVerified", sum(1 for s in sc.values() for c, r in s.items() if r.get("receipts_verified")))
+
+# ---- change kinds added by deviation 11, over all changes (label-free classification)
+_fc = list(csv.DictReader(open(os.path.join(R, "free_changes.csv"))))
+put("TxRemovedBottom", sum("removed_to_bottom:" in r["reasons"] for r in _fc))
+put("TxBeyondStar", sum("declared_beyond_star:" in r["reasons"] for r in _fc))
+
+# ---- adversarial benchmark (camera-ready, deviation 11) ---------------------------------------------------
+B = J("adversarial_bench.json"); BC, BR = B["checker"], B["rule"]
+put("BenchCheckPairs", BC["pairs"]); put("BenchCheckNotIncl", BC["raw"]["not_included"])
+put("BenchRawFA", BC["raw"]["false_accept"]); put("BenchNormFA", BC["norm"]["false_accept"])
+put("BenchGuardFA", BC["guarded"]["false_accept"])
+put("BenchRulePairs", BR["pairs"]); put("BenchRuleAmp", BR["amplifying"]); put("BenchRuleCompatAmp", BR["compatible_amplifying"])
+put("BenchVthreeSilent", BR["v3_false_silent"]); put("BenchVthreeRemoved", BR["v3_false_silent_by_kind"]["removed_to_bottom"]); put("BenchVthreeStar", BR["v3_false_silent_by_kind"]["declared_beyond_star"]); put("BenchFalseSilent", BR["guarded"]["false_silent"])
+put("BenchAsksNonAmp", BR["guarded"]["asks_non_amplifying"]); put("BenchPinAsksNonAmp", BR["pin"]["asks_non_amplifying"])
+put("BenchCompatFalseSilent", BR["compat"]["false_silent"])
+put("BenchGenerated", BR["generated"]); put("BenchDiscarded", BR["discarded"])
+put("BenchSiblingAsk", BR["sibling_old"]); put("BenchSiblingSilent", BR["sibling_old_silent"])
+put("BenchRuleNonAmp", BR["non_amplifying"]); put("BenchUnnecPct", pct(BR["guarded"]["asks_non_amplifying"], BR["non_amplifying"]), 0)
+put("BenchGuardOverRule", BR["guard_overturned_rule_phase"])
+B2 = J("adversarial_bench_seed2.json"); C2, R2 = B2["checker"], B2["rule"]
+put("BenchSeedTwo", B2["seed"]); put("BenchTwoPairs", R2["pairs"]); put("BenchTwoAmp", R2["amplifying"])
+put("BenchTwoFalseSilent", R2["guarded"]["false_silent"]); put("BenchTwoVthreeSilent", R2["v3_false_silent"])
+put("BenchTwoRawFA", C2["raw"]["false_accept"]); put("BenchTwoNormFA", C2["norm"]["false_accept"])
+put("BenchTwoGuardFA", C2["guarded"]["false_accept"]); put("BenchTwoCheckNotIncl", C2["raw"]["not_included"])
+for k, n in (("conditional", "BenchCond"), ("anyOf", "BenchAnyOf"), ("ref", "BenchRef"), ("not", "BenchNot"), ("nested", "BenchNested")):
+    put(n, BR["features"][k])
 
 # ---- survey, tests, proof -------------------------------------------------------------------------------
 sv = J("client_survey.json")
