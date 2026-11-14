@@ -2,7 +2,9 @@
  "pilot": {
   "changes": 1197,
   "asks": 693,
-  "silent_where_schemacaps_asks": 22
+  "silent_where_schemacaps_asks": 22,
+  "of_which_amplifying": 7,
+  "of_which_undecided": 15
  },
  "bench_seed1": {
   "pairs": 600,

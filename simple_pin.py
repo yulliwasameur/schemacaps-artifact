@@ -24,7 +24,7 @@ def simple_silent(old, new):
 
 def pilot():
     rows = [r for r in csv.DictReader(open(os.path.join(HERE, "results", "free_changes.csv"))) if r["schema_changed"] == "True"]
-    asks = silent_where_rule_asks = 0
+    asks = silent_where_rule_asks = silent_amp = silent_und = 0
     for r in rows:
         o = [t for t in load(r["package"], r["from"])["tools"] if t["name"] == r["tool"]][0]
         n = [t for t in load(r["package"], r["to"])["tools"] if t["name"] == r["tool"]][0]
@@ -33,7 +33,10 @@ def pilot():
             asks += 1
         elif r["amp_strict"] == "True" or r["undecided"] == "True":
             silent_where_rule_asks += 1
-    return {"changes": len(rows), "asks": asks, "silent_where_schemacaps_asks": silent_where_rule_asks}
+            if r["amp_strict"] == "True": silent_amp += 1
+            else: silent_und += 1
+    return {"changes": len(rows), "asks": asks, "silent_where_schemacaps_asks": silent_where_rule_asks,
+            "of_which_amplifying": silent_amp, "of_which_undecided": silent_und}
 
 
 def bench(fname):

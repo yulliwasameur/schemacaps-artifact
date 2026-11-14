@@ -80,3 +80,12 @@ alternative rule, "pin unless the new input schema is included in the old one" (
 descriptions and effective values ignored), on the pilot and on both benchmark seeds. (ii) `agreement.py` now also
 reports the two components of K (changes among the lexically flagged ones confirmed by adjudication, and changes
 carried by authority-bearing arguments the labeller missed). No earlier number changes.
+
+**Deviation 11, K correction (14/11/2026, post hoc, decided by the corresponding author after an audit).** The
+human-validated count K of compatible core changes counted, besides the confirmed flagged ones, the changes that add
+an authority-bearing argument the lexical labeller missed, but excluded any such change that also carried another
+STRICT ask reason. That exclusion dropped three GitLab changes (`source_branch` added while `merge_request_iid` became
+optional). With the exclusion restricted to core reasons, K = 76 (66 confirmed of the 84 flagged, plus 10 missed); the
+reviewed version reported 73. `results/agreement.json` keeps both (`K_final_core`, `K_final_core_reviewed_version`).
+`simple_pin.py` now also splits the changes it re-binds silently into those SchemaCaps judges amplifying and those
+it cannot decide.

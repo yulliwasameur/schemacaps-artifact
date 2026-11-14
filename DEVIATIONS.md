@@ -121,3 +121,11 @@ règle la plus simple, « épingler sauf si le nouveau schéma d'entrée est inc
 schéma entier, descriptions et valeurs effectives ignorées), sur le pilote et les deux graines du banc. (ii)
 `agreement.py` publie aussi les deux composantes de K (changements signalés par le lexique et confirmés après
 arbitrage ; changements portés par des arguments d'autorité que le lexique a manqués). Aucun nombre antérieur ne change.
+
+**Écart n° 11, correction de K (14/11/2026, post hoc, décidée par l'auteur correspondant après un audit).** Le nombre
+validé K de changements compatibles « cœur » comptait, outre les changements signalés confirmés, ceux qui ajoutent un
+argument d'autorité manqué par le lexique, mais excluait tout changement portant aussi une autre raison STRICT. Cette
+exclusion faisait perdre trois changements GitLab (`source_branch` ajouté alors que `merge_request_iid` devenait
+optionnel). En restreignant l'exclusion aux raisons « cœur », K = 76 (66 confirmés parmi les 84 signalés, plus 10
+manqués) ; la version relue indiquait 73. `results/agreement.json` garde les deux valeurs. `simple_pin.py` sépare en
+outre les changements qu'il re-lie en silence entre ceux que SchemaCaps juge amplifiants et ceux qu'il ne sait trancher.

@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this artefact, please cite the paper below."
 title: "SchemaCaps artefact: corpus, rule, checker benchmark, proxy and proofs"
-version: v1.0.2-camera-ready
+version: v1.0.3-camera-ready
 doi: 10.5281/zenodo.24224247
 license: MIT
 repository-code: "https://github.com/yulliwasameur/schemacaps-artifact"

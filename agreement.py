@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Accord inter-annotateurs et chiffres validés (feuilles v2, 158 cas : 46 signalés par la règle lexicale,
-112 arguments ajoutés non signalés, mélangés sans indication).
+"""Accord inter-annotateurs et chiffres validés (feuilles v2, 176 cas : 44 signalés par la règle lexicale,
+132 arguments ajoutés non signalés, mélangés sans indication).
 Usage : python3 agreement.py A1.xlsx A2.xlsx [arbitrage.xlsx]
 Produit results/agreement.json : kappa de Cohen, précision et rappel de la règle lexicale, nombre validé K de
 changements compatibles et amplifiants (bas : les deux « oui » ; haut : au moins un « oui »)."""
@@ -41,14 +41,18 @@ def count(S, kinds): return sum(1 for r in rows if any((r["package"], p) in S fo
 from classify2 import walk, closed_ancestor, leaf, is_authority
 from classify import resolve_local_refs
 from witness import load as ld
-def missed(S):
+def missed(S, kinds=None):
+    # Écart n° 11 (audit du 14/11/2026) : un changement compte s'il ajoute un argument d'autorité non signalé et
+    # n'est pas déjà compté par un argument confirmé des « kinds » visés ; la version relue excluait à tort tout
+    # changement portant une autre raison STRICT (3 changements perdus pour K cœur).
+    kinds = STRICT if kinds is None else kinds
     c = 0
     for r in rows:
         o = [t for t in ld(r["package"], r["from"])["tools"] if t["name"] == r["tool"]][0]
         nw = [t for t in ld(r["package"], r["to"])["tools"] if t["name"] == r["tool"]][0]
         do, oo, _ = walk(resolve_local_refs(o.get("inputSchema") or {}))[:3]; dn, _, _ = walk(resolve_local_refs(nw.get("inputSchema") or {}))[:3]
         new = {p for p in set(dn) - set(do) if closed_ancestor(p, oo, do) and not is_authority(leaf(p))}
-        if any((r["package"], p) in S for p in new) and not any((r["package"], p) in S for p in paths(r, STRICT)):
+        if any((r["package"], p) in S for p in new) and not any((r["package"], p) in S for p in paths(r, kinds)):
             c += 1
     return c
 def kappa_of(pairs, labs_):
@@ -69,12 +73,13 @@ res = {"n": n, "percent_agreement": round(po, 3), "cohen_kappa": round(kappa, 3)
        "flagged": len(F), "unflagged": len(U), "gold_yes": len(yes), "disagreements": dis,
        "unresolved_disagreements": [i for i in dis if not arb.get(i)],
        "lexical_rule_precision": round(prec, 3), "lexical_rule_recall": round(rec, 3),
-       "K_final_core": count(fin, ("new_authority_arg", "widened")) + missed(fin),
+       "K_final_core": count(fin, ("new_authority_arg", "widened")) + missed(fin, ("new_authority_arg", "widened")),
        "K_final_core_flagged": count(fin, ("new_authority_arg", "widened")),
-       "K_final_core_missed": missed(fin),
+       "K_final_core_missed": missed(fin, ("new_authority_arg", "widened")),
+       "K_final_core_reviewed_version": count(fin, ("new_authority_arg", "widened")) + missed(fin),
        "K_final_strict_args": count(fin, STRICT) + missed(fin),
-       "K_low_both_yes": count(both, ("new_authority_arg", "widened")) + missed(both),
-       "K_high_one_yes": count(one, ("new_authority_arg", "widened")) + missed(one),
+       "K_low_both_yes": count(both, ("new_authority_arg", "widened")) + missed(both, ("new_authority_arg", "widened")),
+       "K_high_one_yes": count(one, ("new_authority_arg", "widened")) + missed(one, ("new_authority_arg", "widened")),
        "compatible_total": len(rows)}
 json.dump(res, open("results/agreement.json", "w"), indent=1, ensure_ascii=False)
 print(json.dumps(res, indent=1, ensure_ascii=False))
