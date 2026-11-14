@@ -1,0 +1,17 @@
+{
+ "pilot": {
+  "changes": 1197,
+  "asks": 693,
+  "silent_where_schemacaps_asks": 22
+ },
+ "bench_seed1": {
+  "pairs": 600,
+  "amplifying": 330,
+  "false_silent": 27
+ },
+ "bench_seed2": {
+  "pairs": 600,
+  "amplifying": 333,
+  "false_silent": 17
+ }
+}

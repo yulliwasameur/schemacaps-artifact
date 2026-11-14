@@ -74,3 +74,9 @@ reproduction is 0 false silent re-binds of the fixed rule and 0 false acceptance
 The decision-time figures of the paper (`results/v2_timing.json`) are those of the original measurement with the
 submitted rule (2-core x86-64); the fix adds checker calls (`sub()`, guarded, at most 2 s each) only for removed
 declarations and for fields newly declared under a typed `additionalProperties`.
+
+**Camera-ready analyses added after the audits (14/11/2026, post hoc).** (i) `simple_pin.py` measures the simplest
+alternative rule, "pin unless the new input schema is included in the old one" (guarded checker, whole schema,
+descriptions and effective values ignored), on the pilot and on both benchmark seeds. (ii) `agreement.py` now also
+reports the two components of K (changes among the lexically flagged ones confirmed by adjudication, and changes
+carried by authority-bearing arguments the labeller missed). No earlier number changes.

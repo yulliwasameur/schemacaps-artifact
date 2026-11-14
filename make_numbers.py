@@ -117,7 +117,7 @@ put("AnnSure", a["n_excluding_unsure"]); put("AnnUnsure", max(a["unsure_counts"]
 put("AnnDisagree", len(a["disagreements"])); put("AnnHard", len(a["hard_disagreements"]))
 put("AnnUnresolved", len(a["unresolved_disagreements"]))
 put("Precision", a["lexical_rule_precision"], 2); put("Recall", a["lexical_rule_recall"], 2)
-put("GoldYes", a["gold_yes"]); put("KCore", a["K_final_core"]); put("KStrict", a["K_final_strict_args"])
+put("GoldYes", a["gold_yes"]); put("KCore", a["K_final_core"]); put("KCoreFlagged", a["K_final_core_flagged"]); put("KCoreMissed", a["K_final_core_missed"]); put("KStrict", a["K_final_strict_args"])
 put("FrameFlagged", fr["flagged_frame"]); put("FrameMissing", len(fr["flagged_not_annotated"]))
 put("FrameMissingCore", sum(x["has_core_reason"] for x in fr["flagged_not_annotated"]))
 
@@ -189,6 +189,11 @@ put("BenchTwoRawFA", C2["raw"]["false_accept"]); put("BenchTwoNormFA", C2["norm"
 put("BenchTwoGuardFA", C2["guarded"]["false_accept"]); put("BenchTwoCheckNotIncl", C2["raw"]["not_included"])
 for k, n in (("conditional", "BenchCond"), ("anyOf", "BenchAnyOf"), ("ref", "BenchRef"), ("not", "BenchNot"), ("nested", "BenchNested")):
     put(n, BR["features"][k])
+
+# ---- simplest alternative: pin unless S' is included in S (simple_pin.py) ---------------------------------------
+SP = J("simple_pin.json")
+put("SimplePinAsk", SP["pilot"]["asks"]); put("SimplePinMissPilot", SP["pilot"]["silent_where_schemacaps_asks"])
+put("SimplePinMissBench", SP["bench_seed1"]["false_silent"]); put("SimplePinMissBenchTwo", SP["bench_seed2"]["false_silent"])
 
 # ---- survey, tests, proof -------------------------------------------------------------------------------
 sv = J("client_survey.json")

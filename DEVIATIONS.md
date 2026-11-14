@@ -115,3 +115,9 @@ graine **20270223**, consignée ici avant d'être lancée (auto-attesté, comme 
 deux exécutions sont rapportées. La garde est bornée en temps (2 s par inclusion) : le banc est déterministe sur une
 machine donnée mais pourrait en principe différer sur une machine beaucoup plus lente ; le critère de reproduction est
 0 re-lien silencieux erroné de la règle corrigée et 0 fausse acceptation du vérificateur gardé.
+
+**Analyses ajoutées pour la version finale après les audits (14/11/2026, post hoc).** (i) `simple_pin.py` mesure la
+règle la plus simple, « épingler sauf si le nouveau schéma d'entrée est inclus dans l'ancien » (vérificateur gardé,
+schéma entier, descriptions et valeurs effectives ignorées), sur le pilote et les deux graines du banc. (ii)
+`agreement.py` publie aussi les deux composantes de K (changements signalés par le lexique et confirmés après
+arbitrage ; changements portés par des arguments d'autorité que le lexique a manqués). Aucun nombre antérieur ne change.

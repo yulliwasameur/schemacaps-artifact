@@ -70,6 +70,8 @@ res = {"n": n, "percent_agreement": round(po, 3), "cohen_kappa": round(kappa, 3)
        "unresolved_disagreements": [i for i in dis if not arb.get(i)],
        "lexical_rule_precision": round(prec, 3), "lexical_rule_recall": round(rec, 3),
        "K_final_core": count(fin, ("new_authority_arg", "widened")) + missed(fin),
+       "K_final_core_flagged": count(fin, ("new_authority_arg", "widened")),
+       "K_final_core_missed": missed(fin),
        "K_final_strict_args": count(fin, STRICT) + missed(fin),
        "K_low_both_yes": count(both, ("new_authority_arg", "widened")) + missed(both),
        "K_high_one_yes": count(one, ("new_authority_arg", "widened")) + missed(one),

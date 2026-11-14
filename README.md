@@ -3,7 +3,7 @@
 Yulliwas Ameur (Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Cnam), Samia Bouzefrane (CEDRIC, Cnam),
 Soumya Banerjee (Inria). Licence: MIT (code), CC BY 4.0 (data and documents); see `LICENSE`, `LICENSE-DATA`,
 `CITATION.cff`. Archived on Zenodo, all versions: [10.5281/zenodo.24224247](https://doi.org/10.5281/zenodo.24224247); the paper cites
-the version of tag `v1.0.1-camera-ready` (its DOI is shown on the Zenodo page of that release).
+the version of tag `v1.0.2-camera-ready` (its DOI is shown on the Zenodo page of that release).
 
 Artefact of *SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority* (ICAART 2027,
 SciTePress). Everything the paper reports is regenerated from the archived corpus by scripts; `numbers.tex`, which
@@ -35,9 +35,9 @@ oracle and the decision-time measurement dominate.
 | No generated witness contradicts any silent re-bind (§7) | measured | `make oracle` | `results/oracle2_{label_free,lexical}.json` |
 | The proxy enforces the rule; overhead (§5) | prototype | `make test`, `make bench` | `tests/test_proxy.py`, `results/proto_overhead.json`, `results/v2_timing.json` |
 | Staged attacks blocked; six real cases (§6) | prototype | `make demo` | `results/proto_scenarios.json`, `results/proto_replay_real.json` |
-| Compatible widenings exist; cost per rule (§7, Tables 3 and 7) | measured | `make pilot robustness` | `results/v2_summary.json`, `results/free_summary.json`, `results/taxonomy.json`, `results/robustness*.json`, `results/cap_sensitivity.json` |
+| Compatible widenings exist; cost per rule (§3, §7, Tables 2 and 4) | measured | `make pilot robustness` | `results/v2_summary.json`, `results/free_summary.json`, `results/taxonomy.json`, `results/robustness*.json`, `results/cap_sensitivity.json` |
 | Annotation: kappa, precision, recall, K (§7) | measured | `make annotation` | `results/agreement.json`, `results/annotation_frame.json` |
-| Deployed clients do not re-check (§7, Table 8) | measured | `make survey` | `results/client_survey.json`, `results/client_survey_tests.json` |
+| Deployed clients do not re-check (§7, Table 5) | measured | `make survey` | `results/client_survey.json`, `results/client_survey_tests.json` |
 
 ## Layout
 

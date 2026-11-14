@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Écart n° 13 : sensibilité au plafond d'échantillonnage. Ré-extraction des deux paquets dominants avec CAP=40
+"""Analyse de sensibilité au plafond (non numérotée comme écart) : sensibilité au plafond d'échantillonnage. Ré-extraction des deux paquets dominants avec CAP=40
 (agent-device, @sentry/mcp-server) dans raw40/, en réutilisant les extractions existantes quand la version coïncide."""
 import json, os, shutil, glob
 import extract
