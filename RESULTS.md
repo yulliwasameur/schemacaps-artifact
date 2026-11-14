@@ -9,7 +9,7 @@
 - Compatible changes that widen some coordinate (label-free): 412 of 580 (71.0%); widening a lexically authority-bearing argument (core): 84 (14.5%); package bootstrap interval [3.5, 25.2]%.
 - Re-approvals on existing tools: pin 2004, compatibility 617, SchemaCaps label-free 645, SchemaCaps lexical 413; plus 907 added tools for every rule. Undecided: 20 (label-free), 19 (lexical).
 - Taxonomy (compatible changes, lexical / label-free): field added on closed object 80 / 167; domain widened 6 / 134; object opened 129 / 129; strict narrowings (all changes) 333.
-- Annotation (176 cases, 44 flagged + 132 unflagged): raw agreement 83.5%, Cohen's kappa 0.672 (0.9 reading unsure as no); 29 disagreements adjudicated; lexical rule precision 0.75, recall 0.6 (upper bound); human-validated compatible core amplifications K = 73.
+- Annotation (176 cases, 44 flagged + 132 unflagged): raw agreement 83.5%, Cohen's kappa 0.672 (0.9 reading unsure as no); 29 disagreements adjudicated; lexical rule precision 0.75, recall 0.6 (upper bound); human-validated compatible core amplifications K = 76.
 - Oracle, every silent re-bind: label-free 553 schema-changing re-binds, 55003 generated calls, 0 counterexamples; lexical 785 re-binds, 0 counterexamples.
 - Checker probes: raw jsonsubschema unsound on 4 of 17; guarded checker on 0. Guard during classification: {'calls': 467, 'overturned': 0, 'gen_errors': 0}.
 - Decision on a changed tool (cold): label-free median 22.0 ms, p99 2632.3 ms; lexical median 13.3 ms. Proxy overhead: +0.47 ms per call, +1.123 ms per list (5 runs x 500).

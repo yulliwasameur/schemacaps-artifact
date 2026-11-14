@@ -16,7 +16,7 @@ release record (`TIMELINE.md`). "Pre-classification" means decided before any sc
 | 8 | 29/09 21:17, after an adversarial review | classifier v2: `required`, defaults, nested paths, openings, product condition, tool hints | post hoc | defines the reported rule |
 | 9 | 29/09 evening, after a second review | ⋆ under closed ancestors, typed `additionalProperties`, branch descent, unresolved `$ref` | post hoc | re-approvals 343 → 395 |
 | 10 | 30/09, revision 2 | see below | post hoc | lexical counts unchanged; label-free mode added |
-| 11 | 14/11, camera-ready | exact-reference benchmark; two rule gaps fixed (see below) | post hoc | label-free counts unchanged; lexical +1 re-approval |
+| 11 | 14/11, camera-ready | exact-reference benchmark; two rule gaps fixed; simple-pin baseline; K split; K 73→76 (see below) | post hoc | label-free counts unchanged; lexical +1 re-approval; K +3 |
 
 Deviation 10 in detail (previous versions archived: `classify2_dev9.py`, `results/v2_dev9_*`, `prototype/archive/`):
 

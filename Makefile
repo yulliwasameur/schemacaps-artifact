@@ -6,9 +6,9 @@
 #   make extract     re-mine the corpus from the registries (long; needs requirements-extract.txt, node, npm, uv)
 PY ?= python3
 
-.PHONY: reproduce env test pilot oracle annotation robustness demo adversarial bench numbers check proof proof-docker survey manifest extract
+.PHONY: reproduce env test pilot oracle annotation robustness demo adversarial bench report numbers check proof proof-docker survey manifest extract
 
-reproduce: test pilot oracle annotation robustness demo adversarial bench check
+reproduce: test pilot oracle annotation robustness demo adversarial bench report check
 
 env:
 	$(PY) -m pip install -r requirements.lock
@@ -24,7 +24,6 @@ pilot:                    ## classification (both labellings), taxonomy, witness
 	$(PY) release_manifest.py
 	$(PY) witness2.py
 	$(PY) timing2.py
-	$(PY) report2.py
 
 oracle:                   ## differential oracle over every silent re-bind (lexical, then label-free)
 	$(PY) oracle2.py
@@ -47,6 +46,9 @@ adversarial:              ## exact-reference benchmark of the checker and of the
 	$(PY) adversarial_bench.py
 	BENCH_SEED=20270223 BENCH_OUT=adversarial_bench_seed2.json $(PY) adversarial_bench.py
 	$(PY) simple_pin.py
+
+report:                   ## RESULTS.md, after every result (annotation included) is regenerated
+	$(PY) report2.py
 
 bench:                    ## proxy overhead (5 runs x 500 iterations)
 	$(PY) prototype/bench_overhead.py
