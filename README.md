@@ -2,7 +2,8 @@
 
 Yulliwas Ameur (Efrei Research Lab, Université Paris-Panthéon-Assas; CEDRIC, Cnam), Samia Bouzefrane (CEDRIC, Cnam),
 Soumya Banerjee (Inria). Licence: MIT (code), CC BY 4.0 (data and documents); see `LICENSE`, `LICENSE-DATA`,
-`CITATION.cff`. DOI: *(Zenodo DOI, added at release)*.
+`CITATION.cff`. Archived on Zenodo: [10.5281/zenodo.24224248](https://doi.org/10.5281/zenodo.24224248) (version v1.0.0-camera-ready;
+all versions: [10.5281/zenodo.24224247](https://doi.org/10.5281/zenodo.24224247)).
 
 Artefact of *SchemaCaps: When a Compatible Tool Update Silently Widens an AI Agent's Authority* (ICAART 2027,
 SciTePress). Everything the paper reports is regenerated from the archived corpus by scripts; `numbers.tex`, which
